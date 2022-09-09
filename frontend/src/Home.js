@@ -1,24 +1,19 @@
-import { React, useState, useEffect } from "react";
-import "./css/Home.css";
+import { React, useState, useEffect } from 'react';
+import './css/Home.css';
+import Header from './Header';
+import Content from './Content';
 
 const Home = () => {
-  const [selection, setSelection] = useState("about");
+    const [selection, setSelection] = useState();
 
-  return (
-    <main>
-      <div className="contentBox">
-        <button onClick={(e) => setSelection(e.target.value)} value="about">
-          About
-        </button>
-        <button onClick={(e) => setSelection(e.target.value)} value="login">
-          Login
-        </button>
-        <button onClick={(e) => setSelection(e.target.value)} value="register">
-          Register
-        </button>
-      </div>
-    </main>
-  );
+    return (
+        <main>
+            <div className="contentBox">
+                <Header setSelection={setSelection} />
+                <Content selection={selection} />
+            </div>
+        </main>
+    );
 };
 
 export default Home;
