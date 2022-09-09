@@ -1,12 +1,41 @@
-body {
+main {
   height: 100vh;
   height: 100vh;
 
   background-image: url("../images/background_landscape.jpg");
   background-size: cover;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  color: aquamarine;
+.contentBox {
+  /* border: 1px solid white; */
+  box-shadow: 0 0 1.5rem 0 black;
+  border-radius: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  padding: 1rem 2rem 1rem 2rem;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+button:nth-child(1) {
+  border-top-left-radius: 2rem;
+}
+
+button:nth-child(3) {
+  border-top-right-radius: 2rem;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
