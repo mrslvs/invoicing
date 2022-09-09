@@ -1,0 +1,12 @@
+body {
+  height: 100vh;
+  height: 100vh;
+
+  background-image: url("../images/background_landscape.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  color: aquamarine;
+}
