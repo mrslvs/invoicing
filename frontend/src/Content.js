@@ -8,15 +8,12 @@ const Content = ({ selection }) => {
 
     switch (selection) {
         case 'about':
-            console.log('set about');
             contentComponent = <About />;
             break;
         case 'login':
-            console.log('set login');
             contentComponent = <Login />;
             break;
         case 'register':
-            console.log('set register');
             contentComponent = <Register />;
             break;
     }

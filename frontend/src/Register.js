@@ -1,11 +1,16 @@
-import React from "react";
+import React from 'react';
 
 const Register = () => {
-  return (
-    <div>
-      <h1>Register</h1>
-    </div>
-  );
+    return (
+        <div>
+            <form action="/register" method="POST">
+                <label htmlFor="username">Username</label>
+                <input type="text" />
+                <label htmlFor="pwd">Password</label>
+                <input type="password" />
+            </form>
+        </div>
+    );
 };
 
 export default Register;
