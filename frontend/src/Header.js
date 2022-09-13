@@ -1,8 +1,9 @@
 import React from 'react';
+import './css/Header.css';
 
 const Header = ({ setSelection }) => {
     return (
-        <>
+        <header>
             <button onClick={(e) => setSelection(e.target.value)} value="about">
                 About
             </button>
@@ -12,7 +13,7 @@ const Header = ({ setSelection }) => {
             <button onClick={(e) => setSelection(e.target.value)} value="register">
                 Register
             </button>
-        </>
+        </header>
     );
 };
 

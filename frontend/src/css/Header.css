@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: center;
+    /* width: 100vw; */
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+
+    width: 30vw;
+}
+
+button:nth-child(1) {
+    border-top-left-radius: 2rem;
+}
+
+button:nth-child(3) {
+    border-top-right-radius: 2rem;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
