@@ -4,6 +4,7 @@ import Content from './home/Content';
 // CSS
 import './css/Home.css';
 import './css/Header.css';
+import './css/Register.css';
 // lib
 import { React, useState, useEffect } from 'react';
 
