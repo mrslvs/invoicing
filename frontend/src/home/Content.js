@@ -1,7 +1,7 @@
-import React from 'react';
 import About from './About';
 import Login from './Login';
 import Register from './Register';
+import React from 'react';
 
 const Content = ({ selection }) => {
     let contentComponent = <About />;
