@@ -1,3 +1,7 @@
-form {
+.register-form {
     color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

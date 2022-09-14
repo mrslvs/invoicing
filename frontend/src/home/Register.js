@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import '../css/Register.css';
 
 const Register = () => {
     // https://youtu.be/brcHK3P6ChQ
@@ -29,8 +30,9 @@ const Register = () => {
     }, [pwd]);
 
     return (
-        <form action="/register" method="POST" className="Content">
+        <form action="/register" method="POST" className="Content register-form">
             <label htmlFor="username">Username</label>
+
             <input
                 type="text"
                 id="username"
@@ -38,15 +40,17 @@ const Register = () => {
                 required
                 onChange={(e) => setUser(e.target.value)}
             />
+
             {validUser ? (
                 <p>Valid</p>
             ) : (
                 <p className="hint">
-                    Username must contain 3-23 character and start with lowercase letter
+                    Username must contain 3-23 characters/numbers and start with letter
                 </p>
             )}
 
             <label htmlFor="pwd">Password</label>
+
             <input
                 type="password"
                 id="pwd"
@@ -56,6 +60,7 @@ const Register = () => {
             />
 
             <label htmlFor="pwd-repeat">Repeat password</label>
+
             <input
                 type="password"
                 id="pwd-repeat"
@@ -65,6 +70,8 @@ const Register = () => {
                 placeholder={validPwd ? '' : 'Enter valid password first'}
                 onChange={(e) => setValidRepeatPwd(e.target.value)}
             />
+
+            <input type="submit" />
         </form>
     );
 };

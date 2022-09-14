@@ -1,17 +1,17 @@
-main {
+.home-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     height: 100vh;
     height: 100vh;
 
     background-image: url('../images/background_landscape.jpg');
     background-size: cover;
     background-position: center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.contentBox {
+.content-box {
     box-shadow: 0 0 1.5rem 0 black;
     border-radius: 2rem;
     background-color: rgba(0, 0, 0, 0.5);

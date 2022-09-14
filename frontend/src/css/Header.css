@@ -1,13 +1,12 @@
-header {
+.home-header {
     display: flex;
     justify-content: center;
-    /* width: 100vw; */
 }
 
-button {
+.home-header-btn {
     background-color: rgba(0, 0, 0, 0.3);
-    border: none;
     color: white;
+    border: none;
     padding: 1rem 2rem 1rem 2rem;
     font: inherit;
     cursor: pointer;
@@ -16,14 +15,14 @@ button {
     width: 30vw;
 }
 
-button:nth-child(1) {
+.home-header-btn:nth-child(1) {
     border-top-left-radius: 2rem;
 }
 
-button:nth-child(3) {
+.home-header-btn:nth-child(3) {
     border-top-right-radius: 2rem;
 }
 
-button:hover {
+.home-header-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
