@@ -1,6 +1,27 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
+const { Sequelize } = require('sequelize');
+const sequelizeOptions = require('./config/sequelizeOptions');
+
+const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USERNAME,
+    process.env.DB_PASSWORD,
+    sequelizeOptions
+);
+
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection to the MySQL database established.');
+    })
+    .catch((err) => {
+        console.log('Error occured trying to connect to the MySQL database!');
+        console.log(err.message);
+    });
+
 const app = express();
 
 const PORT = process.env.PORT || 9000;
