@@ -1,5 +1,10 @@
 const { Sequelize } = require('sequelize');
-const sequelizeOptions = require('./sequelizeOptions');
+
+sequelizeOptions = {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
+    dialect: 'mysql',
+};
 
 module.exports = new Sequelize(
     process.env.DB_NAME,
