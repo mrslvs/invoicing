@@ -9,7 +9,6 @@ module.exports = db.define(
             primaryKey: true,
             autoIncrement: true,
         },
-
         username: {
             type: Sequelize.DataTypes.STRING,
         },
@@ -22,6 +21,6 @@ module.exports = db.define(
     },
     {
         freezeTableName: true,
-        timestamps: false,
+        timestamps: true,
     }
 );
