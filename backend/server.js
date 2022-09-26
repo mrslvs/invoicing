@@ -2,25 +2,49 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-const { Sequelize } = require('sequelize');
-const sequelizeOptions = require('./config/sequelizeOptions');
+const db = require('./config/database');
 
-const sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USERNAME,
-    process.env.DB_PASSWORD,
-    sequelizeOptions
-);
+// const User = db.define(
+//     'user',
+//     {
+//         id: {
+//             type: Sequelize.DataTypes.INTEGER,
+//             primaryKey: true,
+//             autoIncrement: true,
+//         },
 
-sequelize
-    .authenticate()
-    .then(() => {
-        console.log('Connection to the MySQL database established.');
-    })
-    .catch((err) => {
-        console.log('Error occured trying to connect to the MySQL database!');
-        console.log(err.message);
-    });
+//         username: {
+//             type: Sequelize.DataTypes.STRING,
+//         },
+//         password: {
+//             type: Sequelize.DataTypes.STRING,
+//         },
+//         age: {
+//             type: Sequelize.DataTypes.INTEGER,
+//         },
+//     },
+//     {
+//         freezeTableName: true,
+//         timestamps: false,
+//     }
+// );
+
+// User.sync()
+//     .then((data) => {
+//         console.log('successfully synced user table');
+//     })
+//     .catch((err) => {
+//         console.log('error while ');
+//     });
+
+// db.authenticate()
+//     .then(() => {
+//         console.log('Connection to the MySQL database established.');
+//     })
+//     .catch((err) => {
+//         console.log('Error occured trying to connect to the MySQL database!');
+//         console.log(err.message);
+//     });
 
 const app = express();
 
