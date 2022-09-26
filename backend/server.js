@@ -4,31 +4,6 @@ const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 const db = require('./config/database');
 
-// const User = db.define(
-//     'user',
-//     {
-//         id: {
-//             type: Sequelize.DataTypes.INTEGER,
-//             primaryKey: true,
-//             autoIncrement: true,
-//         },
-
-//         username: {
-//             type: Sequelize.DataTypes.STRING,
-//         },
-//         password: {
-//             type: Sequelize.DataTypes.STRING,
-//         },
-//         age: {
-//             type: Sequelize.DataTypes.INTEGER,
-//         },
-//     },
-//     {
-//         freezeTableName: true,
-//         timestamps: false,
-//     }
-// );
-
 // User.sync()
 //     .then((data) => {
 //         console.log('successfully synced user table');
