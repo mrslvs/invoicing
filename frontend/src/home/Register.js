@@ -30,7 +30,15 @@ const Register = () => {
     }, [pwd]);
 
     return (
-        <form action="/register" method="POST" className="Content register-form">
+        <form
+            action="/auth/register"
+            method="POST"
+            className="Content register-form"
+            onSubmit={(e) => {
+                e.preventDefault();
+                console.log(e);
+            }}
+        >
             <label htmlFor="username">Username</label>
 
             <input
