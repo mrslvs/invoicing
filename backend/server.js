@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 const db = require('./config/database');
+const authRoute = require('./routes/auth');
 
 // User.sync()
 //     .then((data) => {
@@ -26,6 +27,7 @@ const app = express();
 const PORT = process.env.PORT || 9000;
 
 app.use(cors(corsOptions));
+app.use('/auth', require('./routes/auth'));
 
 app.get('^/$|/index(.html)?', (req, res) => {
     // ^/ -> must start with /
