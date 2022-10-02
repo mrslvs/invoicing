@@ -31,12 +31,18 @@ const Register = () => {
 
     return (
         <form
+            // id="register-form"
             action="/auth/register"
             method="POST"
             className="Content register-form"
             onSubmit={(e) => {
                 e.preventDefault();
-                console.log(e);
+
+                const formData = new FormData(document.querySelector('.register-form'));
+                // send POST request
+                formData.forEach((val, key) => {
+                    console.log(key + '=' + val);
+                });
             }}
         >
             <label htmlFor="username">Username</label>
@@ -44,6 +50,7 @@ const Register = () => {
             <input
                 type="text"
                 id="username"
+                name="username"
                 autoComplete="off"
                 required
                 onChange={(e) => setUser(e.target.value)}
@@ -62,6 +69,7 @@ const Register = () => {
             <input
                 type="password"
                 id="pwd"
+                name="pwd"
                 autoComplete="off"
                 required
                 onChange={(e) => setPwd(e.target.value)}
@@ -72,6 +80,7 @@ const Register = () => {
             <input
                 type="password"
                 id="pwd-repeat"
+                name="pwd-repeat"
                 autoComplete="off"
                 required
                 readOnly={validPwd ? false : true}
