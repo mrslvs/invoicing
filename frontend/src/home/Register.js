@@ -88,12 +88,12 @@ const Register = () => {
                 onChange={(e) => setPwd(e.target.value)}
             />
 
-            <label htmlFor="pwd-repeat">Repeat password</label>
+            <label htmlFor="pwd_repeat">Repeat password</label>
 
             <input
                 type="password"
-                id="pwd-repeat"
-                name="pwd-repeat"
+                id="pwd_repeat"
+                name="pwd_repeat"
                 autoComplete="off"
                 required
                 readOnly={validPwd ? false : true}
