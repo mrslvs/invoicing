@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import '../css/Register.css';
+import axios from 'axios';
 
 const Register = () => {
     // https://youtu.be/brcHK3P6ChQ
@@ -29,21 +30,33 @@ const Register = () => {
         setValidPwd(result);
     }, [pwd]);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const api_endpoint = 'http://localhost:9000/auth/register';
+
+        // send POST request
+        const body = {};
+        const formData = new FormData(document.querySelector('.register-form'));
+
+        formData.forEach((val, key) => {
+            body[key] = val;
+            console.log(key + '=' + val);
+        });
+
+        console.log(body);
+        const res = await axios.post(api_endpoint, body);
+
+        console.log(res);
+    };
+
     return (
         <form
             // id="register-form"
             action="/auth/register"
             method="POST"
             className="Content register-form"
-            onSubmit={(e) => {
-                e.preventDefault();
-
-                const formData = new FormData(document.querySelector('.register-form'));
-                // send POST request
-                formData.forEach((val, key) => {
-                    console.log(key + '=' + val);
-                });
-            }}
+            onSubmit={(e) => handleSubmit(e)}
         >
             <label htmlFor="username">Username</label>
 
