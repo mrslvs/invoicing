@@ -23,9 +23,6 @@ const User = require('./models/User');
 //         console.log(err.message);
 //     });
 
-// const User = userModel;
-// User.sync();
-
 User.sync();
 
 const app = express();

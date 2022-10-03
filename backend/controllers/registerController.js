@@ -1,11 +1,13 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+const transpoerter = require('./config/mailer');
 
 const registerUser = async (req, res) => {
     // handle registration
-    const { username, pwd, pwd_repeat } = req.body;
+    const { username, usermail, pwd, pwd_repeat } = req.body;
 
-    if (!username || !pwd || !pwd_repeat) {
+    if (!username || !usermail || !pwd || !pwd_repeat) {
         res.status(400).send('One of the parameters not received.');
         return;
     }
@@ -31,9 +33,41 @@ const registerUser = async (req, res) => {
         password: pwd,
     });
 
-    newUser.save();
+    await newUser.save();
+
+    const emailToken = jwt.sign(
+        {
+            user: newUser.id,
+        },
+        process.env.MAILER_TOKEN_SECRET,
+        {
+            expiresIn: '1h',
+        }
+    );
+
+    const message = {
+        to: `${username} <${usermail}>`,
+        subject: 'Confirm registration',
+        text: `Dear ${username},`,
+        html: `
+    <p>I would like to welcome you to my unique project of invoicing application.</p>
+    <p>Please confirm your email address by clicking on <a href="${process.env.API_ENDPOINT}/auth/confirm/${emailToken}">this link</a></p>
+    `,
+    };
+
+    transpoerter.sendMail(message, (error, info) => {
+        if (error) {
+            console.log('erro occured while sending email:');
+            console.log(error.message);
+        }
+
+        console.log('message has been sent');
+        transpoerter.close();
+    });
 
     res.status(201).send('Successfully registered new user.');
 };
+
+const confirmEmail = (req, res, token) => {};
 
 module.exports = { registerUser };
