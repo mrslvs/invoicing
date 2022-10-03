@@ -17,8 +17,10 @@ module.exports = db.define(
             type: Sequelize.DataTypes.STRING,
             allowNull: false,
         },
-        google_secret_2fa: {
-            type: Sequelize.DataTypes.STRING,
+        verified: {
+            type: Sequelize.DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: 0,
         },
     },
     {
