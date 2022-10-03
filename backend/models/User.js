@@ -11,12 +11,14 @@ module.exports = db.define(
         },
         username: {
             type: Sequelize.DataTypes.STRING,
+            allowNull: false,
         },
         password: {
             type: Sequelize.DataTypes.STRING,
+            allowNull: false,
         },
-        age: {
-            type: Sequelize.DataTypes.INTEGER,
+        google_secret_2fa: {
+            type: Sequelize.DataTypes.STRING,
         },
     },
     {

@@ -15,8 +15,6 @@ const registerUser = async (req, res) => {
         return;
     }
 
-    console.log('111111111111111111111111');
-
     const userExists = await User.findAll({
         where: {
             username: username,
