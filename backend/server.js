@@ -4,6 +4,7 @@ const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 const db = require('./config/database');
 const authRoute = require('./routes/auth');
+const User = require('./models/User');
 
 // User.sync()
 //     .then((data) => {
@@ -21,6 +22,11 @@ const authRoute = require('./routes/auth');
 //         console.log('Error occured trying to connect to the MySQL database!');
 //         console.log(err.message);
 //     });
+
+// const User = userModel;
+// User.sync();
+
+User.sync();
 
 const app = express();
 
