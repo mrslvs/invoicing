@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
-const transpoerter = require('./config/mailer');
+const transpoerter = require('../config/mailer');
 
 const registerUser = async (req, res) => {
     // handle registration
@@ -37,7 +37,7 @@ const registerUser = async (req, res) => {
 
     const emailToken = jwt.sign(
         {
-            user: newUser.id,
+            userId: newUser.id,
         },
         process.env.MAILER_TOKEN_SECRET,
         {
@@ -51,7 +51,7 @@ const registerUser = async (req, res) => {
         text: `Dear ${username},`,
         html: `
     <p>I would like to welcome you to my unique project of invoicing application.</p>
-    <p>Please confirm your email address by clicking on <a href="${process.env.API_ENDPOINT}/auth/confirm/${emailToken}">this link</a></p>
+    <p>Please confirm your email address by clicking on <a href="${process.env.API_ENDPOINT}/confirmation/${emailToken}">this link</a></p>
     `,
     };
 
@@ -68,6 +68,24 @@ const registerUser = async (req, res) => {
     res.status(201).send('Successfully registered new user.');
 };
 
-const confirmEmail = (req, res, token) => {};
+const confirmEmail = async (req, res, token) => {
+    try {
+        const { userId } = jwt.verify(token, process.env.MAILER_TOKEN_SECRET);
 
-module.exports = { registerUser };
+        await User.update(
+            { verified: 1 },
+            {
+                where: {
+                    id: userId,
+                },
+            }
+        );
+
+        res.send('verified!!');
+    } catch (err) {
+        console.log(err);
+        res.send('error hppnd');
+    }
+};
+
+module.exports = { registerUser, confirmEmail };

@@ -29,9 +29,12 @@ const app = express();
 
 const PORT = process.env.PORT || 9000;
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.use(express.json());
-app.use('/auth', require('./routes/auth'));
+
+app.use('/confirmation', require('./routes/confirmation'));
+
+app.use('/auth', cors(corsOptions), require('./routes/auth'));
 
 app.get('^/$|/index(.html)?', (req, res) => {
     // ^/ -> must start with /
