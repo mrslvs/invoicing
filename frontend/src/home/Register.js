@@ -51,7 +51,7 @@ const Register = () => {
         } else {
             setValidRepeatPwd(false);
         }
-    }, [repeatPwd]);
+    }, [repeatPwd, pwd]);
 
     useEffect(() => {
         const tmp = validUser && validMail && validPwd && validRepeatPwd;
