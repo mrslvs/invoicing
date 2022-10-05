@@ -8,13 +8,11 @@ const registerUser = async (req, res) => {
     const { username, usermail, pwd, pwd_repeat } = req.body;
 
     if (!username || !usermail || !pwd || !pwd_repeat) {
-        res.status(400).send('All parameters are required.');
-        return;
+        return res.status(400).send('All parameters are required.');
     }
 
     if (pwd !== pwd_repeat) {
-        res.status(400).send('Passwords do not match.');
-        return;
+        return res.status(400).send('Passwords do not match.');
     }
 
     const userExists = await User.findAll({
@@ -24,8 +22,7 @@ const registerUser = async (req, res) => {
     });
 
     if (userExists.length !== 0) {
-        res.status(409).send('Conflict! User already exists!');
-        return;
+        return res.status(409).send('Conflict! User already exists!');
     }
 
     const hashedPwd = await bcrypt.hash(pwd, 10);
@@ -100,8 +97,7 @@ const loginUser = async (req, res) => {
     });
 
     if (!user) {
-        res.status(400).send(`User doesn't exist`);
-        return;
+        return res.status(400).send(`User doesn't exist`);
     }
 
     console.log(pwd + ' : ' + user.password);
@@ -123,8 +119,6 @@ const loginUser = async (req, res) => {
             { expiresIn: '1h' }
         );
 
-        console.log('Update refreshToken in DB: ' + refreshToken);
-
         await User.update(
             { refresh_token: refreshToken },
             {
@@ -134,9 +128,11 @@ const loginUser = async (req, res) => {
             }
         );
 
-        res.status(200).send('logged in');
+        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 }).json({
+            accessToken,
+        });
     } else {
-        res.status(401).send('wrong password');
+        res.status(401).send('Wrong password');
     }
 };
 
