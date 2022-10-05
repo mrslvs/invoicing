@@ -32,7 +32,7 @@ const PORT = process.env.PORT || 9000;
 // app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use('/confirmation', require('./routes/confirmation'));
+app.use('/confirmation', cors(), require('./routes/confirmation'));
 
 app.use('/auth', cors(corsOptions), require('./routes/auth'));
 
@@ -44,7 +44,7 @@ app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('*', (req, res) => {
+app.get('*', cors(), (req, res) => {
     res.sendFile(__dirname + '/views/404.html');
 });
 
