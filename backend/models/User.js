@@ -22,6 +22,9 @@ module.exports = db.define(
             allowNull: false,
             defaultValue: 0,
         },
+        refresh_token: {
+            type: Sequelize.DataTypes.STRING,
+        },
     },
     {
         freezeTableName: true,
