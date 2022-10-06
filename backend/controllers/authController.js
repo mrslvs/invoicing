@@ -128,9 +128,9 @@ const loginUser = async (req, res) => {
             }
         );
 
-        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 }).json({
-            accessToken,
-        });
+        console.log('SENDING COOKIE!');
+        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 });
+        return res.json({ accessToken });
     } else {
         res.status(401).send('Wrong password');
     }

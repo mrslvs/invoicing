@@ -5,6 +5,7 @@ const corsOptions = require('./config/corsOptions');
 const db = require('./config/database');
 const authRoute = require('./routes/auth');
 const User = require('./models/User');
+const verifyJWT = require('./middleware/verifyJWT');
 
 // User.sync()
 //     .then((data) => {
@@ -35,6 +36,10 @@ app.use(express.json());
 app.use('/confirmation', cors(), require('./routes/confirmation'));
 
 app.use('/auth', cors(corsOptions), require('./routes/auth'));
+
+app.get('/app', verifyJWT, (req, res) => {
+    res.send('hello there');
+});
 
 app.get('^/$|/index(.html)?', (req, res) => {
     // ^/ -> must start with /
