@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const transpoerter = require('../config/mailer');
+const { NOEXPAND } = require('sequelize/types/table-hints');
 
 const registerUser = async (req, res) => {
     // handle registration
@@ -129,7 +130,12 @@ const loginUser = async (req, res) => {
         );
 
         console.log('SENDING COOKIE!');
-        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 });
+        res.cookie('jwt', refreshToken, {
+            httpOnly: true,
+            maxAge: 1 * 60 * 60 * 1000,
+            sameSite: 'None',
+            secure: true,
+        });
         return res.json({ accessToken });
     } else {
         res.status(401).send('Wrong password');
@@ -189,7 +195,7 @@ const handleLogout = async (req, res) => {
 
     if (!user) {
         // we have cookie but not user
-        res.clearCookie('jwt', { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 });
+        res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true });
         return res.status(403);
     }
 
@@ -202,7 +208,7 @@ const handleLogout = async (req, res) => {
         }
     );
 
-    res.clearCookie('jwt', { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 }); // secure: true - only on HTTPS
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true }); // secure: true - only on HTTPS
     res.sendStatus(204);
 };
 
