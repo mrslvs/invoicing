@@ -92,7 +92,7 @@ const Register = () => {
             const res = await axios.post('/auth/register', body);
             console.log(res.data);
         } catch (err) {
-            if (!err.response) {
+            if (err.code === 'ERR_NETWORK') {
                 console.log('No server response');
                 setErrorMessage('No server response');
             } else if (err.response.status === 409) {

@@ -1,25 +1,30 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../api/axios';
 
 const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const api_endpoint = 'http://localhost:9000/auth/login';
-
         // send POST request
-        const body = {};
         const formData = new FormData(document.querySelector('.login-form'));
 
+        const body = {};
         formData.forEach((val, key) => {
             body[key] = val;
             console.log(key + '=' + val);
         });
 
-        console.log(body);
-        const res = await axios.post(api_endpoint, body);
+        try {
+            const res = await axios.post('/auth/login', body);
+        } catch (err) {
+            console.log('mame err');
+            console.log(err.code);
+            if (err.code === 'ERR_NETWORK') {
+                console.log('no server response');
+            }
+        }
 
-        console.log(res);
+        // console.log(res);
     };
     return (
         <form className="Content login-form" onSubmit={(e) => handleSubmit(e)}>
