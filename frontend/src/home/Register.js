@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import '../css/Register.css';
-import axios from 'axios';
+import axios from '../api/axios';
+// import axios from 'axios';
 
 const Register = () => {
     // https://youtu.be/brcHK3P6ChQ
@@ -27,6 +28,8 @@ const Register = () => {
     const [validRepeatPwd, setValidRepeatPwd] = useState(false);
 
     const [validForm, setValidForm] = useState(false);
+
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         const result = USER_REGEX.test(user);
@@ -60,24 +63,42 @@ const Register = () => {
         setValidForm(tmp);
     }, [validUser, validMail, validPwd, validRepeatPwd]);
 
+    useEffect(() => {
+        setTimeout(() => {}, 2000);
+    }, [errorMessage]);
+
+    const displayErrorMessage = () => {};
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const api_endpoint = 'http://localhost:9000/auth/register';
+        if (!validForm) {
+            setErrorMessage('Form is not valid');
+        }
 
         // send POST request
-        const body = {};
         const formData = new FormData(document.querySelector('.register-form'));
 
+        const body = {};
         formData.forEach((val, key) => {
             body[key] = val;
-            console.log(key + '=' + val);
         });
 
-        console.log(body);
-        const res = await axios.post(api_endpoint, body);
-
-        console.log(res);
+        try {
+            const res = await axios.post('/auth/register', body);
+            console.log(res.data);
+        } catch (err) {
+            if (!err.response) {
+                console.log('No server response');
+                setErrorMessage('No server response');
+            } else if (err.response.status === 409) {
+                console.log('Username is taken');
+                setErrorMessage('Username is taken');
+            } else {
+                console.log('reg failed message');
+                setErrorMessage('Registration failed');
+            }
+        }
     };
 
     return (

@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const transpoerter = require('../config/mailer');
-const { NOEXPAND } = require('sequelize/types/table-hints');
 
 const registerUser = async (req, res) => {
     // handle registration
