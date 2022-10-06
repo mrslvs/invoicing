@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { registerUser, loginUser } = require('../controllers/authController');
-const handleRefreshToken = require('../controllers/refreshTokenController');
+const { registerUser, loginUser, handleRefreshToken } = require('../controllers/authController');
 
 router.post('/register', (req, res) => registerUser(req, res));
 
