@@ -45,6 +45,7 @@ const Register = () => {
     }, [pwd]);
 
     useEffect(() => {
+        // compare passwords
         if (pwd && repeatPwd && repeatPwd === pwd) {
             setValidRepeatPwd(true);
             console.log('passwords match');
@@ -54,6 +55,7 @@ const Register = () => {
     }, [repeatPwd, pwd]);
 
     useEffect(() => {
+        // validate form
         const tmp = validUser && validMail && validPwd && validRepeatPwd;
         setValidForm(tmp);
     }, [validUser, validMail, validPwd, validRepeatPwd]);
