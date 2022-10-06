@@ -16,10 +16,13 @@
     border-radius: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 2rem;
+
+    width: 50rem;
+    height: 30rem;
 }
 
 .Content {
-    width: 90vw;
+    /* width: 90vw; */
 }
 
 .fadeInOut {
