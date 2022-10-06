@@ -6,6 +6,7 @@ const db = require('./config/database');
 const authRoute = require('./routes/auth');
 const User = require('./models/User');
 const verifyJWT = require('./middleware/verifyJWT');
+const cookieParser = require('cookie-parser');
 
 // User.sync()
 //     .then((data) => {
@@ -32,6 +33,7 @@ const PORT = process.env.PORT || 9000;
 
 // app.use(cors(corsOptions));
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/confirmation', cors(), require('./routes/confirmation'));
 
