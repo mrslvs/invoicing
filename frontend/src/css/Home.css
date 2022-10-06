@@ -21,3 +21,48 @@
 .Content {
     width: 90vw;
 }
+
+.fadeInOut {
+    -webkit-animation: fadeInOut 4000ms linear forwards;
+    -moz-animation: fadeInOut 4000ms linear forwards;
+    -o-animation: fadeInOut 4000ms linear forwards;
+    animation: fadeInOut 4000ms linear forwards;
+}
+
+@-webkit-keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes fadeInOut {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

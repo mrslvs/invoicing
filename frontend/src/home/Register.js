@@ -43,7 +43,7 @@ const Register = () => {
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
-        console.log(pwd + ' = ' + result);
+        // console.log(pwd + ' = ' + result);
         setValidPwd(result);
     }, [pwd]);
 
@@ -64,13 +64,21 @@ const Register = () => {
     }, [validUser, validMail, validPwd, validRepeatPwd]);
 
     useEffect(() => {
-        console.log('adding class to error-message');
-        document.querySelector('.error-message').classList.add('animate_error');
-        setTimeout(() => {
-            console.log('removing class from error-message');
-            document.querySelector('.error-message').classList.remove('animate-error');
-            setErrorMessage('');
-        }, 20000);
+        if (errorMessage) {
+            if (document.querySelector('.error-message').classList.contains('fadeInOut')) {
+                // if error message is already being displayed, wait additional 4 seconds to remove it
+                setTimeout(() => {
+                    setErrorMessage('');
+                }, 4000);
+            } else {
+                document.querySelector('.error-message').classList.toggle('fadeInOut');
+
+                setTimeout(() => {
+                    document.querySelector('.error-message').classList.toggle('fadeInOut');
+                    setErrorMessage('');
+                }, 4000);
+            }
+        }
     }, [errorMessage]);
 
     const handleSubmit = async (e) => {
