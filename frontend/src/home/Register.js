@@ -64,10 +64,14 @@ const Register = () => {
     }, [validUser, validMail, validPwd, validRepeatPwd]);
 
     useEffect(() => {
-        setTimeout(() => {}, 2000);
+        console.log('adding class to error-message');
+        document.querySelector('.error-message').classList.add('animate_error');
+        setTimeout(() => {
+            console.log('removing class from error-message');
+            document.querySelector('.error-message').classList.remove('animate-error');
+            setErrorMessage('');
+        }, 20000);
     }, [errorMessage]);
-
-    const displayErrorMessage = () => {};
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -158,6 +162,8 @@ const Register = () => {
             />
 
             <input type="submit" disabled={!validForm} />
+
+            <p className="error-message">{errorMessage}</p>
         </form>
     );
 };
