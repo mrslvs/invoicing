@@ -170,4 +170,40 @@ const handleRefreshToken = async (req, res) => {
     });
 };
 
-module.exports = { registerUser, confirmEmail, loginUser, handleRefreshToken };
+const handleLogout = async (req, res) => {
+    // delete access token on client
+
+    const cookies = req.cookies;
+
+    if (!cookies?.jwt) {
+        return res.status(204);
+    }
+
+    const refreshToken = cookies.jwt;
+
+    const user = await User.findOne({
+        where: {
+            refresh_token: refreshToken,
+        },
+    });
+
+    if (!user) {
+        // we have cookie but not user
+        res.clearCookie('jwt', { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 });
+        return res.status(403);
+    }
+
+    await User.update(
+        { refresh_token: null },
+        {
+            where: {
+                username: user.username,
+            },
+        }
+    );
+
+    res.clearCookie('jwt', { httpOnly: true, maxAge: 1 * 60 * 60 * 1000 }); // secure: true - only on HTTPS
+    res.sendStatus(204);
+};
+
+module.exports = { registerUser, confirmEmail, loginUser, handleRefreshToken, handleLogout };
