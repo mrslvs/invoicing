@@ -156,6 +156,15 @@ const Register = () => {
                 onChange={(e) => setPwd(e.target.value)}
             />
 
+            {validPwd ? (
+                <p>Valid</p>
+            ) : (
+                <p className="hint">
+                    Password must be at least 8 chars long, contain special char, number and a
+                    capital letter
+                </p>
+            )}
+
             <label htmlFor="pwd_repeat">Repeat password</label>
 
             <input
@@ -168,6 +177,8 @@ const Register = () => {
                 placeholder={validPwd ? '' : 'Enter valid password first'}
                 onChange={(e) => setRepeatPwd(e.target.value)}
             />
+
+            {validRepeatPwd ? <p>Valid</p> : <p className="hint">Passwords must match</p>}
 
             <input type="submit" disabled={!validForm} />
 

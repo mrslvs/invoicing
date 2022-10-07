@@ -5,3 +5,17 @@
     flex-direction: column;
     justify-content: center;
 }
+
+label {
+    font-size: 1.2rem;
+}
+
+input {
+    align-self: center;
+    width: 30rem;
+    padding: 3px;
+
+    border-radius: 7px;
+    border: 1px solid orange;
+    background-color: rgba(79, 79, 79, 0.412);
+}
