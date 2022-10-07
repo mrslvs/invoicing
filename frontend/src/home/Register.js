@@ -176,6 +176,8 @@ const Register = () => {
                     onChange={(e) => setMail(e.target.value)}
                 />
             </div>
+            {/* as hints take 1rem of height, add this for symetrical form */}
+            <p className="hint"></p>
 
             <div className="marbot"></div>
 
