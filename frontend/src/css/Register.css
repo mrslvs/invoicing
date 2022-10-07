@@ -65,3 +65,7 @@
 .valid-submit {
     background-color: rgba(0, 128, 0, 0.6) !important;
 }
+
+.error-message {
+    min-height: 2rem;
+}

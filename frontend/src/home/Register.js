@@ -90,21 +90,36 @@ const Register = () => {
     }, [validUser, validMail, validPwd, validRepeatPwd]);
 
     useEffect(() => {
+        let errContainer = document.querySelector('.error-message');
         if (errorMessage) {
-            if (document.querySelector('.error-message').classList.contains('fadeInOut')) {
-                // if error message is already being displayed, wait additional 4 seconds to remove it
+            if (errContainer.classList.contains('fadeInOut')) {
                 setTimeout(() => {
-                    setErrorMessage('');
+                    errContainer.classList.remove('fadeInOut');
                 }, 4000);
             } else {
-                document.querySelector('.error-message').classList.toggle('fadeInOut');
-
+                errContainer.classList.add('fadeInOut');
                 setTimeout(() => {
-                    document.querySelector('.error-message').classList.toggle('fadeInOut');
                     setErrorMessage('');
-                }, 4000);
+                    document.querySelector('.error-message').classList.remove('fadeInOut');
+                }, 4050);
             }
         }
+
+        // if (errorMessage) {
+        //     if (document.querySelector('.error-message').classList.contains('fadeInOut')) {
+        //         // if error message is already being displayed, wait additional 4 seconds to remove it
+        //         setTimeout(() => {
+        //             setErrorMessage('');
+        //         }, 4000);
+        //     } else {
+        //         document.querySelector('.error-message').classList.toggle('fadeInOut');
+
+        //         setTimeout(() => {
+        //             document.querySelector('.error-message').classList.toggle('fadeInOut');
+        //             setErrorMessage('');
+        //         }, 4000);
+        //     }
+        // }
     }, [errorMessage]);
 
     const handleSubmit = async (e) => {
