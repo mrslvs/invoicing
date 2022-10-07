@@ -31,29 +31,47 @@ const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
+    const usernameInput = document.getElementById('username');
+    const emailInput = document.getElementById('usermail');
+    const pwdInput = document.getElementById('pwd');
+    const repeatPwdInput = document.getElementById('pwd_repeat');
+
+    const handleValidInputStyling = (isValid, el) => {
+        if (isValid) {
+            el.classList.add('valid-input');
+        } else {
+            if (el.classList.contains('valid-input')) {
+                el.classList.remove('valid-input');
+            }
+        }
+    };
+
     useEffect(() => {
         const result = USER_REGEX.test(user);
         setValidUser(result);
+        handleValidInputStyling(result, document.getElementById('username'));
     }, [user]);
 
     useEffect(() => {
         const result = EMAIL_REGEX.test(mail);
         setValidMail(result);
+        handleValidInputStyling(result, document.getElementById('usermail'));
     }, [mail]);
 
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
-        // console.log(pwd + ' = ' + result);
         setValidPwd(result);
+        handleValidInputStyling(result, document.getElementById('pwd'));
     }, [pwd]);
 
     useEffect(() => {
         // compare passwords
         if (pwd && repeatPwd && repeatPwd === pwd) {
             setValidRepeatPwd(true);
-            console.log('passwords match');
+            handleValidInputStyling(true, document.getElementById('pwd_repeat'));
         } else {
             setValidRepeatPwd(false);
+            handleValidInputStyling(false, document.getElementById('pwd_repeat'));
         }
     }, [repeatPwd, pwd]);
 
@@ -61,6 +79,14 @@ const Register = () => {
         // validate form
         const tmp = validUser && validMail && validPwd && validRepeatPwd;
         setValidForm(tmp);
+
+        if (tmp) {
+            document.querySelector('.submit-btn').classList.add('valid-submit');
+        } else {
+            if (document.querySelector('.submit-btn').classList.contains('valid-submit')) {
+                document.querySelector('.submit-btn').classList.remove('valid-submit');
+            }
+        }
     }, [validUser, validMail, validPwd, validRepeatPwd]);
 
     useEffect(() => {
@@ -129,7 +155,7 @@ const Register = () => {
             </div>
 
             {validUser ? (
-                <p className="hint">Valid</p>
+                <p className="hint"></p>
             ) : (
                 <p className="hint">
                     Username must contain 3-23 characters/numbers and start with a letter
@@ -167,7 +193,7 @@ const Register = () => {
             </div>
 
             {validPwd ? (
-                <p className="hint">Valid</p>
+                <p className="hint"></p>
             ) : (
                 <p className="hint">
                     Password must be at least 8 chars long, contain special char, number and a
@@ -193,7 +219,7 @@ const Register = () => {
             </div>
 
             {validRepeatPwd ? (
-                <p className="hint">Valid</p>
+                <p className="hint"></p>
             ) : (
                 <p className="hint">Passwords must match</p>
             )}

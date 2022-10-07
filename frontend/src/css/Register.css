@@ -58,9 +58,9 @@
 }
 
 .valid-input {
-    border: 1px solid green;
+    border: 1px solid green !important;
 }
 
 .valid-submit {
-    background-color: rgba(0, 128, 0, 0.6);
+    background-color: rgba(0, 128, 0, 0.6) !important;
 }
