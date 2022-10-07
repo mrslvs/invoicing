@@ -127,7 +127,7 @@ const Register = () => {
             />
 
             {validUser ? (
-                <p>Valid</p>
+                <p className="hint">Valid</p>
             ) : (
                 <p className="hint">
                     Username must contain 3-23 characters/numbers and start with a letter
@@ -157,7 +157,7 @@ const Register = () => {
             />
 
             {validPwd ? (
-                <p>Valid</p>
+                <p className="hint">Valid</p>
             ) : (
                 <p className="hint">
                     Password must be at least 8 chars long, contain special char, number and a
@@ -178,9 +178,13 @@ const Register = () => {
                 onChange={(e) => setRepeatPwd(e.target.value)}
             />
 
-            {validRepeatPwd ? <p>Valid</p> : <p className="hint">Passwords must match</p>}
+            {validRepeatPwd ? (
+                <p className="hint">Valid</p>
+            ) : (
+                <p className="hint">Passwords must match</p>
+            )}
 
-            <input type="submit" disabled={!validForm} />
+            <input type="submit" className="submit-btn" disabled={!validForm} />
 
             <p className="error-message">{errorMessage}</p>
         </form>

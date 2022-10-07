@@ -6,11 +6,30 @@
     justify-content: center;
 }
 
-label {
+.register-form > label {
     font-size: 1.2rem;
 }
 
-input {
+.register-form > label {
+    margin-top: 1.5rem;
+}
+
+.register-form > label:nth-of-type(1) {
+    margin-top: 1rem;
+}
+
+.register-form > .submit-btn {
+    margin-top: 1.5rem;
+    background-color: rgba(255, 166, 0, 0.379);
+    color: white;
+    cursor: pointer;
+}
+
+.register-form > .hint {
+    align-self: center;
+}
+
+.register-form > input {
     align-self: center;
     width: 30rem;
     padding: 3px;
