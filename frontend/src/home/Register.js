@@ -200,9 +200,7 @@ const Register = () => {
 
             <div className="marbot"></div>
 
-            {/* <div className="form-item"> */}
             <input type="submit" className="submit-btn" disabled={!validForm} />
-            {/* </div> */}
 
             <p className="error-message">{errorMessage}</p>
         </form>
