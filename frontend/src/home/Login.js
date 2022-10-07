@@ -33,13 +33,15 @@ const Login = () => {
                 <label htmlFor="username">Username</label>
                 <input type="text" name="username" id="username" />
             </div>
+            <div className="marbot"></div>
 
             <div className="form-item">
                 <label htmlFor="pwd">Password</label>
                 <input type="password" name="pwd" id="pwd" />
             </div>
+            <div className="marbot"></div>
 
-            <input type="submit" />
+            <input type="submit" className="submit-btn" />
         </form>
     );
 };
