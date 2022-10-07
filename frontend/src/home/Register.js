@@ -115,16 +115,18 @@ const Register = () => {
 
     return (
         <form className="Content register-form" onSubmit={(e) => handleSubmit(e)}>
-            <label htmlFor="username">Username</label>
+            <div className="form-item">
+                <label htmlFor="username">Username</label>
 
-            <input
-                type="text"
-                id="username"
-                name="username"
-                autoComplete="off"
-                required
-                onChange={(e) => setUser(e.target.value)}
-            />
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    autoComplete="off"
+                    required
+                    onChange={(e) => setUser(e.target.value)}
+                />
+            </div>
 
             {validUser ? (
                 <p className="hint">Valid</p>
@@ -134,27 +136,35 @@ const Register = () => {
                 </p>
             )}
 
-            <label htmlFor="usermail">Email</label>
+            <div className="marbot"></div>
 
-            <input
-                type="text"
-                id="usermail"
-                name="usermail"
-                autoComplete="off"
-                required
-                onChange={(e) => setMail(e.target.value)}
-            />
+            <div className="form-item">
+                <label htmlFor="usermail">Email</label>
 
-            <label htmlFor="pwd">Password</label>
+                <input
+                    type="text"
+                    id="usermail"
+                    name="usermail"
+                    autoComplete="off"
+                    required
+                    onChange={(e) => setMail(e.target.value)}
+                />
+            </div>
 
-            <input
-                type="password"
-                id="pwd"
-                name="pwd"
-                autoComplete="off"
-                required
-                onChange={(e) => setPwd(e.target.value)}
-            />
+            <div className="marbot"></div>
+
+            <div className="form-item">
+                <label htmlFor="pwd">Password</label>
+
+                <input
+                    type="password"
+                    id="pwd"
+                    name="pwd"
+                    autoComplete="off"
+                    required
+                    onChange={(e) => setPwd(e.target.value)}
+                />
+            </div>
 
             {validPwd ? (
                 <p className="hint">Valid</p>
@@ -165,18 +175,22 @@ const Register = () => {
                 </p>
             )}
 
-            <label htmlFor="pwd_repeat">Repeat password</label>
+            <div className="marbot"></div>
 
-            <input
-                type="password"
-                id="pwd_repeat"
-                name="pwd_repeat"
-                autoComplete="off"
-                required
-                readOnly={validPwd ? false : true}
-                placeholder={validPwd ? '' : 'Enter valid password first'}
-                onChange={(e) => setRepeatPwd(e.target.value)}
-            />
+            <div className="form-item">
+                <label htmlFor="pwd_repeat">Repeat password</label>
+
+                <input
+                    type="password"
+                    id="pwd_repeat"
+                    name="pwd_repeat"
+                    autoComplete="off"
+                    required
+                    readOnly={validPwd ? false : true}
+                    placeholder={validPwd ? '' : 'Enter valid password first'}
+                    onChange={(e) => setRepeatPwd(e.target.value)}
+                />
+            </div>
 
             {validRepeatPwd ? (
                 <p className="hint">Valid</p>
@@ -184,7 +198,11 @@ const Register = () => {
                 <p className="hint">Passwords must match</p>
             )}
 
+            <div className="marbot"></div>
+
+            {/* <div className="form-item"> */}
             <input type="submit" className="submit-btn" disabled={!validForm} />
+            {/* </div> */}
 
             <p className="error-message">{errorMessage}</p>
         </form>
