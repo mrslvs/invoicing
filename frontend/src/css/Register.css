@@ -67,5 +67,8 @@
 }
 
 .error-message {
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 1.5rem;
     min-height: 2rem;
 }

@@ -104,22 +104,6 @@ const Register = () => {
                 }, 4050);
             }
         }
-
-        // if (errorMessage) {
-        //     if (document.querySelector('.error-message').classList.contains('fadeInOut')) {
-        //         // if error message is already being displayed, wait additional 4 seconds to remove it
-        //         setTimeout(() => {
-        //             setErrorMessage('');
-        //         }, 4000);
-        //     } else {
-        //         document.querySelector('.error-message').classList.toggle('fadeInOut');
-
-        //         setTimeout(() => {
-        //             document.querySelector('.error-message').classList.toggle('fadeInOut');
-        //             setErrorMessage('');
-        //         }, 4000);
-        //     }
-        // }
     }, [errorMessage]);
 
     const handleSubmit = async (e) => {

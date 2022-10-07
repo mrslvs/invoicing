@@ -21,9 +21,9 @@
     min-height: 40rem;
 }
 
-.Content {
-    /* width: 90vw; */
-}
+/* .Content {
+    width: 90vw;
+} */
 
 .fadeInOut {
     -webkit-animation: fadeInOut 4000ms linear forwards;
@@ -37,6 +37,10 @@
     100% {
         opacity: 0;
     }
+    25%,
+    75% {
+        opacity: 0.7;
+    }
     50% {
         opacity: 1;
     }
@@ -45,6 +49,10 @@
     0%,
     100% {
         opacity: 0;
+    }
+    25%,
+    75% {
+        opacity: 0.7;
     }
     50% {
         opacity: 1;
@@ -56,6 +64,10 @@
     100% {
         opacity: 0;
     }
+    25%,
+    75% {
+        opacity: 0.7;
+    }
     50% {
         opacity: 1;
     }
@@ -64,6 +76,10 @@
     0%,
     100% {
         opacity: 0;
+    }
+    25%,
+    75% {
+        opacity: 0.7;
     }
     50% {
         opacity: 1;
