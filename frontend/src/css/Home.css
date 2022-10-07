@@ -25,6 +25,26 @@
     width: 90vw;
 } */
 
+.form-item {
+    display: inline-flex;
+}
+
+.form-item > label {
+    min-width: 12rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.form-item > input {
+    border-radius: 7px;
+    border: 1px solid orange;
+    background-color: rgba(79, 79, 79, 0.412);
+
+    color: white;
+    padding: 7px 5px 7px 5px;
+}
+
 .fadeInOut {
     -webkit-animation: fadeInOut 4000ms linear forwards;
     -moz-animation: fadeInOut 4000ms linear forwards;
