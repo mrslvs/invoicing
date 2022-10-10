@@ -22,10 +22,8 @@ const Login = () => {
         try {
             const res = await axios.post('/auth/login', body, { withCredentials: true });
 
-            console.log('1.');
             const accessToken = res.data.accessToken;
-            console.log('2.');
-            console.log(accessToken);
+            console.log('accessToken: ' + accessToken);
 
             setAuth({ accessToken });
 
