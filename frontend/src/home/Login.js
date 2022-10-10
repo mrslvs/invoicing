@@ -20,13 +20,19 @@ const Login = () => {
         console.log(body);
 
         try {
-            const res = await axios.post('/auth/login', body);
+            const res = await axios.post('/auth/login', body, { withCredentials: true });
 
+            console.log('1.');
             const accessToken = res.data.accessToken;
+            console.log('2.');
+            console.log(accessToken);
 
             setAuth({ accessToken });
+
+            // navigate /app
         } catch (err) {
             console.log('mame err');
+            console.log(err);
             console.log(err.code);
             if (err.code === 'ERR_NETWORK') {
                 console.log('ERROR: no server response');

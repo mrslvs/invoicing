@@ -7,6 +7,7 @@ const corsOptions = {
             callback(new Error(`Not allowed by CORS at ${origin}`));
         }
     },
+    credentials: true, // (CORS blocking login)
     optionsSuccessStatus: 200,
 };
 
