@@ -1,9 +1,15 @@
-import React, { useContext } from 'react';
 import axios from '../api/axios';
-import AuthContext from '../context/AuthProvider';
+import React, { useContext } from 'react';
+// import AuthContext from '../context/AuthProvider';
+import useAuth from '../hooks/useAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
-    const { setAuth } = useContext(AuthContext);
+    // const { auth, setAuth } = useContext(AuthContext);
+    const { auth, setAuth } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -14,20 +20,18 @@ const Login = () => {
         const body = {};
         formData.forEach((val, key) => {
             body[key] = val;
-            console.log(key + '=' + val);
+            // console.log(key + '=' + val);
         });
-
-        console.log(body);
 
         try {
             const res = await axios.post('/auth/login', body, { withCredentials: true });
 
             const accessToken = res.data.accessToken;
-            console.log('accessToken: ' + accessToken);
 
-            setAuth({ accessToken });
+            // const tmp = { ...body, accessToken };
+            setAuth({ ...body, accessToken });
 
-            // navigate /app
+            navigate('/app');
         } catch (err) {
             console.log('mame err');
             console.log(err);
