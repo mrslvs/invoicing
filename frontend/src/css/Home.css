@@ -1,3 +1,34 @@
+.home-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.home-header-btn {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 1rem 2rem 1rem 2rem;
+    font: inherit;
+    font-size: 1.5rem;
+    cursor: pointer;
+    outline: inherit;
+
+    width: 30vw;
+}
+
+.home-header-btn:nth-child(1) {
+    border-top-left-radius: 2rem;
+}
+
+.home-header-btn:nth-child(3) {
+    border-top-right-radius: 2rem;
+}
+
+.home-header-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .home-main {
     display: flex;
     justify-content: center;
@@ -19,6 +50,17 @@
 
     width: 50rem;
     min-height: 45rem;
+}
+
+.register-form,
+.login-form {
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* justify-self: center; */
 }
 
 /* .Content {
@@ -70,6 +112,26 @@
 
 .marbot {
     margin-bottom: 3rem;
+}
+
+.register-form > .hint {
+    margin-top: 0.3rem;
+    min-height: 1.2rem;
+}
+
+.valid-input {
+    border: 1px solid green !important;
+}
+
+.valid-submit {
+    background-color: rgba(0, 128, 0, 0.6) !important;
+}
+
+.error-message {
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 1.5rem;
+    min-height: 2rem;
 }
 
 .fadeInOut {
