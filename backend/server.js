@@ -37,6 +37,7 @@ app.use(cookieParser());
 
 app.use('/confirmation', cors(), require('./routes/confirmation'));
 
+app.use(cors(corsOptions));
 app.use('/auth', cors(corsOptions), require('./routes/auth'));
 
 app.get('/app', cors(corsOptions), verifyJWT, (req, res) => {
