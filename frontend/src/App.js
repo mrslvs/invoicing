@@ -1,16 +1,18 @@
 import './css/App.css';
 import useAuth from './hooks/useAuth';
-import axios from './api/axios';
+// import axios from './api/axios';
+import useAxiosAPI from './hooks/useAxiosAPI';
 import useRefreshToken from './hooks/useRefreshToken';
 
 function App() {
     const { auth } = useAuth();
     const refresh = useRefreshToken();
+    const axiosAPI = useAxiosAPI();
 
     const callAPI = async () => {
         try {
             console.log('trying to contact server');
-            const res = await axios.get('/app', { withCredentials: true });
+            const res = await axiosAPI.get('/app');
             console.log(res);
         } catch (err) {
             console.log('mame err');

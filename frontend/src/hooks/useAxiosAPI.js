@@ -1,8 +1,7 @@
-const { axiosAPI } = require('../api/axios');
+import { useEffect } from 'react';
 import useRefreshToken from './useRefreshToken';
 import useAuth from './useAuth';
-
-import { useEffect } from 'react';
+const { axiosAPI } = require('../api/axios');
 
 const useAxiosAPI = () => {
     const refresh = useRefreshToken();
@@ -42,6 +41,8 @@ const useAxiosAPI = () => {
             axiosAPI.interceptors.response.eject(responseIntercept);
         };
     }, [auth, refresh]);
+
+    return axiosAPI;
 };
 
 export default useAxiosAPI;
