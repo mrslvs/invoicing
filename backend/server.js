@@ -31,20 +31,19 @@ const app = express();
 
 const PORT = process.env.PORT || 9000;
 
-// app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
 app.use('/confirmation', cors(), require('./routes/confirmation'));
 
 app.use(cors(corsOptions));
-app.use('/auth', cors(corsOptions), require('./routes/auth'));
+app.use('/auth', require('./routes/auth'));
 
-app.get('/app', cors(corsOptions), verifyJWT, (req, res) => {
+app.get('/app', verifyJWT, (req, res) => {
     res.send('hello there, server aknowledges that you are logged in on frontend');
 });
 
-app.get('^/$|/index(.html)?', (req, res) => {
+app.get('^/$|/index(.html)?', cors({ origin: '*' }), (req, res) => {
     // ^/ -> must start with /
     // /$ -> must end with /
     // | -> or
@@ -52,7 +51,7 @@ app.get('^/$|/index(.html)?', (req, res) => {
     res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('*', cors(), (req, res) => {
+app.get('*', cors({ origin: '*' }), (req, res) => {
     res.sendFile(__dirname + '/views/404.html');
 });
 
