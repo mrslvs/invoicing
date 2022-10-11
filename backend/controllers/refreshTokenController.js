@@ -9,6 +9,7 @@ const handleRefreshToken = async (req, res) => {
     }
 
     const refreshToken = cookies.jwt;
+    console.log('This is refreshToken received from client: ' + refreshToken);
 
     const user = await User.findOne({
         where: {
@@ -36,7 +37,7 @@ const handleRefreshToken = async (req, res) => {
         // res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
         // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
         // res.setHeader('Access-Control-Allow-Credentials', true);
-        res.end({ accessToken });
+        res.json({ accessToken });
     });
 };
 

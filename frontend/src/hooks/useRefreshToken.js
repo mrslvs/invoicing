@@ -1,4 +1,5 @@
-import axios from '../api/axios';
+// import axios from '../api/axios';
+import { axiosAPI } from '../api/axios';
 import useAuth from './useAuth';
 
 const useRefreshToken = () => {
@@ -6,7 +7,7 @@ const useRefreshToken = () => {
 
     const refresh = async () => {
         console.log('gonna call axios.get /refresh');
-        const res = await axios.get('/refresh', { withCredentials: true });
+        const res = await axiosAPI.get('/auth/refresh', { withCredentials: true });
         console.log('CALLED axios.get /refresh, this is response:');
         console.log(res);
 
