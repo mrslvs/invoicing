@@ -1,11 +1,30 @@
-import "./css/App.css";
+import './css/App.css';
+import useAuth from './hooks/useAuth';
+import axiosAPI from './api/axios';
+import useRefreshToken from './hooks/useRefreshToken';
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello react world!</h1>
-    </div>
-  );
+    const { auth } = useAuth();
+    const refresh = useRefreshToken();
+
+    const callAPI = async () => {
+        try {
+            console.log('trying to contact server');
+            const res = await axiosAPI.get('/app');
+            console.log(res);
+        } catch (err) {
+            console.log('mame err');
+            console.log(err);
+        }
+    };
+
+    return (
+        <div className="App">
+            <h1>Welcome to app {auth.username}</h1>
+            <button onClick={() => callAPI()}>Use API</button>
+            <button onClick={() => refresh()}>Refresh</button>
+        </div>
+    );
 }
 
 export default App;

@@ -144,8 +144,10 @@ const loginUser = async (req, res) => {
 const handleRefreshToken = async (req, res) => {
     const cookies = req.cookies;
 
+    console.log('handleRefreshToken function');
+
     if (!cookies?.jwt) {
-        return res.status(401);
+        return res.sendStatus(401);
     }
 
     const refreshToken = cookies.jwt;
@@ -171,7 +173,7 @@ const handleRefreshToken = async (req, res) => {
             { expiresIn: '30s' }
         );
 
-        res.json({ accessToken });
+        res.json({ accessToken, withCredentials: true });
     });
 };
 

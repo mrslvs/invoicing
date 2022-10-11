@@ -39,8 +39,8 @@ app.use('/confirmation', cors(), require('./routes/confirmation'));
 
 app.use('/auth', cors(corsOptions), require('./routes/auth'));
 
-app.get('/app', verifyJWT, (req, res) => {
-    res.send('hello there');
+app.get('/app', cors(corsOptions), verifyJWT, (req, res) => {
+    res.send('hello there, server aknowledges that you are logged in on frontend');
 });
 
 app.get('^/$|/index(.html)?', (req, res) => {
