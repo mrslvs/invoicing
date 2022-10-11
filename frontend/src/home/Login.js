@@ -20,7 +20,6 @@ const Login = () => {
         const body = {};
         formData.forEach((val, key) => {
             body[key] = val;
-            // console.log(key + '=' + val);
         });
 
         try {
@@ -28,7 +27,6 @@ const Login = () => {
 
             const accessToken = res.data.accessToken;
 
-            // const tmp = { ...body, accessToken };
             setAuth({ ...body, accessToken });
 
             navigate('/app');

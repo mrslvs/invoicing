@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const verifyJWT = (req, res, next) => {
     console.log('using middleware verifyJWT');
     const authHeader = req.headers['authorization'];
+    console.log('these are the headers:');
+    console.log(req.headers);
 
     if (!authHeader) {
         console.log('authheader missing');
