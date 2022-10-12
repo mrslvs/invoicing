@@ -1,13 +1,10 @@
 const jwt = require('jsonwebtoken');
 
 const verifyJWT = (req, res, next) => {
-    console.log('using middleware verifyJWT');
     const authHeader = req.headers['authorization'];
-    console.log('these are the headers:');
-    console.log(req.headers);
 
     if (!authHeader) {
-        console.log('authheader missing');
+        console.log('verify JWT: authheader missing');
         return res.sendStatus(401);
     }
 
@@ -15,10 +12,11 @@ const verifyJWT = (req, res, next) => {
 
     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, decoded) => {
         if (err) {
+            console.log('verify JWT: invalid access token: ' + token);
             return res.sendStatus(403); // invalid token
         }
 
-        console.log('apparently succes in veryfing jwt (middleware)');
+        console.log('verify JWT: success');
         req.user = decoded.username;
         next();
     });
