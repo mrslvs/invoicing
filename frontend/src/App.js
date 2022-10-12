@@ -11,11 +11,10 @@ function App() {
 
     const callAPI = async () => {
         try {
-            console.log('trying to contact server');
             const res = await axiosAPI.get('/app', { withCredentials: true });
             console.log(res);
         } catch (err) {
-            console.log('mame err');
+            console.log('axiosAPI request ERROR in callAPI()');
             console.log(err);
         }
     };

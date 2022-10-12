@@ -23,14 +23,19 @@ const useAxiosAPI = () => {
             (response) => response,
             async (error) => {
                 // if access token expired
+                console.log('axiosAPI hook: error -> intercepting response');
                 const prevRequest = error?.config; // get previous request
 
                 if (error.response.status === 403 && !prevRequest?.sent) {
+                    console.log('axiosAPI hook: 403 error, get new token and ?retry?');
                     prevRequest.sent = true; // custom flag to not end up in a loop of errors
                     const newAccessToken = await refresh(); // get new AT
+                    console.log('axiosAPI hook: asigning header auth new AT: ' + newAccessToken);
                     prevRequest.headers['Authorization'] = `Bearer ${newAccessToken}`; // assign new AT to the request
                     return axiosAPI(prevRequest);
                 }
+
+                console.log('rejecting promise (propably 403 missing or we in a loop)');
                 return Promise.reject(error);
             }
         );
