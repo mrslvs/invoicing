@@ -8,18 +8,19 @@ const useRefreshToken = () => {
     const refresh = async () => {
         console.log('refreshToken hook: requesting new AT');
         const res = await axiosAPI.get('/auth/refresh', { withCredentials: true });
-        const newAccessToken = res.data.accessToken;
-        console.log('refreshToken hook: response from server, received new AT: ' + newAccessToken);
+        // const newAccessToken = res.data.accessToken;
+        // console.log('refreshToken hook: response from server, received new AT: ' + newAccessToken);
 
         setAuth((prev) => {
             console.log(
                 'refreshToken hook: UPDATING AT from: ' +
                     prev.accessToken +
                     ' to: ' +
-                    newAccessToken
+                    res.data.accessToken
             );
-            return { ...prev, accessToken: newAccessToken }; // overwrite accessToken
+            return { ...prev, accessToken: res.data.accessToken }; // overwrite accessToken
         });
+        return res.data.accessToken;
     };
 
     return refresh;
