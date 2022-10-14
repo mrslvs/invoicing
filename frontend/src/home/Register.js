@@ -123,7 +123,7 @@ const Register = () => {
             const res = await axios.post('/auth/register', body);
 
             // success
-            navigate('/app');
+            window.location.reload(false);
         } catch (err) {
             if (err.code === 'ERR_NETWORK') {
                 console.log('No server response');
