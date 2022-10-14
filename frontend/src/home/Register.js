@@ -110,6 +110,7 @@ const Register = () => {
 
         if (!validForm) {
             setErrorMessage('Form is not valid');
+            return;
         }
 
         // send POST request

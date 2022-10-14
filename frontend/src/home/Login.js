@@ -1,15 +1,33 @@
 import axios from '../api/axios';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // import AuthContext from '../context/AuthProvider';
 import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
     // const { auth, setAuth } = useContext(AuthContext);
+    const [errorMessage, setErrorMessage] = useState('');
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+
+    useEffect(() => {
+        let errContainer = document.querySelector('.error-message');
+        if (errorMessage) {
+            if (errContainer.classList.contains('fadeInOut')) {
+                setTimeout(() => {
+                    errContainer.classList.remove('fadeInOut');
+                }, 4000);
+            } else {
+                errContainer.classList.add('fadeInOut');
+                setTimeout(() => {
+                    setErrorMessage('');
+                    document.querySelector('.error-message').classList.remove('fadeInOut');
+                }, 4050);
+            }
+        }
+    }, [errorMessage]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,19 +49,15 @@ const Login = () => {
 
             navigate('/app');
         } catch (err) {
-            console.log('mame err');
             console.log(err);
-            console.log(err.code);
             if (err.code === 'ERR_NETWORK') {
-                console.log('ERROR: no server response');
+                setErrorMessage('No server response');
             } else if (err.response.status === 400) {
-                console.log('ERROR: missing username or password');
+                setErrorMessage(err.response.data);
             } else {
-                console.log('ERROR: login failed');
+                setErrorMessage(err.response.data);
             }
         }
-
-        // console.log(res);
     };
 
     return (
@@ -61,6 +75,8 @@ const Login = () => {
             <div className="marbot"></div>
 
             <input type="submit" className="submit-btn" />
+
+            <p className="error-message">{errorMessage}</p>
         </form>
     );
 };
