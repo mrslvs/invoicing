@@ -175,7 +175,13 @@ const Register = () => {
                 />
             </div>
             {/* as hints take 1rem of height, add this for symetrical form */}
-            <p className="hint"></p>
+            {/* <p className="hint"></p> */}
+
+            {validMail ? (
+                <p className="hint"></p>
+            ) : (
+                <p className="hint">Enter valid email address (confirmation required)</p>
+            )}
 
             <div className="marbot"></div>
 
