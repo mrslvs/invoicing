@@ -11,13 +11,19 @@ const About = () => {
                 view invoices and perform CRUD operations upon them.
             </main>
             <footer>
-                Made by{' '}
-                <a href="#" className="about-link">
-                    mrslvs
-                </a>{' '}
-                <a href="#" className="about-link about-link-logo">
-                    <FaLinkedin />
-                </a>{' '}
+                <div>
+                    Made by{' '}
+                    <a href="#" className="about-link">
+                        mrslvs
+                    </a>
+                    <br />
+                    <a href="#" className="about-link about-link-logo ">
+                        <FaLinkedin />
+                    </a>
+                    <a href="#" className="about-link about-link-logo marle">
+                        <FaGithub />
+                    </a>
+                </div>
             </footer>
         </article>
     );
