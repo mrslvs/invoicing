@@ -8,7 +8,7 @@ import './css/Home.css';
 import { React, useState, useEffect } from 'react';
 
 const Home = () => {
-    const [selection, setSelection] = useState('about');
+    const [selection, setSelection] = useState('login');
 
     return (
         <main className="home-main">

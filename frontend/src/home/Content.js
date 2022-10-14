@@ -7,11 +7,11 @@ const Content = ({ selection }) => {
     let contentComponent = <About />;
 
     switch (selection) {
-        case 'about':
-            contentComponent = <About />;
-            break;
         case 'login':
             contentComponent = <Login />;
+            break;
+        case 'about':
+            contentComponent = <About />;
             break;
         case 'register':
             contentComponent = <Register />;

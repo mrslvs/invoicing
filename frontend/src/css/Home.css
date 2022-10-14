@@ -26,7 +26,13 @@
 }
 
 .home-header-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    transition: background-color 1s;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn-active {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    box-shadow: inset 0px 0px 0px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .home-main {
@@ -49,7 +55,7 @@
     padding: 2rem;
 
     width: 50rem;
-    min-height: 45rem;
+    min-height: 47rem;
 }
 
 .register-form,
@@ -59,8 +65,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
-    /* justify-self: center; */
 }
 
 /* .Content {
@@ -80,7 +84,7 @@
 
 .form-item > input {
     border-radius: 7px;
-    border: 1px solid orange;
+    border: 2px solid orange;
     background-color: rgba(79, 79, 79, 0.412);
 
     color: white;
@@ -88,14 +92,15 @@
 }
 
 .form-item > input:hover {
-    border: 1px solid rgb(187, 121, 0);
-    background-color: rgba(70, 70, 70, 0.412);
-    /* background-coloorange1, 0.412); */
-    /* outline: none; */
+    transition: border 0.5s;
+    transition: background-color 0.5s;
+    border: 2px solid rgb(187, 121, 0);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .form-item > input:focus {
-    background-color: rgba(31, 31, 31, 0.412);
+    border: 2px solid rgb(187, 121, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     outline: none;
 }
 
@@ -110,6 +115,16 @@
     cursor: pointer;
 }
 
+.submit-btn:hover {
+    /* box-shadow: inset 0px 0px 0px 2px rgba(0, 0, 0, 0.3); */
+    transition: background-color 0.5s;
+    background-color: rgba(152, 99, 0, 0.7);
+}
+
+.martop {
+    margin-top: 3rem;
+}
+
 .marbot {
     margin-bottom: 3rem;
 }
@@ -120,11 +135,38 @@
 }
 
 .valid-input {
-    border: 1px solid green !important;
+    border: 2px solid green !important;
 }
 
 .valid-submit {
     background-color: rgba(0, 128, 0, 0.6) !important;
+}
+
+.about-section {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.about-section > h1 {
+    margin-bottom: 1rem;
+}
+
+.about-section > footer {
+    margin-top: 3rem;
+}
+
+.about-link {
+    color: white;
+    text-decoration: none;
+}
+
+.about-link-logo {
+    display: flexbox;
+    /* align-self: center; */
+    /* align-items: center; */
+    /* justify-content: center; */
+
+    font-size: 2rem;
 }
 
 .error-message {
