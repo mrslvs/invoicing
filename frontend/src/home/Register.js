@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 // import axios from 'axios';
 
@@ -30,8 +29,6 @@ const Register = () => {
     const [validForm, setValidForm] = useState(false);
 
     const [errorMessage, setErrorMessage] = useState('');
-
-    const navigate = useNavigate();
 
     const handleValidInputStyling = (isValid, el) => {
         if (isValid) {
