@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 // import axios from 'axios';
 
@@ -30,10 +31,7 @@ const Register = () => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
-    const usernameInput = document.getElementById('username');
-    const emailInput = document.getElementById('usermail');
-    const pwdInput = document.getElementById('pwd');
-    const repeatPwdInput = document.getElementById('pwd_repeat');
+    const navigate = useNavigate();
 
     const handleValidInputStyling = (isValid, el) => {
         if (isValid) {
@@ -123,7 +121,9 @@ const Register = () => {
 
         try {
             const res = await axios.post('/auth/register', body);
-            console.log(res.data);
+
+            // success
+            navigate('/app');
         } catch (err) {
             if (err.code === 'ERR_NETWORK') {
                 console.log('No server response');

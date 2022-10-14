@@ -168,8 +168,8 @@
 }
 
 .about-link:hover {
-    transition: color 0.5s;
-    color: turquoise;
+    transition: color 1s;
+    color: orange;
 }
 
 .error-message {
