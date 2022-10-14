@@ -10,19 +10,28 @@ const About = () => {
                 technologies (MySQL, ExpressJS, ReactJS + NodeJS). This application allows user to
                 view invoices and perform CRUD operations upon them.
             </main>
+
             <footer>
-                <div>
-                    Made by{' '}
-                    <a href="#" className="about-link">
-                        mrslvs
-                    </a>
-                    <br />
-                    <a href="#" className="about-link about-link-logo ">
-                        <FaLinkedin />
-                    </a>
-                    <a href="#" className="about-link about-link-logo marle">
-                        <FaGithub />
-                    </a>
+                Made by{' '}
+                <div className="grid-container">
+                    <div>
+                        <a href="#" className="about-link">
+                            mrslvs
+                        </a>
+                    </div>
+                    <div>
+                        <a
+                            href="https://www.linkedin.com/in/miroslav-sekerka/"
+                            className="about-link "
+                        >
+                            <FaLinkedin />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://github.com/mrslvs" className="about-link ">
+                            <FaGithub />
+                        </a>
+                    </div>
                 </div>
             </footer>
         </article>

@@ -122,16 +122,8 @@
     background-color: rgba(152, 99, 0, 0.7);
 }
 
-.martop {
-    margin-top: 3rem;
-}
-
 .marbot {
     margin-bottom: 3rem;
-}
-
-.marle {
-    margin-left: 1rem;
 }
 
 .register-form > .hint {
@@ -153,28 +145,31 @@
 }
 
 .about-section > h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .about-section > footer {
     margin-top: 5rem;
+}
 
-    display: flex;
-    flex-direction: column;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
 
 .about-link {
     color: white;
-    /* text-decoration: none; */
+    text-decoration: none;
+    font-size: 3.5rem;
+
+    display: flex;
+    justify-content: center;
 }
 
 .about-link:hover {
     transition: color 0.5s;
     color: turquoise;
-}
-
-.about-link-logo {
-    font-size: 3.5rem;
 }
 
 .error-message {
