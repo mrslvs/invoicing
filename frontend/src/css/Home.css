@@ -239,3 +239,30 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 580px) {
+    .home-header-btn {
+        font-size: 1.3rem;
+        width: 25vw;
+    }
+
+    .content-box {
+        width: 45rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .content-box {
+        width: 35rem;
+    }
+
+    .Content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .form-item > label {
+        font-size: 1.2rem;
+        min-width: 10rem;
+    }
+}
