@@ -156,6 +156,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    justify-items: center;
 }
 
 .about-link {
@@ -163,8 +164,7 @@
     text-decoration: none;
     font-size: 3.5rem;
 
-    display: flex;
-    justify-content: center;
+    border: 1px solid red;
 }
 
 .about-link:hover {
