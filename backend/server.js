@@ -2,9 +2,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-const db = require('./config/database');
 const authRoute = require('./routes/auth');
 const User = require('./models/User');
+const Invoice = require('./models/Invoice');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 
@@ -26,6 +26,7 @@ const cookieParser = require('cookie-parser');
 //     });
 
 User.sync();
+Invoice.sync();
 
 const app = express();
 
@@ -42,6 +43,8 @@ app.use('/auth', require('./routes/auth'));
 app.get('/app', verifyJWT, (req, res) => {
     res.send('hello there, server aknowledges that you are logged in on frontend');
 });
+
+app.use('/invoice', require('./routes/invoice'));
 
 app.get('^/$|/index(.html)?', cors({ origin: '*' }), (req, res) => {
     // ^/ -> must start with /
