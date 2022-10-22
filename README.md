@@ -2,7 +2,7 @@
 
 ## About
 
-My first fullstack JavaScript application for creating and managing invoices via REST API. Built with the help of [Dave Gray's tutorials] (https://www.youtube.com/c/DaveGrayTeachesCode).
+My first fullstack JavaScript application for creating and managing invoices via REST API. Built with the help of **[Dave Gray's tutorials] (https://www.youtube.com/c/DaveGrayTeachesCode)**.
 
 ## Technologies
 
