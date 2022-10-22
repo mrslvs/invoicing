@@ -4,7 +4,7 @@ import Register from './Register';
 import React from 'react';
 
 const Content = ({ selection }) => {
-    let contentComponent = <About />;
+    let contentComponent = <Login />;
 
     switch (selection) {
         case 'login':
