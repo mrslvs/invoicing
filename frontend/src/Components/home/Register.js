@@ -1,6 +1,5 @@
 import { React, useState, useEffect } from 'react';
-import axios from '../api/axios';
-// import axios from 'axios';
+import axios from '../../API/axios';
 
 const Register = () => {
     // https://youtu.be/brcHK3P6ChQ

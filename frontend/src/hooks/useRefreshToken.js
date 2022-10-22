@@ -1,5 +1,4 @@
-// import axios from '../api/axios';
-import { axiosAPI } from '../api/axios';
+import { axiosAPI } from '../API/axios';
 import useAuth from './useAuth';
 
 const useRefreshToken = () => {
@@ -8,8 +7,6 @@ const useRefreshToken = () => {
     const refresh = async () => {
         console.log('refreshToken hook: requesting new AT');
         const res = await axiosAPI.get('/auth/refresh', { withCredentials: true });
-        // const newAccessToken = res.data.accessToken;
-        // console.log('refreshToken hook: response from server, received new AT: ' + newAccessToken);
 
         setAuth((prev) => {
             console.log(

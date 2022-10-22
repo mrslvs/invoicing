@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import useRefreshToken from './useRefreshToken';
 import useAuth from './useAuth';
-const { axiosAPI } = require('../api/axios');
+const { axiosAPI } = require('../API/axios');
 
 const useAxiosAPI = () => {
     const refresh = useRefreshToken();

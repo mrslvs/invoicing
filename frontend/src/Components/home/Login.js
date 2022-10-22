@@ -1,11 +1,9 @@
-import axios from '../api/axios';
-import React, { useContext, useEffect, useState } from 'react';
-// import AuthContext from '../context/AuthProvider';
-import useAuth from '../hooks/useAuth';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
+import { useNavigate, useLocation } from 'react-router-dom';
+import axios from '../../API/axios';
 
 const Login = () => {
-    // const { auth, setAuth } = useContext(AuthContext);
     const [errorMessage, setErrorMessage] = useState('');
     const { auth, setAuth } = useAuth();
     const navigate = useNavigate();

@@ -1,11 +1,7 @@
-// components
-import Header from './home/Header';
-import Content from './home/Content';
-// CSS
-import './css/Home.css';
-// import './css/Header.css';
-// lib
-import { React, useState, useEffect } from 'react';
+import Header from './Components/home/Header';
+import Content from './Components/home/Content';
+import './Assets/Styles/Home.css';
+import { React, useState } from 'react';
 
 const Home = () => {
     const [selection, setSelection] = useState('login');
