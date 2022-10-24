@@ -12,3 +12,10 @@ Stack used for this application:
 -   ExpressJS
 -   ReactJS
 -   NodeJS
+
+Other technologies:
+
+-   Axios for HTTP requests
+-   JWT for authentication and authorization
+-   Sequelize ORM
+-   Nodemailer for account verification
