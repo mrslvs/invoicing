@@ -1,4 +1,4 @@
-const Session = require('../model/Session')
+const Session = require('../models/Session')
 
 const authenticateSession = async (req, res, next) => {
     const currentDate = new Date()

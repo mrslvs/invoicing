@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, logoutUser } = require('../controller/auth')
+const { registerUser, loginUser, logoutUser } = require('../controllers/authController')
 
 router.post('/register', (req, res) => registerUser(req, res))
 router.post('/login', (req, res) => loginUser(req, res))
