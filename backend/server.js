@@ -1,12 +1,11 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const corsOptions = require('./config/corsOptions');
-const authRoute = require('./routes/auth');
-const User = require('./models/User');
-const Invoice = require('./models/Invoice');
-const verifyJWT = require('./middleware/verifyJWT');
-const cookieParser = require('cookie-parser');
+require('dotenv').config()
+const express = require('express')
+const session = require('express-session')
+const cors = require('cors')
+const corsOptions = require('./config/corsOptions')
+const User = require('./model/User')
+const Session = require('./model/Session')
+const { authenticateSession } = require('./middleware/auth')
 
 // User.sync()
 //     .then((data) => {
@@ -25,37 +24,44 @@ const cookieParser = require('cookie-parser');
 //         console.log(err.message);
 //     });
 
-User.sync();
-Invoice.sync();
+User.sync({ force: false })
+Session.sync({ force: true })
 
-const app = express();
+const app = express()
+app.use(express.json())
+app.use(cors(corsOptions))
 
-const PORT = process.env.PORT || 9000;
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        // expires: new Date(Date.now() + 15 * 60 * 1000),
+        // resave: true, //
+        // saveUninitialized: true, //
+        cookie: {
+            // secure: true, // Only HTTPS
+            // maxAge: 15 * 60 * 1000, // cookie expires in 15 min
+            maxAge: 0.2 * 60 * 1000, // TESTING PURPOSES
+            // domain: 'localhost', //
+        },
+    })
+)
 
-app.use(express.json());
-app.use(cookieParser());
+const PORT = process.env.PORT || 9000
 
-app.use('/confirmation', cors(), require('./routes/confirmation'));
+app.use('/auth', require('./routes/auth'))
 
-app.use(cors(corsOptions));
-app.use('/auth', require('./routes/auth'));
+app.use(authenticateSession)
+app.get('/app', (req, res) => {
+    console.log('x')
+})
 
-app.get('/app', verifyJWT, (req, res) => {
-    res.send('hello there, server aknowledges that you are logged in on frontend');
-});
+app.get('*', (req, res) => {
+    res.status(404).send('other routes do not exist')
+})
 
-app.use('/invoice', require('./routes/invoice'));
-
-app.get('^/$|/index(.html)?', cors({ origin: '*' }), (req, res) => {
-    // ^/ -> must start with /
-    // /$ -> must end with /
-    // | -> or
-    // (.html)? doesn't have to be included
-    res.sendFile(__dirname + '/views/index.html');
-});
-
-app.get('*', cors({ origin: '*' }), (req, res) => {
-    res.sendFile(__dirname + '/views/404.html');
-});
-
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`running server on ${PORT}`)
+    // setTimeout(() => {
+    //     testDBResponse()
+    // }, 1000)
+})
