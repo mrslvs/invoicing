@@ -3,8 +3,9 @@ const express = require('express')
 const session = require('express-session')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
-const User = require('./models/User')
-const Session = require('./models/Session')
+const User = require('./model/User')
+const Session = require('./model/Session')
+// const { options } = require('./routes/auth')
 const { authenticateSession } = require('./middleware/auth')
 
 User.sync({ force: false })
@@ -18,8 +19,8 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET,
         // expires: new Date(Date.now() + 15 * 60 * 1000),
-        resave: true, //
-        saveUninitialized: true, //
+        // resave: true, //
+        // saveUninitialized: true, //
         cookie: {
             // secure: true, // Only HTTPS
             // maxAge: 15 * 60 * 1000, // cookie expires in 15 min

@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt')
-const User = require('../models/User')
-// const Session = require('../models/Session')
-const Session = require('../models/Session')
+const User = require('../model/User')
+const Session = require('../model/Session')
 
 // const isEmailTaken = async (email) => {
 //     const user = await User.findAll({
