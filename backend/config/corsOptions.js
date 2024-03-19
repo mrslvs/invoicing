@@ -1,15 +1,15 @@
-const allowedOrigins = ['http://localhost:3000', 'http://127.0.0.1:3000'];
+const allowedOrigins = [process.env.FRONTEND_IP, process.env.FRONTEND_URL]
 const corsOptions = {
     origin: (origin, callback) => {
         if (allowedOrigins.indexOf(origin) !== -1) {
-            callback(null, true);
+            console.log(`Request allowed - ${origin}`)
+            callback(null, true)
         } else {
-            console.log('corsOptions blocking origin');
-            callback(new Error(`Not allowed by CORS at ${origin}`));
+            callback(new Error(`Not allowed by CORS at ${origin}`))
         }
     },
-    credentials: true, // (CORS blocking login)
-    optionsSuccessStatus: 200,
-};
+    methods: 'GET,POST,PUT,DELETE',
+    credentials: true, //server is willing to accept credentials (e.g., cookies, authorization headers)
+}
 
-module.exports = corsOptions;
+module.exports = corsOptions

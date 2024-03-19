@@ -7,23 +7,6 @@ const User = require('./models/User')
 const Session = require('./models/Session')
 const { authenticateSession } = require('./middleware/auth')
 
-// User.sync()
-//     .then((data) => {
-//         console.log('successfully synced user table');
-//     })
-//     .catch((err) => {
-//         console.log('error while ');
-//     });
-
-// db.authenticate()
-//     .then(() => {
-//         console.log('Connection to the MySQL database established.');
-//     })
-//     .catch((err) => {
-//         console.log('Error occured trying to connect to the MySQL database!');
-//         console.log(err.message);
-//     });
-
 User.sync({ force: false })
 Session.sync({ force: true })
 
@@ -35,8 +18,8 @@ app.use(
     session({
         secret: process.env.SESSION_SECRET,
         // expires: new Date(Date.now() + 15 * 60 * 1000),
-        // resave: true, //
-        // saveUninitialized: true, //
+        resave: true, //
+        saveUninitialized: true, //
         cookie: {
             // secure: true, // Only HTTPS
             // maxAge: 15 * 60 * 1000, // cookie expires in 15 min
