@@ -1,39 +1,40 @@
-import { useEffect, useState } from 'react'
-// import { Link } from 'react-router-dom'
-import axiosInstance from '../../api/axiosInstance'
-import useAuth from '../../hooks/useAuth'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import axiosInstance from '../../api/axiosInstance';
+import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
+import '../../assets/styles/index.css';
 
 function Login() {
-    const { user, setUser } = useAuth()
-    const navigate = useNavigate()
+    const { user, setUser } = useAuth();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        console.log(user)
-    }, [user])
+        console.log(user);
+    }, [user]);
 
     const login = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const loginData = {
             email: document.getElementById('email').value,
             pwd: document.getElementById('pwd').value,
-        }
+        };
 
         try {
             const response = await axiosInstance.post('/auth/login', loginData, {
                 withCredentials: true,
-            })
+            });
 
-            setUser({ user: 'testUser', isLoggedIn: true })
-            navigate('/app')
+            setUser({ user: 'testUser', isLoggedIn: true });
+            navigate('/app');
         } catch (err) {
-            console.log('There has been an error at login:')
+            console.log('There has been an error at login:');
         }
-    }
+    };
 
     return (
         <form onSubmit={login}>
+            <p className="text-orange-600">Press to get data from server</p>
             <div className="input">
                 <label htmlFor="email">Email</label>
                 <input type="text" name="email" id="email" />
@@ -45,7 +46,7 @@ function Login() {
 
             <input type="submit" />
         </form>
-    )
+    );
 }
 
-export default Login
+export default Login;

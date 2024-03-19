@@ -1,23 +1,18 @@
-import { useEffect, useState } from 'react'
-import Content from './home/Content'
-import Header from './home/Header'
+import { useEffect, useState } from 'react';
+import Content from './home/Content';
+import Header from './home/Header';
 
 function Home() {
-    const [selection, setSelection] = useState('login')
-
-    // useEffect(() => {
-    //     console.log(`selection: ${selection}`)
-    // }, [selection])
+    const [selection, setSelection] = useState('login');
 
     return (
-        <div>
-            <Header setSelection={setSelection} />
-            <Content selection={selection} />
-
-            {/* <p>Mimic login - REMOVE AFTER</p> */}
-            {/* <Link to="/dashboard">Dashboard</Link> */}
-        </div>
-    )
+        <main className="home-main">
+            <div className="content-box">
+                <Header setSelection={setSelection} />
+                <Content selection={selection} />
+            </div>
+        </main>
+    );
 }
 
-export default Home
+export default Home;

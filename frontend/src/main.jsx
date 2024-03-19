@@ -1,10 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './components/App.jsx'
-import Home from './components/Home.jsx'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { AuthProvider } from './context/AuthProvider.jsx'
-import RequireAuth from './RequireAuth.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './components/App.jsx';
+import Home from './components/Home.jsx';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthProvider.jsx';
+import RequireAuth from './RequireAuth.jsx';
+import './assets/styles/index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
@@ -19,4 +20,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </AuthProvider>
         </Router>
     </React.StrictMode>
-)
+);

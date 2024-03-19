@@ -1,26 +1,18 @@
-import { useEffect, useState } from 'react'
-import axiosInstance from '../api/axiosInstance'
-import Header from './app/Header'
-// import useAuth from '../hooks/useAuth'
+import { useEffect } from 'react';
+import axiosInstance from '../api/axiosInstance';
+import Header from './app/Header';
 
 function App() {
-    // const [data, setData] = useState(null)
-    // const [isLodaing, setIsLoading] = useState(false)
-    // const [error, setError] = useState('')
-    // const { user, setUser } = useAuth()
-
-    useEffect(() => {
-        // console.log(user)
-    }, [])
+    useEffect(() => {}, []);
 
     const getData3 = async () => {
         try {
-            const data = await axiosInstance.get('/app', { withCredentials: 'true' })
-            console.log(data)
+            const data = await axiosInstance.get('/app', { withCredentials: 'true' });
+            console.log(data);
         } catch (err) {
-            console.log(err)
+            console.log(err);
         }
-    }
+    };
 
     return (
         <div>
@@ -31,7 +23,7 @@ function App() {
             <Header />
             {/* {error ? <p>{error}</p> : isLodaing ? <p>Loading ...</p> : <p>{data}</p>} */}
         </div>
-    )
+    );
 }
 
-export default App
+export default App;
