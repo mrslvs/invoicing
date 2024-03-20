@@ -33,10 +33,11 @@ function Login() {
     };
 
     return (
-        <form onSubmit={login}>
-            <p className="text-orange-600">Press to get data from server</p>
+        <form onSubmit={login} className="home-content">
             <div className="input">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="pr-3">
+                    Email
+                </label>
                 <input type="text" name="email" id="email" />
             </div>
             <div className="input">
