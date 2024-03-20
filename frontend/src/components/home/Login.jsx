@@ -33,19 +33,21 @@ function Login() {
     };
 
     return (
-        <form onSubmit={login} className="home-content">
-            <div className="input">
-                <label htmlFor="email" className="pr-3">
+        <form onSubmit={login} className="home-content home-content-login">
+            <div className="home-input-container">
+                <label htmlFor="email" className="home-input-label">
                     Email
                 </label>
-                <input type="text" name="email" id="email" />
+                <input type="text" name="email" id="email" className="home-input" />
             </div>
-            <div className="input">
-                <label htmlFor="pwd">Password</label>
-                <input type="text" name="pwd" id="pwd" />
+            <div className="home-input-container">
+                <label htmlFor="pwd" className="home-input-label">
+                    Password
+                </label>
+                <input type="text" name="pwd" id="pwd" className="home-input" />
             </div>
 
-            <input type="submit" />
+            <input type="submit" className="home-submit home-animated-hover" />
         </form>
     );
 }

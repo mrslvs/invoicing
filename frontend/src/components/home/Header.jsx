@@ -8,7 +8,7 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="login"
-                className="home-header-button"
+                className="home-header-button home-animated-hover"
             >
                 Login
             </button>
@@ -17,7 +17,7 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="about"
-                className="home-header-button"
+                className="home-header-button home-animated-hover"
             >
                 About
             </button>
@@ -26,7 +26,7 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="register"
-                className="home-header-button"
+                className="home-header-button home-animated-hover"
             >
                 Register
             </button>

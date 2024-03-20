@@ -7,15 +7,45 @@
         @apply bg-gray-900 bg-opacity-50 rounded-xl text-white;
     }
 
+    .home-content {
+        @apply w-[30rem] h-[25rem] max-w-[30rem];
+    }
+
+    /* HEADER START */
     .home-header {
         @apply bg-gray-900 bg-opacity-30 rounded-t-xl flex cursor-pointer;
     }
 
     .home-header-button {
-        @apply flex-grow p-1 first:rounded-tl-xl last:rounded-tr-xl hover:text-yellow-500 hover:bg-gray-900 hover:bg-opacity-80 transition duration-300 ease-in-out;
+        @apply flex-grow p-1 first:rounded-tl-xl last:rounded-tr-xl hover:bg-gray-900 hover:bg-opacity-80;
+    }
+    /* HEADER STOP */
+
+    /* LOGIN START */
+    .home-content-login {
+        @apply flex flex-col justify-center items-center;
     }
 
-    .home-content {
-        @apply p-4;
+    .home-input-container {
+        @apply mb-3 flex items-center;
+    }
+
+    .home-input-label {
+        @apply mr-3 min-w-20 text-center;
+    }
+
+    .home-input {
+        @apply bg-black pl-2 pr-2 pt-1 pb-1 rounded-xl;
+    }
+
+    .home-submit {
+        @apply bg-black pt-2 pb-2 pl-4 pr-4 rounded-xl;
+    }
+
+    .home-content-about-text {
+    }
+
+    .home-animated-hover {
+        @apply hover:text-yellow-500 transition duration-300 ease-in-out;
     }
 }
