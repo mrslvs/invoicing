@@ -140,7 +140,8 @@ function Register() {
             <input
                 type="submit"
                 // disabled={!(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid)}
-                className="home-submit home-animated-hover"
+                className="home-submit home-animated-hover bg-black"
+                value={'Register'}
             />
 
             <div id="hint">

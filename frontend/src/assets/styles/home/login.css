@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .home-content-about-text {
+    .home-content-login {
+        @apply flex flex-col justify-center items-center;
     }
 }

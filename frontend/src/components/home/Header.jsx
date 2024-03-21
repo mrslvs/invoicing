@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../assets/styles/home/header.css';
 
 const Header = ({ setSelection }) => {
     return (

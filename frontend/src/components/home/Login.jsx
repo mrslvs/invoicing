@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import '../../assets/styles/index.css';
+import '../../assets/styles/home/login.css';
 
 function Login() {
     const { user, setUser } = useAuth();
@@ -47,7 +47,11 @@ function Login() {
                 <input type="text" name="pwd" id="pwd" className="home-input" />
             </div>
 
-            <input type="submit" className="home-submit home-animated-hover" />
+            <input
+                type="submit"
+                className="home-submit home-animated-hover bg-black"
+                value={'Log In'}
+            />
         </form>
     );
 }

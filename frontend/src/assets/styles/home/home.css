@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.home-main {
+    @apply h-screen w-screen bg-cover bg-center flex justify-center items-center;
+}
+
+.home-box {
+    @apply bg-gray-900 bg-opacity-50 rounded-xl text-white;
+}
+
+.home-content {
+    @apply w-[30rem] h-[25rem] max-w-[30rem];
+}
+
+.home-input-container {
+    @apply mb-3 flex items-center;
+}
+
+.home-input-label {
+    @apply mr-3 min-w-32 text-center;
+}
+
+.home-input {
+    @apply bg-black pl-2 pr-2 pt-1 pb-1 rounded-xl;
+}
+
+.home-submit {
+    @apply pt-2 pb-2 pl-4 pr-4 rounded-xl bg-yellow-500 border;
+}
+
+.home-animated-hover {
+    @apply hover:text-yellow-500 hover:border-yellow-500 transition duration-300 ease-in-out;
+}
