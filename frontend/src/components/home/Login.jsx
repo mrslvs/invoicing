@@ -47,11 +47,7 @@ function Login() {
                 <input type="text" name="pwd" id="pwd" className="home-input" />
             </div>
 
-            <input
-                type="submit"
-                className="home-submit home-animated-hover bg-black"
-                value={'Log In'}
-            />
+            <input type="submit" className="home-submit home-animated-hover" value={'Log In'} />
         </form>
     );
 }

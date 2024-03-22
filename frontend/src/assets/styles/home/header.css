@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.home-header {
-    @apply bg-gray-900 bg-opacity-30 rounded-t-xl flex cursor-pointer;
-}
+@layer components {
+    .home-header {
+        @apply bg-gray-900 bg-opacity-30 rounded-t-xl flex cursor-pointer;
+    }
 
-.home-header-button {
-    @apply flex-grow p-1 first:rounded-tl-xl last:rounded-tr-xl hover:bg-gray-900 hover:bg-opacity-80;
+    .home-header-button {
+        @apply flex-grow p-1 first:rounded-tl-xl last:rounded-tr-xl hover:bg-gray-900 hover:bg-opacity-80;
+    }
 }
