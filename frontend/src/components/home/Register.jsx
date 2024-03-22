@@ -60,6 +60,7 @@ function Register() {
             // // window.location.reload(true)
 
             console.log('registered successfully');
+            // navigate('/app');
         } catch (err) {
             console.log('there has been an error at register:');
             console.log(err.response.status + ': ' + err.response.data);
