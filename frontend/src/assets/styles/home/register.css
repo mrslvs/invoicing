@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .home-content-register {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    .home-register-label-vvalid {
+        @apply text-white;
+    }
+
+    .home-register-label-invalid {
+        @apply text-red-500;
+    }
+
+    .home-register-submit-disabled {
+        @apply pt-2 pb-2 pl-4 pr-4 rounded-xl border border-red-500 text-gray-500;
+    }
+
+    .home-register-hint {
+        @apply text-xs pr-10 pl-10 mt-5;
+    }
+
+    .home-register-list {
+        @apply flex flex-col items-center;
+    }
+}

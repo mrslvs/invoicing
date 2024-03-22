@@ -16,7 +16,6 @@ const About = () => {
             </main>
 
             <footer className="home-about-footer">
-                {/* <div className="home-about-links"> */}
                 <div className="home-about-link-container">
                     <a href="#" className="about-link home-animated-hover">
                         mrslvs
@@ -35,7 +34,6 @@ const About = () => {
                         <FaGithub className="home-about-icon" />
                     </a>
                 </div>
-                {/* </div> */}
             </footer>
         </article>
     );

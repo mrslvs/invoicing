@@ -28,7 +28,7 @@
     }
 
     .home-submit {
-        @apply pt-2 pb-2 pl-4 pr-4 rounded-xl bg-black border;
+        @apply pt-2 pb-2 pl-4 pr-4 rounded-xl bg-black border hover:cursor-pointer;
     }
 
     .home-animated-hover {

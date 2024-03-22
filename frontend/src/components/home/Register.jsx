@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axiosInstance from '../../api/axiosInstance';
 import AuthContext from '../../context/AuthProvider';
+import '../../assets/styles/home/register.css';
 
 function Register() {
     const { user, setUser } = useContext(AuthContext);
@@ -18,6 +19,8 @@ function Register() {
     const [phone, setPhone] = useState('');
     const [isPhoneValid, setIsPhoneValid] = useState(false);
 
+    const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
+
     useEffect(() => {
         const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         setIsEmailValid(emailRegex.test(email));
@@ -29,7 +32,7 @@ function Register() {
     }, [pwd]);
 
     useEffect(() => {
-        setIsPwdRepeatValid(pwdRepeat === pwd);
+        setIsPwdRepeatValid(isPwdValid && pwdRepeat === pwd);
     }, [pwdRepeat]);
 
     useEffect(() => {
@@ -72,9 +75,16 @@ function Register() {
     };
 
     return (
-        <form onSubmit={register} className="home-content">
+        <form onSubmit={register} className="home-content home-content-register">
             <div className="home-input-container">
-                <label htmlFor="email" className="home-input-label">
+                <label
+                    htmlFor="email"
+                    className={
+                        isEmailValid
+                            ? 'home-input-label home-register-label-valid'
+                            : 'home-input-label home-register-label-invalid'
+                    }
+                >
                     Email
                 </label>
                 <input
@@ -89,7 +99,14 @@ function Register() {
             </div>
 
             <div className="home-input-container">
-                <label htmlFor="pwd" className="home-input-label">
+                <label
+                    htmlFor="pwd"
+                    className={
+                        isPwdValid
+                            ? 'home-input-label home-register-label-valid'
+                            : 'home-input-label home-register-label-invalid'
+                    }
+                >
                     Password
                 </label>
                 <input
@@ -104,7 +121,14 @@ function Register() {
             </div>
 
             <div className="home-input-container">
-                <label htmlFor="pwdRepeat" className="home-input-label">
+                <label
+                    htmlFor="pwdRepeat"
+                    className={
+                        isPwdRepeatValid
+                            ? 'home-input-label home-register-label-valid'
+                            : 'home-input-label home-register-label-invalid'
+                    }
+                >
                     Repeat password
                 </label>
                 <input
@@ -121,8 +145,11 @@ function Register() {
             <div className="home-input-container">
                 <label
                     htmlFor="phone"
-                    className="home-input-label"
-                    style={{ color: isPhoneValid ? 'green' : 'red' }}
+                    className={
+                        isPhoneValid
+                            ? 'home-input-label home-register-label-valid'
+                            : 'home-input-label home-register-label-invalid'
+                    }
                 >
                     Phone
                 </label>
@@ -140,20 +167,23 @@ function Register() {
             <input
                 type="submit"
                 // disabled={!(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid)}
-                className="home-submit home-animated-hover"
+                disabled={disabled}
+                className={
+                    disabled ? 'home-register-submit-disabled' : 'home-submit home-animated-hover'
+                }
                 value={'Register'}
             />
 
-            <div id="hint">
+            <div className="home-register-hint">
                 <p>
                     Password needs to be at least 12 characters long and must include all of the
                     following:
                 </p>
-                <ul>
-                    <li>lowercase letter</li>
-                    <li>uppercase letter</li>
-                    <li>number</li>
-                    <li>special character</li>
+                <ul className="home-register-list">
+                    <li>Lowercase letter</li>
+                    <li>Uppercase letter</li>
+                    <li>Number</li>
+                    <li>Special character</li>
                 </ul>
             </div>
         </form>

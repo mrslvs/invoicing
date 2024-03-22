@@ -19,10 +19,6 @@
         @apply flex mt-5 w-full mr-auto ml-auto;
     }
 
-    /* .home-about-links {
-        @apply flex;
-    } */
-
     .home-about-link-container {
         @apply w-full mr-auto ml-auto flex flex-grow justify-center;
         /* @apply border ; */
