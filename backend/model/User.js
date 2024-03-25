@@ -1,5 +1,5 @@
-const { Sequelize } = require('sequelize')
-const database = require('../config/database')
+const { Sequelize } = require('sequelize');
+const database = require('../config/database');
 
 module.exports = database.define(
     'user',
@@ -22,6 +22,11 @@ module.exports = database.define(
             type: Sequelize.DataTypes.INTEGER,
             allowNull: false,
         },
+        role: {
+            type: Sequelize.DataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: null,
+        },
         verified: {
             type: Sequelize.DataTypes.BOOLEAN,
             allowNull: false,
@@ -32,4 +37,4 @@ module.exports = database.define(
         freezeTableName: true,
         timestamps: true,
     }
-)
+);
