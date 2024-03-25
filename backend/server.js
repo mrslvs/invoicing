@@ -3,26 +3,10 @@ const express = require('express')
 const session = require('express-session')
 const cors = require('cors')
 const corsOptions = require('./config/corsOptions')
-const User = require('./models/User')
-const Session = require('./models/Session')
+const User = require('./model/User')
+const Session = require('./model/Session')
+// const { options } = require('./routes/auth')
 const { authenticateSession } = require('./middleware/auth')
-
-// User.sync()
-//     .then((data) => {
-//         console.log('successfully synced user table');
-//     })
-//     .catch((err) => {
-//         console.log('error while ');
-//     });
-
-// db.authenticate()
-//     .then(() => {
-//         console.log('Connection to the MySQL database established.');
-//     })
-//     .catch((err) => {
-//         console.log('Error occured trying to connect to the MySQL database!');
-//         console.log(err.message);
-//     });
 
 User.sync({ force: false })
 Session.sync({ force: true })
