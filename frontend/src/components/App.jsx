@@ -1,9 +1,14 @@
 import { useEffect } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import Header from './app/Header';
+import useAuth from '../hooks/useAuth';
 
 function App() {
-    useEffect(() => {}, []);
+    const { user, setUser } = useAuth();
+    useEffect(() => {
+        console.log('app:');
+        console.log(user);
+    }, []);
 
     const getData3 = async () => {
         try {

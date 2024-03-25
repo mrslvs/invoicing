@@ -25,10 +25,16 @@ function Login() {
                 withCredentials: true,
             });
 
-            setUser({ user: 'testUser', isLoggedIn: true });
-            navigate('/app');
+            console.log('log login:');
+            console.log(response.data.userId);
+            console.log(response.data.role);
+            setUser({ user: response.data.userId, isLoggedIn: true, role: response.data.role });
+            setTimeout(() => {
+                navigate('/app');
+            }, 4000);
         } catch (err) {
             console.log('There has been an error at login:');
+            console.log(err);
         }
     };
 

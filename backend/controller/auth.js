@@ -72,7 +72,7 @@ const loginUser = async (req, res) => {
         });
 
         await newSession.save();
-        res.status(200).json('nice');
+        res.status(200).json({ userId: userExists.id, role: userExists.role });
     } catch (err) {
         console.log(err);
         res.status(500).json('error in login');
