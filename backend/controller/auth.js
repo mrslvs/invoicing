@@ -3,23 +3,6 @@ const User = require('../model/User');
 const Session = require('../model/Session');
 const { getUserByEmail } = require('./userController');
 
-// const isEmailTaken = async (email) => {
-//     const user = await User.findAll({
-//         where: {
-//             email: email,
-//         },
-//     })
-//     return user.length === 0 ? false : true
-// }
-
-// const getUserByEmail = async (email) => {
-//     return await User.findOne({
-//         where: {
-//             email: email,
-//         },
-//     })
-// }
-
 const registerUser = async (req, res) => {
     const { email, pwd, phone } = req.body;
 
@@ -48,13 +31,6 @@ const registerUser = async (req, res) => {
 
         await newUser.save();
     } catch (err) {
-        // if (err.name === 'SequelizeUniqueConstraintError') {
-        //     console.log('Trying to save duplicate user')
-        //     errMsg = 'This email is already being used'
-        // } else {
-        //     console.log('Unknown error when trying to save user into DB')
-        //     errMsg = 'Server error'
-        // }
         errMsg = err;
         console.log(errMsg);
     }
@@ -62,24 +38,6 @@ const registerUser = async (req, res) => {
     errMsg
         ? res.status(500).send(errMsg.message)
         : res.status(201).send('Registered with controller');
-    // else {
-    // const userFromDatabase = await User.findOne({
-    //     where: {
-    //         email: email,
-    //     },
-    // })
-
-    // const newSession = Session.build({
-    //     user_id: userFromDatabase.id,
-    //     session_id: sessionID,
-    //     expires_at: new Date(req.session.cookie.expires),
-    // })
-
-    // await newSession.save()
-
-    // res.cookie('test', 'testing')
-
-    // }
 };
 
 const loginUser = async (req, res) => {
@@ -123,34 +81,6 @@ const loginUser = async (req, res) => {
 
     res.status(200);
 };
-
-// const authenticateUser = async (req, res) => {
-//     const currentDate = new Date()
-//     const sessionID = req.sessionID
-
-//     console.log(sessionID)
-//     if (sessionID) {
-//         console.log('ok got the session id')
-//         const ses = await Session.findOne({
-//             where: {
-//                 session_id: sessionID,
-//             },
-//         })
-
-//         if (ses) {
-//             // console.log(typeof ses.dataValues.expires_at)
-//             if (currentDate <= ses.dataValues.expires_at) {
-//                 res.status(200).json({ userId: ses.dataValues.user_id })
-//             } else {
-//                 res.status(401).json('session expired')
-//             }
-//         } else {
-//             res.status(401).json('no session ID')
-//         }
-//     } else {
-//         res.status(401).json('no session ID')
-//     }
-// }
 
 const logoutUser = async (req, res) => {
     const sessionID = req.sessionID;
