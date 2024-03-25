@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .app-header {
+        @apply flex  bg-yellow-500;
+    }
+
+    .app-header-h3 {
+        @apply text-red-500;
+    }
+
+    .app-header-nav {
+        @apply flex border border-black;
+    }
+}

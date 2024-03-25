@@ -21,11 +21,11 @@ function App() {
 
     return (
         <div>
+            <Header />
             <h1>Dashboard</h1>
             <p>Press to get data from server</p>
             <button onClick={getData3}>GET Server</button>
             <br></br>
-            <Header />
             {/* {error ? <p>{error}</p> : isLodaing ? <p>Loading ...</p> : <p>{data}</p>} */}
         </div>
     );
