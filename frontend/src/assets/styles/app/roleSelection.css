@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer components {
-    .role-selection-main {
-        @apply grid grid-cols-2 h-full text-secondaryTextWhite;
+    .role-selection-parent-div {
+        @apply grid grid-cols-2 h-full;
     }
     .role-selection-option {
-        @apply bg-secondaryGray border w-full;
+        @apply flex justify-center items-center rounded-2xl text-4xl font-bold hover:bg-primaryBlue m-10 border border-black hover:ease-in-out hover:transition hover:duration-1000;
     }
 }

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-    .app-parent-div {
-        @apply flex flex-col h-[100vh] bg-secondaryTextWhite;
+    .user-set-up-main {
+        @apply h-full;
     }
 }

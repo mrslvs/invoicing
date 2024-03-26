@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
-import axiosInstance from '../api/axiosInstance';
 import Header from './app/Header';
 import useAuth from '../hooks/useAuth';
 import Dashboard from './app/Dashboard';
-import RoleSelection from './app/RoleSelection';
+import RoleSelection from './app/UserSetUp';
 import '../assets/styles/app/app.css';
 
 function App() {
