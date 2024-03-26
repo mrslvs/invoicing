@@ -8,7 +8,7 @@
     }
 
     .home-register-label-vvalid {
-        @apply text-white;
+        @apply text-secondaryTextWhite;
     }
 
     .home-register-label-invalid {

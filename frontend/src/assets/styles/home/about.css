@@ -8,7 +8,7 @@
     }
 
     .home-about-h1 {
-        @apply text-3xl mt-5 mb-5;
+        @apply text-3xl text-primaryBlue mt-5 mb-5;
     }
 
     .home-about-main {

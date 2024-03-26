@@ -4,11 +4,11 @@
 
 @layer components {
     .app-header {
-        @apply flex  bg-yellow-500;
+        @apply flex  bg-primaryBlue;
     }
 
     .app-header-h3 {
-        @apply text-red-500;
+        @apply text-primaryTextBlack;
     }
 
     .app-header-nav {
@@ -16,6 +16,6 @@
     }
 
     .header-user-drop-down-menu {
-        @apply absolute border border-black bg-primaryBackground text-primaryText top-[1.5rem] right-[1rem];
+        @apply absolute top-[1.5rem] right-[1rem] bg-primaryBlue border-primaryTextBlack text-primaryTextBlack;
     }
 }
