@@ -4,7 +4,7 @@
 
 @layer components {
     .app-header {
-        @apply flex  bg-primaryBlue;
+        @apply flex justify-between bg-primaryBlue m-4 p-4 rounded-full;
     }
 
     .app-header-h3 {
@@ -12,10 +12,10 @@
     }
 
     .app-header-nav {
-        @apply flex border border-black;
+        @apply flex;
     }
 
     .header-user-drop-down-menu {
-        @apply absolute top-[1.5rem] right-[1rem] bg-primaryBlue border-primaryTextBlack text-primaryTextBlack;
+        @apply absolute top-[5rem] right-[1rem] bg-primaryBlue border-primaryTextBlack text-primaryTextBlack;
     }
 }

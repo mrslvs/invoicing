@@ -15,9 +15,6 @@ const Header = () => {
         <header className="app-header">
             <h3 className="app-header-h3">NameNameN</h3>
             <nav className="app-header-nav">
-                <p>fake nav 1</p>
-                <p>fake nav 2</p>
-                <p>fake nav 3</p>
                 <button onClick={handleShowUserMenu}>
                     <FaUserGroup />
                 </button>
