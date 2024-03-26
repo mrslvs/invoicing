@@ -4,8 +4,8 @@ import '../../../assets/styles/app/roleSelection.css';
 const RoleSelection = ({ setSelectedUser }) => {
     // const [selectedUser, setSelectedUser] = useState(0);
 
-    const selectUser = (u) => {
-        setSelectedUser(u);
+    const selectUser = (userId) => {
+        setSelectedUser(userId);
     };
 
     return (

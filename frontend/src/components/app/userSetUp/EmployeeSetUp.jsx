@@ -1,9 +1,9 @@
 import React from 'react';
 
-const BusinessOwnerSetUp = ({ setSelectedUser }) => {
+const EmployeeSetUp = ({ setSelectedUser }) => {
     return (
         <div>
-            <p>BusinessOwnerSetUp</p>
+            <p>EmployeeSetUp</p>
             <button
                 onClick={() => {
                     setSelectedUser(0);
@@ -15,4 +15,4 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     );
 };
 
-export default BusinessOwnerSetUp;
+export default EmployeeSetUp;
