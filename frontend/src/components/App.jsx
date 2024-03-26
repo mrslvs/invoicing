@@ -2,31 +2,21 @@ import { useEffect } from 'react';
 import axiosInstance from '../api/axiosInstance';
 import Header from './app/Header';
 import useAuth from '../hooks/useAuth';
+import Dashboard from './app/Dashboard';
+import RoleSelection from './app/RoleSelection';
+import '../assets/styles/app/app.css';
 
 function App() {
     const { user, setUser } = useAuth();
     useEffect(() => {
         console.log('app:');
-        console.log(user);
+        console.log(user.role);
     }, []);
 
-    const getData3 = async () => {
-        try {
-            const data = await axiosInstance.get('/app', { withCredentials: 'true' });
-            console.log(data);
-        } catch (err) {
-            console.log(err);
-        }
-    };
-
     return (
-        <div>
+        <div className="app-parent-div">
             <Header />
-            <h1>Dashboard</h1>
-            <p>Press to get data from server</p>
-            <button onClick={getData3}>GET Server</button>
-            <br></br>
-            {/* {error ? <p>{error}</p> : isLodaing ? <p>Loading ...</p> : <p>{data}</p>} */}
+            {user.role ? <Dashboard /> : <RoleSelection />}
         </div>
     );
 }

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .app-parent-div {
+        @apply flex flex-col h-[100vh] bg-red-500;
+    }
+}
