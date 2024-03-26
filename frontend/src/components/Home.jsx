@@ -10,7 +10,7 @@ function Home() {
     return (
         <main className="home-main" style={{ backgroundImage: `url(${backgroundImage})` }}>
             <div className="home-box">
-                <Header setSelection={setSelection} />
+                <Header selection={selection} setSelection={setSelection} />
                 <Content selection={selection} />
             </div>
         </main>

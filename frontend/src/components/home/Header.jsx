@@ -1,7 +1,9 @@
 import React from 'react';
 import '../../assets/styles/home/header.css';
 
-const Header = ({ setSelection }) => {
+const Header = ({ selection, setSelection }) => {
+    const basicClasses = 'home-header-button home-animated-hover';
+    // const isActive = this.value === selection;
     return (
         <header className="home-header">
             <button
@@ -9,7 +11,9 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="login"
-                className="home-header-button home-animated-hover"
+                className={
+                    selection === 'login' ? basicClasses + ' home-header-active' : basicClasses
+                }
             >
                 Login
             </button>
@@ -18,7 +22,9 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="about"
-                className="home-header-button home-animated-hover"
+                className={
+                    selection === 'about' ? basicClasses + ' home-header-active' : basicClasses
+                }
             >
                 About
             </button>
@@ -27,7 +33,9 @@ const Header = ({ setSelection }) => {
                     setSelection(e.target.value);
                 }}
                 value="register"
-                className="home-header-button home-animated-hover"
+                className={
+                    selection === 'register' ? basicClasses + ' home-header-active' : basicClasses
+                }
             >
                 Register
             </button>
