@@ -10,6 +10,9 @@ export default {
                 secondaryTextWhite: '#EDEDED',
             },
         },
+        fontFamily: {
+            logo: ['Dancing Script', 'cursive'],
+        },
     },
     plugins: [],
 };
