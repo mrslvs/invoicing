@@ -10,9 +10,9 @@ const About = () => {
         >
             <h1 className="home-about-h1">NamenameName</h1>
             <main className="home-about-main">
-                Welcome personal project NamenameName, a fullstack application build with modern
-                technologies (MySQL, ExpressJS, ReactJS + NodeJS). This application allows user to
-                view invoices and perform CRUD operations upon them.
+                Welcome to my personal project NamenameName, a fullstack application build with
+                modern technologies (MySQL, ExpressJS, ReactJS + NodeJS). This application allows
+                user to create and edit invoices.
             </main>
 
             <footer className="home-about-footer">

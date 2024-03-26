@@ -5,11 +5,11 @@
 
 @layer components {
     .app-header {
-        @apply flex justify-between bg-primaryBlue m-4 p-4 rounded-full;
+        @apply flex justify-between bg-primaryBlue m-4 pr-4 pl-4 pt-2 pb-2 rounded-full;
     }
 
     .app-header-h3 {
-        @apply text-primaryTextBlack font-logo;
+        @apply text-primaryTextBlack text-4xl font-bold font-logo;
     }
 
     .app-header-nav {
