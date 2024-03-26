@@ -14,4 +14,8 @@
     .app-header-nav {
         @apply flex border border-black;
     }
+
+    .header-user-drop-down-menu {
+        @apply absolute border border-black bg-primaryBackground text-primaryText top-[1.5rem] right-[1rem];
+    }
 }
