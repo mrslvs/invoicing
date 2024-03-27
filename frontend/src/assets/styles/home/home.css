@@ -20,7 +20,7 @@
     }
 
     .home-input-label {
-        @apply mr-3 min-w-32 text-center;
+        @apply mr-3 min-w-32 text-end;
     }
 
     .home-input {

@@ -3,8 +3,6 @@ import '../../assets/styles/home/header.css';
 import HeaderButton from './HeaderButton';
 
 const Header = ({ selection, setSelection }) => {
-    // const basicClasses = 'home-header-button home-animated-hover';
-    // const isActive = this.value === selection;
     return (
         <header className="home-header">
             <HeaderButton buttonText={'Login'} selection={selection} setSelection={setSelection} />

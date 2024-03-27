@@ -1,12 +1,9 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axiosInstance from '../../api/axiosInstance';
-import AuthContext from '../../context/AuthProvider';
 import '../../assets/styles/home/register.css';
+import TextInput from './TextInput';
 
 function Register() {
-    const { user, setUser } = useContext(AuthContext);
-
     const [email, setEmail] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(false);
 
@@ -47,20 +44,14 @@ function Register() {
             pwd: document.getElementById('pwd').value,
             phone: document.getElementById('phone').value,
         };
+        console.log(registerData);
 
         try {
             const response = await axiosInstance.post('/auth/register', registerData, {
                 withCredentials: true,
             });
 
-            // console.log(`Logged in before:${user}`)
-            // setUser('lumos')
-            // // this.forceUpdate()
-            // console.log(`Logged in after:${user}`)
-            // // window.location.reload(true)
-
-            console.log('registered successfully');
-            // navigate('/app');
+            // console.log('registered successfully');
         } catch (err) {
             console.log('there has been an error at register:');
             console.log(err.response.status + ': ' + err.response.data);
@@ -77,97 +68,39 @@ function Register() {
 
     return (
         <form onSubmit={register} className="home-content home-content-register">
-            <div className="home-input-container">
-                <label
-                    htmlFor="email"
-                    className={
-                        isEmailValid
-                            ? 'home-input-label home-register-label-valid'
-                            : 'home-input-label home-register-label-invalid'
-                    }
-                >
-                    Email
-                </label>
-                <input
-                    type="text"
-                    name="email"
-                    id="email"
-                    autoComplete="off"
-                    // required
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="home-input"
-                />
-            </div>
+            <TextInput
+                label={'Email'}
+                id={'email'}
+                isValid={isEmailValid}
+                onChange={(e) => setEmail(e.target.value)}
+            />
 
-            <div className="home-input-container">
-                <label
-                    htmlFor="pwd"
-                    className={
-                        isPwdValid
-                            ? 'home-input-label home-register-label-valid'
-                            : 'home-input-label home-register-label-invalid'
-                    }
-                >
-                    Password
-                </label>
-                <input
-                    type="password"
-                    name="pwd"
-                    id="pwd"
-                    autoComplete="off"
-                    required
-                    onChange={(e) => setPwd(e.target.value)}
-                    className="home-input"
-                />
-            </div>
+            <TextInput
+                label={'Password'}
+                id={'pwd'}
+                type="password"
+                isValid={isPwdValid}
+                onChange={(e) => setPwd(e.target.value)}
+            />
 
-            <div className="home-input-container">
-                <label
-                    htmlFor="pwdRepeat"
-                    className={
-                        isPwdRepeatValid
-                            ? 'home-input-label home-register-label-valid'
-                            : 'home-input-label home-register-label-invalid'
-                    }
-                >
-                    Repeat password
-                </label>
-                <input
-                    type="password"
-                    name="pwdRepeat"
-                    id="pwdRepeat"
-                    autoComplete="off"
-                    required
-                    onChange={(e) => setPwdRepeat(e.target.value)}
-                    className="home-input"
-                />
-            </div>
+            <TextInput
+                label={'Repeat password'}
+                id={'pwdRepeat'}
+                type="password"
+                isValid={isPwdRepeatValid}
+                onChange={(e) => setPwdRepeat(e.target.value)}
+            />
 
-            <div className="home-input-container">
-                <label
-                    htmlFor="phone"
-                    className={
-                        isPhoneValid
-                            ? 'home-input-label home-register-label-valid'
-                            : 'home-input-label home-register-label-invalid'
-                    }
-                >
-                    Phone
-                </label>
-                <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    autoComplete="off"
-                    required
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="home-input"
-                />
-            </div>
+            <TextInput
+                label={'Phone'}
+                id={'phone'}
+                type="text"
+                isValid={isPhoneValid}
+                onChange={(e) => setPhone(e.target.value)}
+            />
 
             <input
                 type="submit"
-                // disabled={!(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid)}
                 disabled={disabled}
                 className={
                     disabled ? 'home-register-submit-disabled' : 'home-submit home-animated-hover'
