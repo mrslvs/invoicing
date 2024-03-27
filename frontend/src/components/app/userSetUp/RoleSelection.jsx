@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import '../../../assets/styles/app/roleSelection.css';
 
 const RoleSelection = ({ setSelectedUser }) => {
-    // const [selectedUser, setSelectedUser] = useState(0);
-
     const selectUser = (userId) => {
         setSelectedUser(userId);
     };

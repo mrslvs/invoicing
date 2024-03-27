@@ -6,4 +6,12 @@
     .user-set-up-main {
         @apply h-full;
     }
+
+    .user-set-up-form-input-container {
+        @apply flex justify-center border border-yellow-500;
+    }
+
+    .user-set-up-input-label {
+        @apply w-[15rem];
+    }
 }

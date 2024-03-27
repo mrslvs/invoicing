@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .business-owner-set-up-form {
+        @apply grid grid-cols-2;
+    }
+
+    .business-owner-set-up-half {
+        @apply border border-black;
+    }
+
+    .business-owner-set-up-form-is-tax-payer-parent {
+        @apply flex gap-4;
+    }
+
+    .business-owner-set-up-form-checkbox-container {
+        @apply border border-purple-700;
+    }
+}
