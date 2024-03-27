@@ -3,13 +3,16 @@ const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
-const User = require('./model/User');
-const Session = require('./model/Session');
+// const User = require('./model/User');
+// const Session = require('./model/Session');
 // const { options } = require('./routes/auth')
 const { authenticateSession } = require('./middleware/auth');
+const { databaseStart } = require('./db/connection');
 
-User.sync({ force: false });
-Session.sync({ force: true });
+// User.sync({ force: false });
+// Session.sync({ force: true });
+
+databaseStart();
 
 const app = express();
 app.use(express.json());

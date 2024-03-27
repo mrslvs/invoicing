@@ -10,12 +10,12 @@ const RoleSelection = ({ setSelectedUser }) => {
 
     return (
         <div className="role-selection-parent-div">
-            <div className="role-selection-option">
-                <button onClick={() => selectUser(1)}>I want to set up my business</button>
-            </div>
-            <div className="role-selection-option">
-                <button onClick={() => selectUser(2)}>I am an employee</button>
-            </div>
+            <button onClick={() => selectUser(1)} className="role-selection-option">
+                I want to set up my business
+            </button>
+            <button onClick={() => selectUser(2)} className="role-selection-option">
+                I am an employee
+            </button>
         </div>
     );
 };
