@@ -5,7 +5,7 @@ import backgroundImage from '../assets/images/background_landscape.jpg';
 import '../assets/styles/home/home.css';
 
 function Home() {
-    const [selection, setSelection] = useState('login');
+    const [selection, setSelection] = useState('Login');
 
     return (
         <main className="home-main" style={{ backgroundImage: `url(${backgroundImage})` }}>

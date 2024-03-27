@@ -1,24 +1,24 @@
-import React from 'react'
-import About from './About'
-import Register from './Register'
-import Login from './Login'
+import React from 'react';
+import About from './About';
+import Register from './Register';
+import Login from './Login';
 
 const Content = ({ selection }) => {
-    let contentComponent = <Login />
+    let contentComponent = <Login />;
 
     switch (selection) {
-        case 'about':
-            contentComponent = <About />
-            break
-        case 'register':
-            contentComponent = <Register />
-            break
-        case 'login':
-            contentComponent = <Login />
-            break
+        case 'About':
+            contentComponent = <About />;
+            break;
+        case 'Register':
+            contentComponent = <Register />;
+            break;
+        case 'Login':
+            contentComponent = <Login />;
+            break;
     }
 
-    return contentComponent
-}
+    return contentComponent;
+};
 
-export default Content
+export default Content;
