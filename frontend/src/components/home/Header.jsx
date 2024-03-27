@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../assets/styles/home/header.css';
 import HeaderButton from './HeaderButton';
 
 const Header = ({ selection, setSelection }) => {

@@ -3,35 +3,98 @@
 @tailwind utilities;
 
 @layer components {
+    /*  
+        1.  flex/grid
+        2.  centering / aligning
+        3.  resizing screen
+        4.  background
+        5.  text / font
+        6.  border / rounded
+        7.  cursor
+        8.  padding
+        9.  margin
+        10.  hover / first / last etc. (?directives?
+        11. animation
+    */
     .home-main {
-        @apply h-screen w-screen bg-cover bg-center flex justify-center items-center;
+        @apply flex justify-center items-center h-screen w-screen bg-cover bg-center;
     }
 
     .home-box {
         @apply bg-gray-900 bg-opacity-50 rounded-xl text-secondaryTextWhite;
     }
 
-    .home-content {
-        @apply w-[30rem] h-[25rem] max-w-[30rem];
+    .home-header {
+        @apply flex bg-gray-900 bg-opacity-30 rounded-t-xl cursor-pointer;
     }
 
-    .home-input-container {
-        @apply mb-3 flex items-center;
+    .home-header-button {
+        @apply flex-grow p-1 hover:bg-gray-900 hover:bg-opacity-80 first:rounded-tl-xl last:rounded-tr-xl;
     }
 
-    .home-input-label {
-        @apply mr-3 min-w-32 text-end;
-    }
-
-    .home-input {
-        @apply bg-black pl-2 pr-2 pt-1 pb-1 rounded-xl;
-    }
-
-    .home-submit {
-        @apply pt-2 pb-2 pl-4 pr-4 rounded-xl bg-black border hover:cursor-pointer;
+    .home-header-active {
+        @apply bg-gray-900 bg-opacity-80 text-primaryBlue;
     }
 
     .home-animated-hover {
         @apply hover:text-primaryBlue transition duration-300 ease-in-out;
     }
+
+    .home-content {
+        @apply flex flex-col items-center w-[30rem] h-[25rem] max-w-[30rem];
+    }
+
+    .home-input-container {
+        @apply flex items-center mb-3;
+    }
+
+    .home-input-label {
+        @apply min-w-32 text-end mr-3;
+    }
+
+    .home-input {
+        @apply bg-black rounded-xl pl-2 pr-2 pt-1 pb-1;
+    }
+
+    .home-submit {
+        @apply bg-black border rounded-xl pt-2 pb-2 pl-4 pr-4 hover:cursor-pointer;
+    }
+
+    .home-about-logo {
+        @apply text-5xl text-primaryBlue font-logo font-bold mt-5 mb-5;
+    }
+
+    .home-about-main {
+        @apply pl-10 pr-10;
+    }
+
+    .home-about-footer {
+        @apply flex w-full mt-5 mr-auto ml-auto;
+    }
+
+    .home-about-link-container {
+        @apply flex flex-grow justify-center w-full mr-auto ml-auto;
+    }
+
+    .about-link {
+        @apply flex self-center text-3xl;
+    }
+
+    .home-about-icon {
+        @apply text-5xl;
+    }
+
+    .home-register-submit-disabled {
+        @apply text-gray-500 border border-red-500 rounded-xl pt-2 pb-2 pl-4 pr-4;
+    }
+
+    .home-register-hint {
+        @apply text-xs pr-10 pl-10 mt-5;
+    }
+
+    .home-register-list {
+        @apply flex flex-col items-center;
+    }
+
+    /* ⬅️ MOVE THIS TO LAST STYLE */
 }

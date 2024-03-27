@@ -1,14 +1,10 @@
 import React from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import '../../assets/styles/home/about.css';
 
 const About = () => {
     return (
-        <article
-            className="home-content home-content-about
-        "
-        >
-            <h1 className="home-about-h1">NamenameName</h1>
+        <article className="home-content">
+            <h1 className="home-about-logo">NamenameName</h1>
             <main className="home-about-main">
                 Welcome to my personal project NamenameName, a fullstack application build with
                 modern technologies (MySQL, ExpressJS, ReactJS + NodeJS). This application allows

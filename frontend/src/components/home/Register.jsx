@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
-import '../../assets/styles/home/register.css';
 import TextInput from './TextInput';
 
 function Register() {
@@ -67,7 +66,7 @@ function Register() {
     };
 
     return (
-        <form onSubmit={register} className="home-content home-content-register">
+        <form onSubmit={register} className="home-content justify-center">
             <TextInput
                 label={'Email'}
                 id={'email'}

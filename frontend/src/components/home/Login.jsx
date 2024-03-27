@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import axiosInstance from '../../api/axiosInstance';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import '../../assets/styles/home/login.css';
 import TextInput from './TextInput';
 
 function Login() {
@@ -36,7 +35,7 @@ function Login() {
     };
 
     return (
-        <form onSubmit={login} className="home-content home-content-login">
+        <form onSubmit={login} className="home-content justify-center">
             <TextInput label="Email" id="email" />
             <TextInput label="Password" id="pwd" />
             <input type="submit" className="home-submit home-animated-hover" value={'Log In'} />
