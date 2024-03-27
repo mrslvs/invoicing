@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HeaderButton = ({ buttonText, selection, setSelection, className }) => {
-    let classes = 'home-header-button home-animated-hover' + className;
+    let classes = 'home-header-button home-animated-hover ' + className;
     return (
         <button
             value={buttonText}
