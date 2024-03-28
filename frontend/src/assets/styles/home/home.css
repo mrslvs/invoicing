@@ -52,7 +52,7 @@
         @apply min-w-32 text-end mr-3;
     }
 
-    .home-input {
+    .home-input-text {
         @apply bg-black rounded-xl pl-2 pr-2 pt-1 pb-1;
     }
 

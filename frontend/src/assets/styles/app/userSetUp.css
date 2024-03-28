@@ -7,6 +7,22 @@
         @apply h-full;
     }
 
+    .role-selection-parent-div {
+        @apply grid grid-cols-2 h-full;
+    }
+
+    .role-selection-option {
+        @apply flex justify-center items-center rounded-2xl text-4xl font-bold hover:bg-primaryBlue m-10 border border-black hover:ease-in-out hover:transition hover:duration-1000;
+    }
+
+    .business-owner-set-up-form {
+        @apply grid grid-cols-2;
+    }
+
+    .business-owner-set-up-half {
+        @apply border border-black;
+    }
+
     .user-set-up-form-input-container {
         @apply flex justify-center border border-yellow-500;
     }
@@ -14,4 +30,14 @@
     .user-set-up-input-label {
         @apply w-[15rem];
     }
+
+    .business-owner-set-up-form-is-tax-payer-parent {
+        @apply flex gap-4;
+    }
+
+    .business-owner-set-up-form-checkbox-container {
+        @apply border border-purple-700;
+    }
+
+    /* ⬅️ move to last code */
 }
