@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import axiosInstance from '../../api/axiosInstance';
+import axiosInstance from '../../../api/axiosInstance';
 import TextInput from './TextInput';
 
 function Register() {

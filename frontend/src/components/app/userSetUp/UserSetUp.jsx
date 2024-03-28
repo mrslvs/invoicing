@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import RoleSelection from './userSetUp/RoleSelection';
-import '../../assets/styles/app/userSetUp.css';
-import BusinessOwnerSetUp from './userSetUp/BusinessOwnerSetUp';
-import EmployeeSetUp from './userSetUp/EmployeeSetUp';
+import RoleSelection from './RoleSelection';
+import '../../../assets/styles/app/userSetUp.css';
+import BusinessOwnerSetUp from './BusinessOwnerSetUp';
+import EmployeeSetUp from './EmployeeSetUp';
 
 const UserSetUp = () => {
     const [selectedUser, setSelectedUser] = useState(0);

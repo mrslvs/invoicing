@@ -10,7 +10,7 @@ const TextInput = ({ label, id, type = 'text', isValid = true, onChange }) => {
             >
                 {label}
             </label>
-            <input type={type} name={id} id={id} className="home-input" onChange={onChange} />
+            <input type={type} name={id} id={id} className="home-input-text" onChange={onChange} />
         </div>
     );
 };

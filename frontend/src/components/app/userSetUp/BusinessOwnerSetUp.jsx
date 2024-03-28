@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../assets/styles/app/businessOwnerSetUp.css';
 
 const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     const handleSubmit = (e) => {

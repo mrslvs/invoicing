@@ -1,5 +1,5 @@
 import React from 'react';
-import axiosInstance from '../../api/axiosInstance';
+import axiosInstance from '../../../api/axiosInstance';
 
 const Dashboard = () => {
     const getData = async () => {

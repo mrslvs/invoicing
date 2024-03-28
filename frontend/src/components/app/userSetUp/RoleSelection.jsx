@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../../assets/styles/app/roleSelection.css';
 
 const RoleSelection = ({ setSelectedUser }) => {
     const selectUser = (userId) => {

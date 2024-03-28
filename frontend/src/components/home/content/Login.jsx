@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import axiosInstance from '../../api/axiosInstance';
-import useAuth from '../../hooks/useAuth';
+import axiosInstance from '../../../api/axiosInstance';
+import useAuth from '../../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import TextInput from './TextInput';
 

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import Content from './home/Content';
-import Header from './home/Header';
-import backgroundImage from '../assets/images/background_landscape.jpg';
-import '../assets/styles/home/home.css';
+import Content from './content/Content';
+import Header from './header/Header';
+import backgroundImage from '../../assets/images/background_landscape.jpg';
+import '../../assets/styles/home/home.css';
 
 function Home() {
     const [selection, setSelection] = useState('Login');
