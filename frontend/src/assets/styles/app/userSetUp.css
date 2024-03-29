@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/*  
+        1.  flex/grid
+        2.  centering / aligning
+        3.  resizing screen
+        4.  background
+        5.  text / font
+        6.  border / rounded
+        7.  cursor
+        8.  padding
+        9.  margin
+        10. hover / first / last etc. (?directives?
+        11. animation
+    */
+
 @layer components {
     .user-set-up-main {
         @apply h-full;
@@ -23,12 +37,17 @@
         @apply border border-black;
     }
 
-    .user-set-up-form-input-container {
+    .app-form-input-container {
         @apply flex justify-center border border-yellow-500;
     }
 
-    .user-set-up-input-label {
-        @apply w-[15rem];
+    .app-form-input-label {
+        @apply w-[15rem] text-end mr-5;
+        /* w-[15rem] */
+    }
+
+    .app-form-input-text {
+        @apply bg-red-500;
     }
 
     .business-owner-set-up-form-is-tax-payer-parent {

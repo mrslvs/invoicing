@@ -1,4 +1,5 @@
 import React from 'react';
+import TextInput from '../form/TextInput';
 
 const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     const handleSubmit = (e) => {
@@ -14,42 +15,13 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     return (
         <form className="business-owner-set-up-form" onSubmit={handleSubmit}>
             <div className="business-owner-set-up-half">
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="businessName">
-                        Business name
-                    </label>
-                    <input
-                        className="user-set-up-input-input"
-                        type="text"
-                        name="businessName"
-                        id="businessName"
-                    ></input>
-                </div>
-                <div className="user-set-up-form-input-container">
-                    <label
-                        className="user-set-up-input-label"
-                        htmlFor="businessIdentificationNumber"
-                    >
-                        Business Identification Number
-                    </label>
-                    <input
-                        className="user-set-up-input-input"
-                        type="text"
-                        name="businessIdentificationNumber"
-                        id="businessIdentificationNumber"
-                    ></input>
-                </div>
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="taxIdentificationNumber">
-                        Tax Identification Number
-                    </label>
-                    <input
-                        className="user-set-up-input-input"
-                        type="text"
-                        name="taxIdentificationNumber"
-                        id="taxIdentificationNumber"
-                    ></input>
-                </div>
+                <TextInput label={'Business Name'} id={'businessName'} />
+                <TextInput
+                    label={'Business Identification Number'}
+                    id={'businessIdentificationNumber'}
+                />
+                <TextInput label={'Tax Identification Number'} id={'taxIdentificationNumber'} />
+
                 <div className="user-set-up-form-input-container">
                     <p className="user-set-up-input-label">Are you a tax payer?</p>
                     <div className="business-owner-set-up-form-is-tax-payer-parent">
@@ -77,55 +49,15 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
                         </div>
                     </div>
                 </div>
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="legalForm">
-                        Legal form drop-down
-                    </label>
-                    <input
-                        className="user-set-up-input-input"
-                        type="text"
-                        name="legalForm"
-                        id="legalForm"
-                    ></input>
-                </div>
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="vatIdentificationNumber">
-                        VAT Identification Number
-                    </label>
-                    <input
-                        className="user-set-up-input-input"
-                        type="text"
-                        name="vatIdentificationNumber"
-                        id="vatIdentificationNumber"
-                    ></input>
-                </div>
+
+                <TextInput label={'Legal form drop-down'} id={'legalForm'} />
+                <TextInput label={'VAT Identification Number'} id={'vatIdentificationNumber'} />
             </div>
             <div className="business-owner-set-up-half">
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="">
-                        Country
-                    </label>
-                    <input className="user-set-up-input-input" type="text" name="" id=""></input>
-                </div>
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="">
-                        Address line 1
-                    </label>
-                    <input className="user-set-up-input-input" type="text" name="" id=""></input>
-                </div>
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="">
-                        Address line 3
-                    </label>
-                    <input className="user-set-up-input-input" type="text" name="" id=""></input>
-                </div>
-
-                <div className="user-set-up-form-input-container">
-                    <label className="user-set-up-input-label" htmlFor="">
-                        Postal code
-                    </label>
-                    <input className="user-set-up-input-input" type="text" name="" id=""></input>
-                </div>
+                <TextInput label={'Country drop-down'} id={'country'} />
+                <TextInput label={'Address line 1'} id={'addr1'} />
+                <TextInput label={'Address line 2'} id={'addr2'} />
+                <TextInput label={'Postal code'} id={'postalCode'} />
             </div>
 
             <button
