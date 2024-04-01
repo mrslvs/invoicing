@@ -1,5 +1,6 @@
 import React from 'react';
 import TextInput from '../form/TextInput';
+import RadioInput from '../form/RadioInput';
 
 const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     const handleSubmit = (e) => {
@@ -22,32 +23,13 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
                 />
                 <TextInput label={'Tax Identification Number'} id={'taxIdentificationNumber'} />
 
-                <div className="user-set-up-form-input-container">
-                    <p className="user-set-up-input-label">Are you a tax payer?</p>
-                    <div className="business-owner-set-up-form-is-tax-payer-parent">
-                        <div className="business-owner-set-up-form-checkbox-container">
-                            <label>
-                                Yes
-                                <input
-                                    className="user-set-up-input-input"
-                                    type="checkbox"
-                                    name="isTaxPayer"
-                                    id="isTaxPayer"
-                                ></input>
-                            </label>
-                        </div>
-                        <div className="business-owner-set-up-form-checkbox-container">
-                            <label>
-                                No
-                                <input
-                                    className="user-set-up-input-input"
-                                    type="checkbox"
-                                    name="isTaxPayer"
-                                    id="isTaxPayer"
-                                ></input>
-                            </label>
-                        </div>
-                    </div>
+                {/* <div className="user-set-up-form-input-container"> */}
+                <div className="app-form-input-container">
+                    <p className="app-form-input-label w-[8rem]">Are you a tax payer?</p>
+                    {/* <div className="business-owner-set-up-form-is-tax-payer-parent"> */}
+                    <RadioInput label={'Yes'} id={'isTaxPayer'} value={true} />
+                    <RadioInput label={'No'} id={'isTaxPayer'} value={false} />
+                    {/* </div> */}
                 </div>
 
                 <TextInput label={'Legal form drop-down'} id={'legalForm'} />

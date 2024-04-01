@@ -38,23 +38,26 @@
     }
 
     .app-form-input-container {
-        @apply flex justify-center border border-yellow-500;
+        @apply flex justify-center items-center border border-yellow-500;
     }
 
     .app-form-input-label {
         @apply w-[15rem] text-end mr-5;
-        /* w-[15rem] */
     }
 
     .app-form-input-text {
-        @apply bg-red-500;
+        @apply border border-primaryBlue border-2;
+    }
+
+    .app-form-input-radio {
+        @apply bg-red-500 border border-red-500 border-4;
     }
 
     .business-owner-set-up-form-is-tax-payer-parent {
-        @apply flex gap-4;
+        @apply flex gap-4 border border-green-500 border-4;
     }
 
-    .business-owner-set-up-form-checkbox-container {
+    .app-form-checkbox-container {
         @apply border border-purple-700;
     }
 
