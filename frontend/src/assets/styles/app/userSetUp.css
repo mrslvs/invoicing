@@ -34,31 +34,7 @@
     }
 
     .business-owner-set-up-half {
-        @apply border border-black;
-    }
-
-    .app-form-input-container {
-        @apply flex justify-center items-center border border-yellow-500;
-    }
-
-    .app-form-input-label {
-        @apply w-[15rem] text-end mr-5;
-    }
-
-    .app-form-input-text {
-        @apply border border-primaryBlue border-2;
-    }
-
-    .app-form-input-radio {
-        @apply bg-red-500 border border-red-500 border-4;
-    }
-
-    .business-owner-set-up-form-is-tax-payer-parent {
-        @apply flex gap-4 border border-green-500 border-4;
-    }
-
-    .app-form-checkbox-container {
-        @apply border border-purple-700;
+        @apply bg-red-100;
     }
 
     /* ⬅️ move to last code */

@@ -1,8 +1,9 @@
 import React from 'react';
+import '../../../assets/styles/app/form.css';
 
-const RadioInput = ({ label, id, value }) => {
+const RadioInput = ({ label, id, value, onChange }) => {
     return (
-        <div className="app-form-checkbox-container">
+        <div className="app-form-radio-option-container">
             <label htmlFor={id} className="">
                 {label}
                 <input
@@ -10,7 +11,8 @@ const RadioInput = ({ label, id, value }) => {
                     name={id}
                     id={id}
                     value={value}
-                    className="user-set-up-input-input"
+                    className="app-form-radio-input"
+                    onChange={onChange}
                 ></input>
             </label>
         </div>

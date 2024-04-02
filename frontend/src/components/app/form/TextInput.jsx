@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../../assets/styles/app/form.css';
 
 const TextInput = ({ label, id, type = 'text', isValid = true, onChange }) => {
     return (
