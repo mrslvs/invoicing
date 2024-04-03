@@ -23,13 +23,10 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
                 />
                 <TextInput label={'Tax Identification Number'} id={'taxIdentificationNumber'} />
 
-                {/* <div className="user-set-up-form-input-container"> */}
                 <div className="app-form-radio-container">
                     <p className="app-form-input-label ">Are you a tax payer?</p>
-                    {/* <div className="business-owner-set-up-form-is-tax-payer-parent"> */}
                     <RadioInput label={'Yes'} id={'isTaxPayer'} value={true} />
                     <RadioInput label={'No'} id={'isTaxPayer'} value={false} />
-                    {/* </div> */}
                 </div>
 
                 <TextInput label={'Legal form drop-down'} id={'legalForm'} />
