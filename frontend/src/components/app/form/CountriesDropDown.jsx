@@ -4,10 +4,9 @@ import CountryItem from './CountryItem';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const CountriesDropDown = () => {
-    const [showDropDown, setShowDropDown] = useState(true);
+    const [showDropDown, setShowDropDown] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState('');
     const [countries, setCountries] = useState([]);
-    const [countries2, setCountries2] = useState([]);
 
     const availableCountryAlphaCodes = ['SVK', 'GER', 'CZ', 'AT'];
 
