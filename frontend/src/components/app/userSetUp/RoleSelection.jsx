@@ -6,7 +6,7 @@ const RoleSelection = ({ setSelectedUser }) => {
     };
 
     return (
-        <div className="role-selection-parent-div">
+        <div className="role-selection-parent-div dark:bg-darkBackground">
             <button onClick={() => selectUser(1)} className="role-selection-option">
                 I want to set up my business
             </button>
