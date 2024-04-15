@@ -1,16 +1,29 @@
 import React from 'react';
 
-const TextInput = ({ label, id, type = 'text', isValid = true, onChange }) => {
+const TextInput = ({
+    label,
+    id,
+    type = 'text',
+    isValid = true,
+    onChange,
+    additionalParentDivClasses,
+    additionalLabelClasses,
+    additionalInputClasses,
+}) => {
     // label will be multi-language ID
+    const baseParentDivClasses = 'home-input-container ' + additionalParentDivClasses;
+    const baseLabelClasses = 'home-input-label ' + additionalLabelClasses;
+    const baseInputClasses = 'home-input-text ' + additionalInputClasses;
+
     return (
-        <div className="home-input-container">
+        <div className={baseParentDivClasses}>
             <label
                 htmlFor={id}
-                className={isValid ? 'home-input-label' : 'home-input-label text-red-500'}
+                className={isValid ? baseLabelClasses : baseLabelClasses + ' text-red-500'}
             >
                 {label}
             </label>
-            <input type={type} name={id} id={id} className="home-input-text" onChange={onChange} />
+            <input type={type} name={id} id={id} className={baseInputClasses} onChange={onChange} />
         </div>
     );
 };

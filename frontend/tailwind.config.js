@@ -11,6 +11,11 @@ export default {
                 secondaryTextWhite: '#EDEDED',
                 darkBackground: '#556773',
             },
+            screens: {
+                xl: '1000px',
+                s: '600px',
+                xs: '500px',
+            },
         },
         fontFamily: {
             logo: ['Dancing Script', 'cursive'],

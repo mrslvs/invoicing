@@ -3,20 +3,14 @@ import TextInput from '../form/TextInput';
 import RadioInput from '../form/RadioInput';
 import axios from 'axios';
 import CountriesDropDown from '../form/CountriesDropDown';
-import CountryItem from '../form/CountryItem';
 
 const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const countries = await axios.get('https://restcountries.com/v3.1/all');
-
         const data = {
             businessName: document.getElementById('businessName').value,
         };
-
-        // console.log(countries.data[1].flags.svg);
-        // console.log(countries.data[1].altSpellings[1]);
     };
 
     return (

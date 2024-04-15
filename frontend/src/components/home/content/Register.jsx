@@ -72,6 +72,7 @@ function Register() {
                 id={'email'}
                 isValid={isEmailValid}
                 onChange={(e) => setEmail(e.target.value)}
+                additionalLabelClasses={'min-w-32'}
             />
 
             <TextInput
@@ -80,6 +81,7 @@ function Register() {
                 type="password"
                 isValid={isPwdValid}
                 onChange={(e) => setPwd(e.target.value)}
+                additionalLabelClasses={'min-w-32'}
             />
 
             <TextInput
@@ -88,6 +90,7 @@ function Register() {
                 type="password"
                 isValid={isPwdRepeatValid}
                 onChange={(e) => setPwdRepeat(e.target.value)}
+                additionalLabelClasses={'min-w-32'}
             />
 
             <TextInput
@@ -96,6 +99,7 @@ function Register() {
                 type="text"
                 isValid={isPhoneValid}
                 onChange={(e) => setPhone(e.target.value)}
+                additionalLabelClasses={'min-w-32'}
             />
 
             <input

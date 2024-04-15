@@ -36,8 +36,8 @@ function Login() {
 
     return (
         <form onSubmit={login} className="home-content justify-center">
-            <TextInput label="Email" id="email" />
-            <TextInput label="Password" id="pwd" />
+            <TextInput label="Email" id="email" additionalLabelClasses={'min-w-[5rem]'} />
+            <TextInput label="Password" id="pwd" additionalLabelClasses={'min-w-[5rem]'} />
             <input type="submit" className="home-submit home-animated-hover" value={'Log In'} />
         </form>
     );

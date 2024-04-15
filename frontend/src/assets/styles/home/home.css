@@ -29,7 +29,7 @@
     }
 
     .home-header-button {
-        @apply flex-grow p-1 hover:bg-gray-900 hover:bg-opacity-80 first:rounded-tl-xl last:rounded-tr-xl;
+        @apply flex-grow text-xl font-bold p-1 hover:bg-gray-900 hover:bg-opacity-80 first:rounded-tl-xl last:rounded-tr-xl;
     }
 
     .home-header-active {
@@ -49,7 +49,7 @@
     }
 
     .home-input-label {
-        @apply min-w-32 text-end mr-3;
+        @apply text-end mr-3;
     }
 
     .home-input-text {
