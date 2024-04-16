@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import axiosInstance from '../../../api/axiosInstance';
 import TextInput from './TextInput';
+import SubmitButton from './SubmitButton';
 
 function Register() {
     const [email, setEmail] = useState('');
@@ -14,6 +15,8 @@ function Register() {
 
     const [phone, setPhone] = useState('');
     const [isPhoneValid, setIsPhoneValid] = useState(false);
+
+    const [isLoading, setIsLoading] = useState(false);
 
     const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
 
@@ -102,13 +105,11 @@ function Register() {
                 additionalLabelClasses={'min-w-32'}
             />
 
-            <input
-                type="submit"
-                disabled={disabled}
-                className={
-                    disabled ? 'home-register-submit-disabled' : 'home-submit home-animated-hover'
-                }
-                value={'Register'}
+            <SubmitButton
+                parentDivClasses={'min-h-[4rem]'}
+                isDisabled={disabled}
+                isLoading={isLoading}
+                buttonLabel={'Register'}
             />
 
             <div className="home-register-hint">

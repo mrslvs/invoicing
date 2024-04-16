@@ -45,7 +45,9 @@ const loginUser = async (req, res) => {
 
     if (!email || !pwd) {
         console.log('missing login input');
-        res.status(404).json('missing login inputs');
+        setTimeout(() => {
+            res.status(404).json('missing login inputs');
+        }, 3000);
         return;
     }
 
@@ -53,14 +55,18 @@ const loginUser = async (req, res) => {
 
     if (!userExists) {
         console.log('email does not exist');
-        res.status(404).json('User not found');
+        setTimeout(() => {
+            res.status(404).json('User not found');
+        }, 3000);
         return;
     }
 
     const isPasswordCorrect = await bcrypt.compare(pwd, userExists.password);
 
     if (!isPasswordCorrect) {
-        res.status(401).json('Wrong password');
+        setTimeout(() => {
+            res.status(401).json('Wrong password');
+        }, 3000);
         return;
     }
 
@@ -72,14 +78,20 @@ const loginUser = async (req, res) => {
         });
 
         await newSession.save();
-        res.status(200).json({ userId: userExists.id, role: userExists.role });
+        setTimeout(() => {
+            res.status(200).json({ userId: userExists.id, role: userExists.role });
+        }, 3000);
     } catch (err) {
         console.log(err);
-        res.status(500).json('error in login');
+        setTimeout(() => {
+            res.status(500).json('error in login');
+        }, 3000);
         return;
     }
 
-    res.status(200);
+    setTimeout(() => {
+        res.status(200);
+    }, 3000);
 };
 
 const logoutUser = async (req, res) => {

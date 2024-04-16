@@ -7,23 +7,23 @@ const TextInput = ({
     isValid = true,
     onChange,
     additionalParentDivClasses,
-    additionalLabelClasses,
     additionalInputClasses,
 }) => {
     // label will be multi-language ID
     const baseParentDivClasses = 'home-input-container ' + additionalParentDivClasses;
-    const baseLabelClasses = 'home-input-label ' + additionalLabelClasses;
-    const baseInputClasses = 'home-input-text ' + additionalInputClasses;
+    const baseInputClasses =
+        'home-input-text ' + (isValid ? '' : 'border border-red-500 ') + additionalInputClasses;
 
     return (
         <div className={baseParentDivClasses}>
-            <label
-                htmlFor={id}
-                className={isValid ? baseLabelClasses : baseLabelClasses + ' text-red-500'}
-            >
-                {label}
-            </label>
-            <input type={type} name={id} id={id} className={baseInputClasses} onChange={onChange} />
+            <input
+                type={type}
+                name={id}
+                id={id}
+                className={baseInputClasses}
+                onChange={onChange}
+                placeholder={label}
+            />
         </div>
     );
 };

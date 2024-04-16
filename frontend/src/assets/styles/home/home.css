@@ -53,11 +53,19 @@
     }
 
     .home-input-text {
-        @apply bg-black rounded-xl pl-2 pr-2 pt-1 pb-1;
+        @apply bg-black border border-transparent outline-none rounded-xl pl-2 pr-2 pt-1 pb-1;
+    }
+
+    .err-msg {
+        @apply text-red-500 font-bold min-h-[2rem] transition-opacity duration-500;
     }
 
     .home-submit {
-        @apply bg-black border rounded-xl pt-2 pb-2 pl-4 pr-4 hover:cursor-pointer;
+        @apply min-w-[10rem] bg-black text-xl font-bold border border-[4px] rounded-xl pt-1 pb-1 pl-4 pr-4 hover:cursor-pointer hover:border-primaryBlue;
+    }
+
+    .home-loading-icon {
+        @apply text-blue-500 w-[2rem] h-[2rem] animate-spin;
     }
 
     .home-about-logo {
@@ -84,8 +92,8 @@
         @apply text-5xl;
     }
 
-    .home-register-submit-disabled {
-        @apply text-gray-500 border border-red-500 rounded-xl pt-2 pb-2 pl-4 pr-4;
+    .home-submit-disabled {
+        @apply text-gray-500 border-red-500 hover:border-red-500;
     }
 
     .home-register-hint {
