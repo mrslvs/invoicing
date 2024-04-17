@@ -17,7 +17,7 @@ function Register() {
     const [isPhoneValid, setIsPhoneValid] = useState(false);
 
     const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('go');
+    const [errorMessage, setErrorMessage] = useState('');
     const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
 
     useEffect(() => {
@@ -40,6 +40,7 @@ function Register() {
 
     const register = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
         const registerData = {
             email: document.getElementById('email').value,
@@ -55,8 +56,13 @@ function Register() {
 
             // console.log('registered successfully');
         } catch (err) {
-            console.log('there has been an error at register:');
-            console.log(err.response.status + ': ' + err.response.data);
+            const status = err.response?.status || 500;
+
+            setIsLoading(false);
+
+            status === 500
+                ? setErrorMessage('Server error')
+                : setErrorMessage('User already exists');
         }
     };
 
