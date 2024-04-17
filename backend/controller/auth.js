@@ -56,7 +56,7 @@ const loginUser = async (req, res) => {
     if (!userExists) {
         console.log('email does not exist');
         setTimeout(() => {
-            res.status(404).json('User not found');
+            res.status(404).json('Wrong credentials');
         }, 3000);
         return;
     }
@@ -65,7 +65,7 @@ const loginUser = async (req, res) => {
 
     if (!isPasswordCorrect) {
         setTimeout(() => {
-            res.status(401).json('Wrong password');
+            res.status(401).json('Wrong credentials');
         }, 3000);
         return;
     }
@@ -84,14 +84,14 @@ const loginUser = async (req, res) => {
     } catch (err) {
         console.log(err);
         setTimeout(() => {
-            res.status(500).json('error in login');
+            res.status(500).json('Server error');
         }, 3000);
         return;
     }
 
-    setTimeout(() => {
-        res.status(200);
-    }, 3000);
+    // setTimeout(() => {
+    //     res.status(200);
+    // }, 3000);
 };
 
 const logoutUser = async (req, res) => {

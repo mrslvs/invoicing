@@ -17,7 +17,7 @@ function Register() {
     const [isPhoneValid, setIsPhoneValid] = useState(false);
 
     const [isLoading, setIsLoading] = useState(false);
-
+    const [errorMessage, setErrorMessage] = useState('go');
     const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
 
     useEffect(() => {
@@ -104,6 +104,10 @@ function Register() {
                 onChange={(e) => setPhone(e.target.value)}
                 additionalLabelClasses={'min-w-32'}
             />
+
+            <span className={errorMessage ? 'err-msg opacity-100' : 'err-msg opacity-0'}>
+                {errorMessage ? errorMessage : ''}
+            </span>
 
             <SubmitButton
                 parentDivClasses={'min-h-[4rem]'}

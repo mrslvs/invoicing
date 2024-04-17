@@ -26,7 +26,7 @@
     }
 
     .role-selection-option {
-        @apply flex justify-center items-center rounded-2xl text-4xl font-bold hover:bg-primaryBlue m-10 border border-black hover:ease-in-out hover:transition hover:duration-1000;
+        @apply flex justify-center items-center rounded-2xl text-4xl font-bold hover:bg-primaryBlue m-10 border border-[4px] border-primaryBlue shadow-lg hover:ease-in-out hover:transition hover:duration-1000;
     }
 
     .business-owner-set-up-form {

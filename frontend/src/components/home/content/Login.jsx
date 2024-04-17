@@ -16,9 +16,9 @@ function Login() {
     const [errorMessage, setErrorMessage] = useState('');
     const disabled = !(email && pwd);
 
-    useEffect(() => {
-        // console.log(user);
-    }, [user]);
+    // useEffect(() => {
+    //     // console.log(user);
+    // }, [user]);
 
     const removeErrorMessageOnInputChange = () => {
         setErrorMessage('');
@@ -27,7 +27,7 @@ function Login() {
     const handleInputChange = (c, isEmail) => {
         setErrorMessage('');
         isEmail ? setEmail(c) : setPwd(c);
-        isEmail ? console.log(email) : console.log(pwd);
+        // isEmail ? console.log(email) : console.log(pwd);
     };
 
     const login = async (e) => {
@@ -47,9 +47,10 @@ function Login() {
             setUser({ user: response.data.userId, isLoggedIn: true, role: response.data.role });
             navigate('/app');
         } catch (err) {
-            console.log('There has been an error at login:');
+            const status = err.response?.status || 500;
+
             setIsLoading(false);
-            setErrorMessage('There has been an error at login');
+            status === 500 ? setErrorMessage('Server error') : setErrorMessage('Wrong credentials');
         }
     };
 

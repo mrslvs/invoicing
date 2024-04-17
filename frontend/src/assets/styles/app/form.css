@@ -36,4 +36,8 @@
     .app-form-radio-container {
         @apply flex justify-center items-center gap-11;
     }
+
+    .app-submit-button {
+        @apply bg-primaryBlue shadow-lg;
+    }
 }
