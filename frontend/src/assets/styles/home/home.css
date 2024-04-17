@@ -17,7 +17,7 @@
         11. animation
     */
     .home-main {
-        @apply flex justify-center items-center h-screen w-screen bg-cover bg-center;
+        @apply flex justify-center items-center h-screen w-screen bg-cover bg-center dark:text-red-200;
     }
 
     .home-box {
