@@ -1,14 +1,14 @@
 import React from 'react';
 
-const HeaderButton = ({ buttonText, selection, setSelection, additionalClasses }) => {
+const HeaderButton = ({ buttonText, id, selection, setSelection, additionalClasses }) => {
     let classes = 'home-header-button home-animated-hover ' + additionalClasses;
     return (
         <button
             value={buttonText}
             onClick={(e) => {
-                setSelection(e.target.value);
+                setSelection(id);
             }}
-            className={selection === buttonText ? classes + ' home-header-active' : classes}
+            className={selection === id ? classes + ' home-header-active' : classes}
         >
             {buttonText}
         </button>
