@@ -1,10 +1,17 @@
 import React from 'react';
 import HeaderButton from './HeaderButton';
+import useTranslation from '../../../hooks/useTranslation';
 
 const Header = ({ selection, setSelection }) => {
+    const { lng, t } = useTranslation();
+
     return (
         <header className="home-header">
-            <HeaderButton buttonText={'Login'} selection={selection} setSelection={setSelection} />
+            <HeaderButton
+                buttonText={t('home-header-login-button')}
+                selection={selection}
+                setSelection={setSelection}
+            />
             <HeaderButton
                 buttonText={'About'}
                 selection={selection}
