@@ -30,6 +30,7 @@ const About = () => {
                         <FaGithub className="home-about-icon" />
                     </a>
                 </div>
+                <span>testLangauge</span>
             </footer>
         </article>
     );
