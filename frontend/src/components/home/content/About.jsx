@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import useTranslation from '../../../hooks/useTranslation';
 
 const About = () => {
+    const { lng, translations } = useTranslation();
+
+    useEffect(() => {
+        // console.log(translations);
+        console.log(lng);
+        // console.log(translations['home-header-login-button'].en);
+        // console.log(translations['home-header-login-button'].sk);
+        console.log(translations['home-header-login-button'][lng]);
+    }, [lng]);
+
     return (
         <article className="home-content">
             <h1 className="home-about-logo">NamenameName</h1>
@@ -30,7 +41,7 @@ const About = () => {
                         <FaGithub className="home-about-icon" />
                     </a>
                 </div>
-                <span>testLangauge</span>
+                <span>{translations['home-header-login-button'][lng]}</span>
             </footer>
         </article>
     );

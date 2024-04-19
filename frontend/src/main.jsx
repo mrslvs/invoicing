@@ -5,14 +5,14 @@ import Home from './components/home/Home.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './context/AuthProvider.jsx';
 import { ThemeProvider } from './context/ThemeProvider.jsx';
-import { LanguageProvider } from './context/LanguageProvider.jsx';
+import { TranslationProvider } from './context/TranslationProvider.jsx';
 import RequireAuth from './RequireAuth.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <Router>
             <ThemeProvider>
-                <LanguageProvider>
+                <TranslationProvider>
                     <AuthProvider>
                         <Routes>
                             <Route exact path="/" element={<Home />} />
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                             </Route>
                         </Routes>
                     </AuthProvider>
-                </LanguageProvider>
+                </TranslationProvider>
             </ThemeProvider>
         </Router>
     </React.StrictMode>

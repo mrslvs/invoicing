@@ -1,0 +1,18 @@
+{
+    "home-header-login-button": {
+        "en": "Login",
+        "de": "Anwahlen",
+        "sk": "Prihlasit"
+    },
+
+    "app-header-logout": {
+        "en": "Logout",
+        "de": "Auswahlen",
+        "sk": "Odhlasit"
+    },
+    "app-header-": {
+        "en": "",
+        "de": "",
+        "sk": ""
+    }
+}
