@@ -1,15 +1,20 @@
 {
     "home-header-login-button": {
         "en": "Login",
-        "de": "Anwahlen",
-        "sk": "Prihlasit"
+        "de": "Anmelden",
+        "sk": "Prihlásiť"
+    },
+    "home-header-about-button": {
+        "en": "About",
+        "de": "Über",
+        "sk": "O nás"
+    },
+    "home-header-register-button": {
+        "en": "Register",
+        "de": "Registrieren",
+        "sk": "Registrovať"
     },
 
-    "app-header-logout": {
-        "en": "Logout",
-        "de": "Auswahlen",
-        "sk": "Odhlasit"
-    },
     "app-header-": {
         "en": "",
         "de": "",

@@ -4,20 +4,20 @@ import translations from '../assets/translations/translations.json';
 const TranslationContext = createContext();
 
 export const TranslationProvider = ({ children }) => {
-    const [lng, setLng] = useState(navigator.language.startsWith('en') ? 'en' : navigator.language);
-
-    // en-US
-    // de
-    // sk
+    // const [lng, setLng] = useState(navigator.language.startsWith('en') ? 'en' : navigator.language);
+    const availableLanguages = ['en', 'de', 'sk'];
+    const [lng, setLng] = useState(
+        availableLanguages.includes(navigator.language) ? navigator.language : 'en'
+    );
 
     // handle browser change
     useEffect(() => {
         const handleLanguageChange = () => {
-            const browserLanguage = navigator.language.startsWith('en') ? 'en' : navigator.language;
-            console.log('provider:' + browserLanguage);
+            const browserLanguage = availableLanguages.includes(navigator.language)
+                ? navigator.language
+                : 'en';
 
             setLng(() => browserLanguage);
-            console.log('set up new language: ' + lng);
         };
 
         window.addEventListener('languagechange', handleLanguageChange);

@@ -3,7 +3,7 @@ import HeaderButton from './HeaderButton';
 import useTranslation from '../../../hooks/useTranslation';
 
 const Header = ({ selection, setSelection }) => {
-    const { lng, t } = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <header className="home-header">
@@ -13,13 +13,13 @@ const Header = ({ selection, setSelection }) => {
                 setSelection={setSelection}
             />
             <HeaderButton
-                buttonText={'About'}
+                buttonText={t('home-header-about-button')}
                 selection={selection}
                 setSelection={setSelection}
                 additionalClasses={'border-primaryBlue border-r border-l'}
             />
             <HeaderButton
-                buttonText={'Register'}
+                buttonText={t('home-header-register-button')}
                 selection={selection}
                 setSelection={setSelection}
             />
