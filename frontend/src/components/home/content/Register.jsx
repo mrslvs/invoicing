@@ -64,8 +64,8 @@ function Register() {
             setIsLoading(false);
 
             status === 500
-                ? setErrorMessage('Server error')
-                : setErrorMessage('User already exists');
+                ? setErrorMessage('home-error-message-server-error')
+                : setErrorMessage('home-error-message-user-already-exists');
         }
     };
 
@@ -115,7 +115,7 @@ function Register() {
             />
 
             <span className={errorMessage ? 'err-msg opacity-100' : 'err-msg opacity-0'}>
-                {errorMessage ? errorMessage : ''}
+                {errorMessage ? t(errorMessage) : ''}
             </span>
 
             <SubmitButton

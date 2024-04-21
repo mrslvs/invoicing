@@ -52,7 +52,9 @@ function Login() {
             const status = err.response?.status || 500;
 
             setIsLoading(false);
-            status === 500 ? setErrorMessage('Server error') : setErrorMessage('Wrong credentials');
+            status === 500
+                ? setErrorMessage('home-error-message-server-error')
+                : setErrorMessage('home-error-message-wrong-credentials');
         }
     };
 
@@ -73,7 +75,7 @@ function Login() {
                 additionalLabelClasses={'min-w-[5rem]'}
             />
             <span className={errorMessage ? 'err-msg opacity-100' : 'err-msg opacity-0'}>
-                {errorMessage ? errorMessage : ''}
+                {errorMessage ? t(errorMessage) : ''}
             </span>
             <SubmitButton
                 parentDivClasses={'min-h-[4rem]'}

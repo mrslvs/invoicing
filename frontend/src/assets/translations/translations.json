@@ -75,6 +75,21 @@
         "de": "Sonderzeichen",
         "sk": "Špeciálny znak"
     },
+    "home-error-message-server-error": {
+        "en": "Server error",
+        "de": "Serverfehler",
+        "sk": "Chyba servera"
+    },
+    "home-error-message-user-already-exists": {
+        "en": "User already exists",
+        "de": "Benutzer existiert bereits",
+        "sk": "Používateľ už existuje"
+    },
+    "home-error-message-wrong-credentials": {
+        "en": "Wrong credentials",
+        "de": "Falsche Anmeldeinformationen",
+        "sk": "Nesprávne prihlasovacie údaje"
+    },
     "app-header-": {
         "en": "",
         "de": "",
