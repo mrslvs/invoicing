@@ -4,10 +4,12 @@ import useAuth from '../../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import TextInput from './TextInput';
 import SubmitButton from './SubmitButton';
+import useTranslation from '../../../hooks/useTranslation';
 
 function Login() {
     const { user, setUser } = useAuth();
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
@@ -57,14 +59,14 @@ function Login() {
     return (
         <form onSubmit={login} className="home-content justify-center">
             <TextInput
-                label="Email"
+                label={t('home-input-placeholder-email')}
                 id="email"
                 // onChange={removeErrorMessageOnInputChange}
                 onChange={(e) => handleInputChange(e.target.value, true)}
                 additionalLabelClasses={'min-w-[5rem]'}
             />
             <TextInput
-                label="Password"
+                label={t('home-input-placeholder-password')}
                 id="pwd"
                 // onChange={removeErrorMessageOnInputChange}
                 onChange={(e) => handleInputChange(e.target.value, false)}
@@ -77,7 +79,7 @@ function Login() {
                 parentDivClasses={'min-h-[4rem]'}
                 isLoading={isLoading}
                 isDisabled={disabled}
-                buttonLabel={'Log in'}
+                buttonLabel={t('home-button-log-in')}
             />
         </form>
     );

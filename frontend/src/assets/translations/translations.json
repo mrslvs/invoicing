@@ -15,6 +15,36 @@
         "sk": "Registrovať"
     },
 
+    "home-input-placeholder-email": {
+        "en": "Enter Email",
+        "de": "E-Mail eingeben",
+        "sk": "Zadajte e-mail"
+    },
+    "home-input-placeholder-password": {
+        "en": "Enter Password",
+        "de": "Passwort eingeben",
+        "sk": "Zadajte heslo"
+    },
+    "home-input-placeholder-repeat-password": {
+        "en": "Repeat Password",
+        "de": "Passwort wiederholen",
+        "sk": "Zopakujte heslo"
+    },
+    "home-input-placeholder-phone": {
+        "en": "Enter Phone",
+        "de": "Telefonnummer eingeben",
+        "sk": "Zadajte telefónne číslo"
+    },
+    "home-button-log-in": {
+        "en": "Log in",
+        "de": "Einloggen",
+        "sk": "Prihlásiť sa"
+    },
+    "home-button-register": {
+        "en": "Register",
+        "de": "Registrieren",
+        "sk": "Registrovať sa"
+    },
     "app-header-": {
         "en": "",
         "de": "",
