@@ -1,9 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axiosInstance from '../../../api/axiosInstance';
 import TextInput from './TextInput';
 import SubmitButton from './SubmitButton';
+import useTranslation from '../../../hooks/useTranslation';
 
 function Register() {
+    const { t } = useTranslation();
+
     const [email, setEmail] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(false);
 
@@ -77,7 +80,7 @@ function Register() {
     return (
         <form onSubmit={register} className="home-content justify-center">
             <TextInput
-                label={'Email'}
+                label={t('home-input-placeholder-email')}
                 id={'email'}
                 isValid={isEmailValid}
                 onChange={(e) => setEmail(e.target.value)}
@@ -85,7 +88,7 @@ function Register() {
             />
 
             <TextInput
-                label={'Password'}
+                label={t('home-input-placeholder-password')}
                 id={'pwd'}
                 type="password"
                 isValid={isPwdValid}
@@ -94,7 +97,7 @@ function Register() {
             />
 
             <TextInput
-                label={'Repeat password'}
+                label={t('home-input-placeholder-repeat-password')}
                 id={'pwdRepeat'}
                 type="password"
                 isValid={isPwdRepeatValid}
@@ -103,7 +106,7 @@ function Register() {
             />
 
             <TextInput
-                label={'Phone'}
+                label={t('home-input-placeholder-phone')}
                 id={'phone'}
                 type="text"
                 isValid={isPhoneValid}
@@ -119,19 +122,16 @@ function Register() {
                 parentDivClasses={'min-h-[4rem]'}
                 isDisabled={disabled}
                 isLoading={isLoading}
-                buttonLabel={'Register'}
+                buttonLabel={t('home-button-register')}
             />
 
             <div className="home-register-hint">
-                <p>
-                    Password needs to be at least 12 characters long and must include all of the
-                    following:
-                </p>
+                <p>{t('home-register-password-requirements-text')}</p>
                 <ul className="home-register-list">
-                    <li>Lowercase letter</li>
-                    <li>Uppercase letter</li>
-                    <li>Number</li>
-                    <li>Special character</li>
+                    <li>{t('home-register-requirement-lowercase-letter')}</li>
+                    <li>{t('home-register-requirement-uppercase-letter')}</li>
+                    <li>{t('home-register-requirement-number')}</li>
+                    <li>{t('home-register-requirement-special-character')}</li>
                 </ul>
             </div>
         </form>

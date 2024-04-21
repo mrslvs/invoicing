@@ -50,6 +50,31 @@
         "de": "Willkommen bei Projekt X. Eine Full-Stack-Anwendung, die mit modernen Technologien (MySQL, ExpressJS, ReactJS, NodeJS) erstellt wurde. Diese Anwendung ermöglicht es Benutzern, Rechnungen mühelos zu erstellen, zu verwalten und zu exportieren.",
         "sk": "Vitajte v projekte X. Plne komplexná aplikácia postavená s použitím moderných technológií (MySQL, ExpressJS, ReactJS, NodeJS). Táto aplikácia umožňuje používateľom jednoducho vytvárať, spravovať a exportovať faktúry."
     },
+    "home-register-password-requirements-text": {
+        "en": "Password needs to be at least 12 characters long and must include all of the following:",
+        "de": "Das Passwort muss mindestens 12 Zeichen lang sein und muss alle folgenden Anforderungen erfüllen:",
+        "sk": "Heslo musí obsahovať aspoň 12 znakov a musí obsahovať všetko z nasledujúceho:"
+    },
+    "home-register-requirement-lowercase-letter": {
+        "en": "Lowercase letter",
+        "de": "Kleinbuchstabe",
+        "sk": "Malé písmeno"
+    },
+    "home-register-requirement-uppercase-letter": {
+        "en": "Uppercase letter",
+        "de": "Großbuchstabe",
+        "sk": "Veľké písmeno"
+    },
+    "home-register-requirement-number": {
+        "en": "Number",
+        "de": "Zahl",
+        "sk": "Číslo"
+    },
+    "home-register-requirement-special-character": {
+        "en": "Special character",
+        "de": "Sonderzeichen",
+        "sk": "Špeciálny znak"
+    },
     "app-header-": {
         "en": "",
         "de": "",
