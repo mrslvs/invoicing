@@ -45,6 +45,11 @@
         "de": "Registrieren",
         "sk": "Registrovať sa"
     },
+    "home-about-description": {
+        "en": "Welcome to Project X. A full-stack application built with modern technologies (MySQL, ExpressJS, ReactJS, NodeJS). This application empowers users to effortlessly create, manage, and export invoices.",
+        "de": "Willkommen bei Projekt X. Eine Full-Stack-Anwendung, die mit modernen Technologien (MySQL, ExpressJS, ReactJS, NodeJS) erstellt wurde. Diese Anwendung ermöglicht es Benutzern, Rechnungen mühelos zu erstellen, zu verwalten und zu exportieren.",
+        "sk": "Vitajte v projekte X. Plne komplexná aplikácia postavená s použitím moderných technológií (MySQL, ExpressJS, ReactJS, NodeJS). Táto aplikácia umožňuje používateľom jednoducho vytvárať, spravovať a exportovať faktúry."
+    },
     "app-header-": {
         "en": "",
         "de": "",
