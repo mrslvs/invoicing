@@ -16,7 +16,7 @@ function Home() {
             className={isDark ? baseClass + 'dark' : baseClass}
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-            <div className="home-box dark:text-red-500">
+            <div className="home-box dark:text-red-500 sm:border sm:border-red-500">
                 <Header selection={selection} setSelection={setSelection} />
                 <Content selection={selection} />
             </div>
