@@ -3,8 +3,10 @@ import TextInput from '../form/TextInput';
 import RadioInput from '../form/RadioInput';
 import axios from 'axios';
 import CountriesDropDown from '../form/CountriesDropDown';
+import useTranslation from '../../../hooks/useTranslation';
 
 const BusinessOwnerSetUp = ({ setSelectedUser }) => {
+    const { t } = useTranslation();
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -16,27 +18,33 @@ const BusinessOwnerSetUp = ({ setSelectedUser }) => {
     return (
         <form className="business-owner-set-up-form" onSubmit={handleSubmit}>
             <div className="business-owner-set-up-half">
-                <TextInput label={'Business Name'} id={'businessName'} />
+                <TextInput label={t('app-business-set-up-business-name')} id={'businessName'} />
                 <TextInput
-                    label={'Business Identification Number'}
+                    label={t('app-business-set-up-business-identification-number')}
                     id={'businessIdentificationNumber'}
                 />
-                <TextInput label={'Tax Identification Number'} id={'taxIdentificationNumber'} />
+                <TextInput
+                    label={t('app-business-set-up-tax-identification-number')}
+                    id={'taxIdentificationNumber'}
+                />
 
                 <div className="app-form-radio-container">
-                    <p className="app-form-input-label ">Are you a tax payer?</p>
+                    <p className="app-form-input-label ">{t('app-business-set-up-tax-payer')}</p>
                     <RadioInput label={'Yes'} id={'isTaxPayer'} value={true} />
                     <RadioInput label={'No'} id={'isTaxPayer'} value={false} />
                 </div>
 
                 <TextInput label={'Legal form drop-down'} id={'legalForm'} />
-                <TextInput label={'VAT Identification Number'} id={'vatIdentificationNumber'} />
+                <TextInput
+                    label={t('app-business-set-up-vat-identification-number')}
+                    id={'vatIdentificationNumber'}
+                />
             </div>
             <div className="business-owner-set-up-half">
                 <TextInput label={'Country drop-down'} id={'country'} />
-                <TextInput label={'Address line 1'} id={'addr1'} />
-                <TextInput label={'Address line 2'} id={'addr2'} />
-                <TextInput label={'Postal code'} id={'postalCode'} />
+                <TextInput label={t('app-business-set-up-address-line-1')} id={'addr1'} />
+                <TextInput label={t('app-business-set-up-address-line-2')} id={'addr2'} />
+                <TextInput label={t('app-business-set-up-postal-code')} id={'postalCode'} />
                 <CountriesDropDown />
             </div>
 

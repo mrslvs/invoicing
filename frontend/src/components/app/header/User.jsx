@@ -2,10 +2,12 @@ import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../../../api/axiosInstance';
+import useTranslation from '../../../hooks/useTranslation';
 
 const User = () => {
     const { user, setUser } = useAuth();
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     const logout = async () => {
         if (user.isLoggedIn) {
@@ -27,7 +29,7 @@ const User = () => {
             <li>{user.user}</li>
             <li>{user.role ? user.role : 'role not defined'}</li>
             <li>
-                <button onClick={logout}>Logout</button>
+                <button onClick={logout}>{t('app-header-logout')}</button>
             </li>
             {/* <p>user@email.com</p>
             <p>persona will be here</p> */}

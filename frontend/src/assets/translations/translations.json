@@ -90,9 +90,69 @@
         "de": "Falsche Anmeldeinformationen",
         "sk": "Nesprávne prihlasovacie údaje"
     },
-    "app-header-": {
-        "en": "",
-        "de": "",
-        "sk": ""
+    "app-header-logout": {
+        "en": "Logout",
+        "de": "Abmelden",
+        "sk": "Odhlásiť sa"
+    },
+    "app-role-selection-set-up-business-button": {
+        "en": "I want to set up my business",
+        "de": "Ich möchte mein Unternehmen gründen",
+        "sk": "Chcem založiť svoj podnik"
+    },
+    "app-role-selection-employee-button": {
+        "en": "I am an employee",
+        "de": "Ich bin Angestellter",
+        "sk": "Som zamestnanec"
+    },
+    "app-business-set-up-business-name": {
+        "en": "Business Name",
+        "de": "Firmenname",
+        "sk": "Obchodné meno"
+    },
+    "app-business-set-up-business-identification-number": {
+        "en": "Business Identification Number",
+        "de": "Unternehmensidentifikationsnummer",
+        "sk": "Identifikačné číslo podniku"
+    },
+    "app-business-set-up-tax-identification-number": {
+        "en": "Tax Identification Number",
+        "de": "Steuernummer",
+        "sk": "Identifikačné číslo dane"
+    },
+    "app-business-set-up-tax-payer": {
+        "en": "Are you a tax payer?",
+        "de": "Sind Sie Steuerzahler?",
+        "sk": "Ste platcom dane?"
+    },
+    "app-business-set-up-legal-form": {
+        "en": "Legal form",
+        "de": "Rechtsform",
+        "sk": "Právna forma"
+    },
+    "app-business-set-up-vat-identification-number": {
+        "en": "VAT Identification Number",
+        "de": "Umsatzsteuer-Identifikationsnummer",
+        "sk": "Identifikačné číslo pre DPH"
+    },
+    "app-business-set-up-country": {
+        "en": "Country",
+        "de": "Land",
+        "sk": "Krajina"
+    },
+    "app-business-set-up-address-line-1": {
+        "en": "Address line 1",
+        "de": "Adresszeile 1",
+        "sk": "Adresa, riadok 1"
+    },
+    "app-business-set-up-address-line-2": {
+        "en": "Address line 2",
+        "de": "Adresszeile 2",
+        "sk": "Adresa, riadok 2"
+    },
+    "app-business-set-up-postal-code": {
+        "en": "Postal code",
+        "de": "Postleitzahl",
+        "sk": "PSČ"
     }
 }

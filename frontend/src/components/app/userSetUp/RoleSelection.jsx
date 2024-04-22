@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import useTranslation from '../../../hooks/useTranslation';
 
 const RoleSelection = ({ setSelectedUser }) => {
+    const { t } = useTranslation();
     const selectUser = (userId) => {
         setSelectedUser(userId);
     };
@@ -8,10 +10,10 @@ const RoleSelection = ({ setSelectedUser }) => {
     return (
         <div className="role-selection-parent-div dark:bg-darkBackground">
             <button onClick={() => selectUser(1)} className="role-selection-option">
-                I want to set up my business
+                {t('app-role-selection-set-up-business-button')}
             </button>
             <button onClick={() => selectUser(2)} className="role-selection-option">
-                I am an employee
+                {t('app-role-selection-employee-button')}
             </button>
         </div>
     );
