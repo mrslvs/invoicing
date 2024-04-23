@@ -17,7 +17,7 @@
         11. animation
     */
     .home-main {
-        @apply flex justify-center items-center h-screen w-screen bg-cover bg-center dark:text-red-200;
+        @apply flex justify-center items-center h-screen w-screen bg-cover bg-center;
     }
 
     .home-box {
@@ -29,7 +29,7 @@
     }
 
     .home-header-button {
-        @apply flex-grow text-xl font-bold p-1 hover:bg-gray-900 hover:bg-opacity-80 first:rounded-tl-xl last:rounded-tr-xl;
+        @apply flex-grow text-base sm:text-xl font-bold p-1 hover:bg-gray-900 hover:bg-opacity-80 first:rounded-tl-xl last:rounded-tr-xl;
     }
 
     .home-header-active {
@@ -41,23 +41,23 @@
     }
 
     .home-content {
-        @apply flex flex-col items-center w-[30rem] h-[25rem] max-w-[30rem];
+        @apply flex flex-col items-center w-[18rem] h-[20rem] max-w-[18rem] sm:w-[30rem] sm:h-[25rem] sm:max-w-[30rem];
     }
 
     .home-input-container {
-        @apply flex items-center mb-3;
+        @apply flex items-center mb-2 sm:mb-3;
     }
 
-    .home-input-label {
+    /* .home-input-label {
         @apply text-end mr-3;
-    }
+    } */
 
     .home-input-text {
-        @apply bg-black border border-transparent outline-none rounded-xl pl-2 pr-2 pt-1 pb-1;
+        @apply bg-black text-base sm:text-xl border border-transparent outline-none rounded-xl pl-2 pr-2 pt-1 pb-1;
     }
 
     .err-msg {
-        @apply text-red-500 font-bold min-h-[2rem] transition-opacity duration-500;
+        @apply text-xs sm:text-base text-red-500 font-bold min-h-[1rem] sm:min-h-[2rem] transition-opacity duration-500;
     }
 
     .home-submit {
@@ -69,15 +69,15 @@
     }
 
     .home-about-logo {
-        @apply text-5xl text-primaryBlue font-logo font-bold mt-5 mb-5;
+        @apply text-4xl sm:text-5xl text-primaryBlue font-logo font-bold mt-5 mb-5;
     }
 
     .home-about-main {
-        @apply pl-10 pr-10;
+        @apply text-sm sm:text-base pl-7 pr-7 sm:pl-10 sm:pr-10;
     }
 
     .home-about-footer {
-        @apply flex w-full mt-5 mr-auto ml-auto;
+        @apply flex w-full mt-3 sm:mt-5 mr-auto ml-auto;
     }
 
     .home-about-link-container {
@@ -85,11 +85,11 @@
     }
 
     .about-link {
-        @apply flex self-center text-3xl;
+        @apply flex self-center text-xl sm:text-3xl;
     }
 
     .home-about-icon {
-        @apply text-5xl;
+        @apply text-3xl sm:text-5xl;
     }
 
     .home-submit-disabled {
@@ -97,7 +97,7 @@
     }
 
     .home-register-hint {
-        @apply text-xs pr-10 pl-10 mt-5;
+        @apply text-xs pr-10 pl-10 mt-0 sm:mt-5;
     }
 
     .home-register-list {

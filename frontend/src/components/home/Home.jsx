@@ -7,13 +7,14 @@ import useTheme from '../../hooks/useTheme';
 
 function Home() {
     const { isDark } = useTheme();
-    const [selection, setSelection] = useState('Login');
+    const [selection, setSelection] = useState('login');
 
     const baseClass = 'home-main ';
 
     return (
         <main
-            className={isDark ? baseClass + 'dark' : baseClass}
+            // className={isDark ? baseClass + 'dark' : baseClass}
+            className={baseClass}
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div className="home-box dark:text-red-500 sm:border sm:border-red-500">
