@@ -1,25 +1,28 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import TextInput from '../../home/content/TextInput';
-import useTranslation from '../../../hooks/useTranslation';
+import React from 'react'
+import { useEffect, useState } from 'react'
+import TextInput from '../../home/content/TextInput'
+import useTranslation from '../../../hooks/useTranslation'
+import { Box, Container, Typography, Paper } from '@mui/material'
 
 const TwoFactorAuth = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
-    const [phone, setPhone] = useState('');
-    const [isPhoneValid, setIsPhoneValid] = useState(false);
+    const [phone, setPhone] = useState('')
+    const [isPhoneValid, setIsPhoneValid] = useState(false)
+
+    const serviceList = ['Service 1', 'Service 2', 'Service 3']
 
     useEffect(() => {
-        setIsPhoneValid(isPhoneValidSlovakia(phone));
-    }, [phone]);
+        setIsPhoneValid(isPhoneValidSlovakia(phone))
+    }, [phone])
 
     const isPhoneValidSlovakia = (phone) => {
-        let publicAndPagingNetwork = phone >= 901000000 && phone <= 919999999;
-        let publicNetwork = phone >= 940000000 && phone <= 959999999;
+        let publicAndPagingNetwork = phone >= 901000000 && phone <= 919999999
+        let publicNetwork = phone >= 940000000 && phone <= 959999999
 
-        let output = !isNaN(phone) && (publicAndPagingNetwork || publicNetwork);
-        return output;
-    };
+        let output = !isNaN(phone) && (publicAndPagingNetwork || publicNetwork)
+        return output
+    }
 
     return (
         <div>
@@ -31,8 +34,29 @@ const TwoFactorAuth = () => {
                 onChange={(e) => setPhone(e.target.value)}
                 additionalLabelClasses={'min-w-32'}
             />
+            <Container>
+                <Typography variant="h1">Hello World of MUI!</Typography>
+                <Box>
+                    {serviceList.map((service) => {
+                        // {
+                        //     console.log('ok');
+                        // }
+                        return (
+                            <Paper elevation={3} sx={{ m: 1, p: 1 }}>
+                                <Typography variant="h3">{service}</Typography>
+                                <Typography>
+                                    Some service text and more. Some service text and more. Some
+                                    service text and more. Some service text and more. Some service
+                                    text and more. Some service text and more. Some service text and
+                                    more. Some service text and more.{' '}
+                                </Typography>
+                            </Paper>
+                        )
+                    })}
+                </Box>
+            </Container>
         </div>
-    );
-};
+    )
+}
 
-export default TwoFactorAuth;
+export default TwoFactorAuth
