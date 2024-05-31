@@ -16,9 +16,6 @@ function Register() {
     const [pwdRepeat, setPwdRepeat] = useState('');
     const [isPwdRepeatValid, setIsPwdRepeatValid] = useState(false);
 
-    const [phone, setPhone] = useState('');
-    const [isPhoneValid, setIsPhoneValid] = useState(false);
-
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
     const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
@@ -37,10 +34,6 @@ function Register() {
         setIsPwdRepeatValid(isPwdValid && pwdRepeat === pwd);
     }, [pwdRepeat]);
 
-    useEffect(() => {
-        setIsPhoneValid(isPhoneValidSlovakia(phone));
-    }, [phone]);
-
     const register = async (e) => {
         e.preventDefault();
         setIsLoading(true);
@@ -48,7 +41,6 @@ function Register() {
         const registerData = {
             email: document.getElementById('email').value,
             pwd: document.getElementById('pwd').value,
-            phone: document.getElementById('phone').value,
         };
         console.log(registerData);
 
@@ -57,7 +49,7 @@ function Register() {
                 withCredentials: true,
             });
 
-            // console.log('registered successfully');
+            setIsLoading(false);
         } catch (err) {
             const status = err.response?.status || 500;
 
@@ -67,14 +59,6 @@ function Register() {
                 ? setErrorMessage('home-error-message-server-error')
                 : setErrorMessage('home-error-message-user-already-exists');
         }
-    };
-
-    const isPhoneValidSlovakia = (phone) => {
-        let publicAndPagingNetwork = phone >= 901000000 && phone <= 919999999;
-        let publicNetwork = phone >= 940000000 && phone <= 959999999;
-
-        let output = !isNaN(phone) && (publicAndPagingNetwork || publicNetwork);
-        return output;
     };
 
     return (
@@ -102,15 +86,6 @@ function Register() {
                 type="password"
                 isValid={isPwdRepeatValid}
                 onChange={(e) => setPwdRepeat(e.target.value)}
-                additionalLabelClasses={'min-w-32'}
-            />
-
-            <TextInput
-                label={t('home-input-placeholder-phone')}
-                id={'phone'}
-                type="text"
-                isValid={isPhoneValid}
-                onChange={(e) => setPhone(e.target.value)}
                 additionalLabelClasses={'min-w-32'}
             />
 
