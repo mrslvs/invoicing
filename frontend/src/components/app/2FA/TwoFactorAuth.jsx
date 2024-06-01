@@ -38,9 +38,6 @@ const TwoFactorAuth = () => {
                 <Typography variant="h1">Hello World of MUI!</Typography>
                 <Box>
                     {serviceList.map((service) => {
-                        // {
-                        //     console.log('ok');
-                        // }
                         return (
                             <Paper elevation={3} sx={{ m: 1, p: 1 }}>
                                 <Typography variant="h3">{service}</Typography>
