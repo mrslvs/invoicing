@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import TextInput from '../../home/content/TextInput'
+import TextField from '@mui/material/TextField'
 import useTranslation from '../../../hooks/useTranslation'
 import { Box, Container, Typography, Paper } from '@mui/material'
 
@@ -26,14 +26,15 @@ const TwoFactorAuth = () => {
 
     return (
         <div>
-            <TextInput
+            {/* <TextInput
                 label={t('home-input-placeholder-phone')}
                 id={'phone'}
                 type="text"
                 isValid={isPhoneValid}
                 onChange={(e) => setPhone(e.target.value)}
                 additionalLabelClasses={'min-w-32'}
-            />
+            /> */}
+            <TextField id="phone" label={t('home-input-placeholder-phone')} variant="outlined" />
             <Container>
                 <Typography variant="h1">Hello World of MUI!</Typography>
                 <Box>

@@ -1,7 +1,7 @@
 // import React, { useState } from 'react';
 // import User from './User';
 // import { FaUserGroup } from 'react-icons/fa6';
-// import '../../../assets/styles/app/header.css';
+import '../../../assets/styles/app/header.css'
 
 // const Header = () => {
 //     const [showUser, setShowUser] = useState(false);
@@ -35,19 +35,18 @@ import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 
 import useTranslation from '../../../hooks/useTranslation'
 import { useNavigate } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
 import axiosInstance from '../../../api/axiosInstance'
+import { FaCircleUser } from 'react-icons/fa6'
 
-const pages = ['Products', 'Pricing', 'Blog']
-const settings = ['account', 'logout']
+const pages = ['app-header-invoices', 'app-header-customers', 'app-header-suppliers']
+const settings = ['app-header-profile', 'app-header-logout']
 
 function ResponsiveAppBar() {
     const navigate = useNavigate()
@@ -103,23 +102,21 @@ function ResponsiveAppBar() {
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="static" sx={{ backgroundColor: 'primary.main' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
-                        variant="h6"
+                        variant="logo"
                         noWrap
                         component="a"
                         href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'Dancing Script',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
+                            // fontFamily: 'Dancing Script',
+                            // fontWeight: 700,
+                            // color: 'inherit',
+                            // fontSize: '2rem',
                         }}
                     >
                         NameNameN
@@ -156,30 +153,13 @@ function ResponsiveAppBar() {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                    <Typography textAlign="center" variant="text">
+                                        {t(page)}
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography> */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
@@ -187,15 +167,17 @@ function ResponsiveAppBar() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {t(page)}
                             </Button>
                         ))}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
+                        <Tooltip title={t('app-header-user-settings')}>
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <div className="border-2 rounded-md p-1">
+                                    <FaCircleUser className="h-[1.5rem] w-[1.5rem] text-secondaryTextWhite " />
+                                </div>
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -219,7 +201,9 @@ function ResponsiveAppBar() {
                                     key={setting}
                                     onClick={() => handleUserMenuClick(setting)}
                                 >
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center" variant="text">
+                                        {t(setting)}
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>

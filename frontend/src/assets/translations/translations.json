@@ -90,10 +90,35 @@
         "de": "Falsche Anmeldeinformationen",
         "sk": "Nesprávne prihlasovacie údaje"
     },
+    "app-header-invoices": {
+        "en": "Invoices",
+        "de": "Rechnungen",
+        "sk": "Faktúry"
+    },
+    "app-header-customers": {
+        "en": "Customers",
+        "de": "Kunden",
+        "sk": "Odberatelia"
+    },
+    "app-header-suppliers": {
+        "en": "Suppliers",
+        "de": "Lieferanten",
+        "sk": "Dodávatelia"
+    },
+    "app-header-user-settings": {
+        "en": "User settings",
+        "de": "Benutzereinstellungen",
+        "sk": "Nastavenia používateľa"
+    },
     "app-header-logout": {
         "en": "Logout",
         "de": "Abmelden",
         "sk": "Odhlásiť sa"
+    },
+    "app-header-profile": {
+        "en": "Profile",
+        "de": "Profil",
+        "sk": "Profil"
     },
     "app-role-selection-set-up-business-button": {
         "en": "I want to set up my business",
