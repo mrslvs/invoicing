@@ -32,7 +32,7 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className="app-parent-div">
+            <div className="">
                 <Header />
                 {/* {user.role ? <Dashboard /> : <UserSetUp />} */}
                 {/* <TwoFactorAuth /> */}

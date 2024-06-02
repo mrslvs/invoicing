@@ -29,28 +29,47 @@ import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Container } from '@mui/material'
 import InvoiceDash from './InvoiceDash'
+import ActionItems from './ActionItems'
+import DashboardCard from './DashboardCard'
 
 const Dashboard = () => {
     return (
-        <Container>
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
-                    <Grid xs={6}>
-                        {/* <Paper elevation={3}>Text number 1</Paper> */}
-                        <InvoiceDash />
-                    </Grid>
-                    <Grid xs={6}>
-                        <Paper elevation={3}>Text number 2</Paper>
-                    </Grid>
-                    <Grid xs={6}>
-                        <Paper elevation={3}>Text number 3</Paper>
-                    </Grid>
-                    <Grid xs={6}>
-                        <Paper elevation={3}>Text number 4</Paper>
-                    </Grid>
-                </Grid>
-            </Box>
-        </Container>
+        // <Grid container spacing={2} sx={{ mr: '1rem', ml: '1rem', height: '100vh' }}>
+        //     <Grid xs={6}>
+        //         <DashboardCard>
+        //             <InvoiceDash />
+        //         </DashboardCard>
+        //     </Grid>
+        //     <Grid xs={6}>
+        //         <DashboardCard>
+        //             <ActionItems />
+        //         </DashboardCard>
+        //     </Grid>
+        //     <Grid xs={6}>
+        //         <DashboardCard>
+        //             <ActionItems />
+        //         </DashboardCard>
+        //     </Grid>
+        //     <Grid xs={6}>
+        //         <DashboardCard>
+        //             <ActionItems />
+        //         </DashboardCard>
+        //     </Grid>
+        // </Grid>
+        <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 mr-4 ml-4 ">
+            <DashboardCard>
+                <InvoiceDash />
+            </DashboardCard>
+            <DashboardCard>
+                <InvoiceDash />
+            </DashboardCard>
+            <DashboardCard>
+                <InvoiceDash />
+            </DashboardCard>
+            <DashboardCard>
+                <InvoiceDash />
+            </DashboardCard>
+        </main>
     )
 }
 
