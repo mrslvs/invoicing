@@ -1,5 +1,4 @@
 import { Typography } from '@mui/material'
-import '../../../assets/styles/app/chart.css'
 
 import {
     Chart as ChartJS,
