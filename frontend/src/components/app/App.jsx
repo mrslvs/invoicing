@@ -25,6 +25,7 @@ function App() {
         typography: {
             logo: { fontFamily: 'Dancing Script', fontSize: '2rem', fontWeight: 700 },
             text: { fontFamily: 'Roboto', fontSize: '1rem' },
+            kpi: { fontFamily: 'Roboto', fontSize: '3rem' },
             // fontFamily: ['"[Dancing Script]", "sans-serif"'],
         },
     })
@@ -34,7 +35,8 @@ function App() {
             <div className="app-parent-div">
                 <Header />
                 {/* {user.role ? <Dashboard /> : <UserSetUp />} */}
-                <TwoFactorAuth />
+                {/* <TwoFactorAuth /> */}
+                <Dashboard />
             </div>
         </ThemeProvider>
     )
