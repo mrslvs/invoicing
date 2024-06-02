@@ -90,9 +90,10 @@ function ResponsiveAppBar() {
         handleCloseUserMenu()
 
         switch (setting) {
-            case 'account':
+            case 'app-header-profile':
+                console.log('profile')
                 break
-            case 'logout':
+            case 'app-header-logout':
                 logout()
                 break
             default:
