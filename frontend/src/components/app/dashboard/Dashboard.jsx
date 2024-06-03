@@ -39,7 +39,7 @@ const Dashboard = () => {
                 <InvoiceDash />
             </DashboardCard>
             <DashboardCard>
-                <InvoiceDash />
+                <ActionItems />
             </DashboardCard>
             <DashboardCard>
                 <InvoiceDash />
