@@ -34,29 +34,7 @@ import DashboardCard from './DashboardCard'
 
 const Dashboard = () => {
     return (
-        // <Grid container spacing={2} sx={{ mr: '1rem', ml: '1rem', height: '100vh' }}>
-        //     <Grid xs={6}>
-        //         <DashboardCard>
-        //             <InvoiceDash />
-        //         </DashboardCard>
-        //     </Grid>
-        //     <Grid xs={6}>
-        //         <DashboardCard>
-        //             <ActionItems />
-        //         </DashboardCard>
-        //     </Grid>
-        //     <Grid xs={6}>
-        //         <DashboardCard>
-        //             <ActionItems />
-        //         </DashboardCard>
-        //     </Grid>
-        //     <Grid xs={6}>
-        //         <DashboardCard>
-        //             <ActionItems />
-        //         </DashboardCard>
-        //     </Grid>
-        // </Grid>
-        <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 mr-4 ml-4 ">
+        <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 mr-4 ml-4">
             <DashboardCard>
                 <InvoiceDash />
             </DashboardCard>

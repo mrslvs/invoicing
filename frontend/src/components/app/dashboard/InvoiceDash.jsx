@@ -47,15 +47,15 @@ const InvoiceDash = () => {
         26, 27, 28, 29, 30, 31,
     ]
 
-    const dataToUse = [1, 2, 4, 5, 34, 21, 12, 1, 2, 3]
+    const dataToUse = [1, 2, 4, 5, 34, 21, 12, 1, 2, 3, 1, 2, 3, 1, 2, 3]
 
     const data = {
         labels: labels.slice(0, dataToUse.length),
         datasets: [
             {
                 data: dataToUse,
-                borderColor: 'rgb(255, 99, 132)',
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: '#24B2EB',
+                // backgroundColor: 'rgba(155, 99, 132, 0.5)',
                 pointRadius: 0,
             },
         ],
@@ -63,8 +63,10 @@ const InvoiceDash = () => {
 
     return (
         <>
-            <Line options={options} data={data} />
-            <Typography variant={'kpi'} sx={{ color: 'primary.main' }}>
+            <div className="h-[12rem] mr-auto ml-auto mt-5">
+                <Line options={options} data={data} />
+            </div>
+            <Typography variant={'kpi'} sx={{ color: 'primary.main', marginRight: '1rem' }}>
                 5
             </Typography>
             <Typography variant={'text'}>Invoices created this month</Typography>
