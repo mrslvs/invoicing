@@ -1,65 +1,65 @@
-import { useEffect, useState } from 'react';
-import axiosInstance from '../../../api/axiosInstance';
-import TextInput from './TextInput';
-import SubmitButton from './SubmitButton';
-import useTranslation from '../../../hooks/useTranslation';
+import { useEffect, useState } from 'react'
+import axiosInstance from '../../../api/axiosInstance'
+import TextInput from './TextInput'
+import SubmitButton from './SubmitButton'
+import useTranslation from '../../../hooks/useTranslation'
 
 function Register() {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
-    const [email, setEmail] = useState('');
-    const [isEmailValid, setIsEmailValid] = useState(false);
+    const [email, setEmail] = useState('')
+    const [isEmailValid, setIsEmailValid] = useState(false)
 
-    const [pwd, setPwd] = useState('');
-    const [isPwdValid, setIsPwdValid] = useState(false);
+    const [pwd, setPwd] = useState('')
+    const [isPwdValid, setIsPwdValid] = useState(false)
 
-    const [pwdRepeat, setPwdRepeat] = useState('');
-    const [isPwdRepeatValid, setIsPwdRepeatValid] = useState(false);
+    const [pwdRepeat, setPwdRepeat] = useState('')
+    const [isPwdRepeatValid, setIsPwdRepeatValid] = useState(false)
 
-    const [isLoading, setIsLoading] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-    const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid && isPhoneValid);
-
-    useEffect(() => {
-        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        setIsEmailValid(emailRegex.test(email));
-    }, [email]);
+    const [isLoading, setIsLoading] = useState(false)
+    const [errorMessage, setErrorMessage] = useState('')
+    const disabled = !(isEmailValid && isPwdValid && isPwdRepeatValid)
 
     useEffect(() => {
-        const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*-_])(?=.{12,}).*$/;
-        setIsPwdValid(pwdRegex.test(pwd));
-    }, [pwd]);
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+        setIsEmailValid(emailRegex.test(email))
+    }, [email])
 
     useEffect(() => {
-        setIsPwdRepeatValid(isPwdValid && pwdRepeat === pwd);
-    }, [pwdRepeat]);
+        const pwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*-_])(?=.{12,}).*$/
+        setIsPwdValid(pwdRegex.test(pwd))
+    }, [pwd])
+
+    useEffect(() => {
+        setIsPwdRepeatValid(isPwdValid && pwdRepeat === pwd)
+    }, [pwdRepeat])
 
     const register = async (e) => {
-        e.preventDefault();
-        setIsLoading(true);
+        e.preventDefault()
+        setIsLoading(true)
 
         const registerData = {
             email: document.getElementById('email').value,
             pwd: document.getElementById('pwd').value,
-        };
-        console.log(registerData);
+        }
+        console.log(registerData)
 
         try {
             const response = await axiosInstance.post('/auth/register', registerData, {
                 withCredentials: true,
-            });
+            })
 
-            setIsLoading(false);
+            setIsLoading(false)
         } catch (err) {
-            const status = err.response?.status || 500;
+            const status = err.response?.status || 500
 
-            setIsLoading(false);
+            setIsLoading(false)
 
             status === 500
                 ? setErrorMessage('home-error-message-server-error')
-                : setErrorMessage('home-error-message-user-already-exists');
+                : setErrorMessage('home-error-message-user-already-exists')
         }
-    };
+    }
 
     return (
         <form onSubmit={register} className="home-content justify-center">
@@ -110,7 +110,7 @@ function Register() {
                 </ul>
             </div>
         </form>
-    );
+    )
 }
 
-export default Register;
+export default Register

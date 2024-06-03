@@ -1,5 +1,5 @@
-const { Sequelize } = require('sequelize');
-const database = require('../config/database');
+const { Sequelize } = require('sequelize')
+const database = require('../config/database')
 
 module.exports = database.define(
     'user',
@@ -20,7 +20,8 @@ module.exports = database.define(
         },
         phone: {
             type: Sequelize.DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: null,
         },
         role: {
             type: Sequelize.DataTypes.INTEGER,
@@ -37,4 +38,4 @@ module.exports = database.define(
         freezeTableName: true,
         timestamps: true,
     }
-);
+)
