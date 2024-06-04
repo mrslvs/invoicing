@@ -25,18 +25,21 @@ const TwoFactorAuthAction = () => {
     return (
         <div>
             <Container>
-                <Typography variant="h2">Complete 2 Factor Authentication</Typography>
-                <TextField
-                    id="phone"
-                    label={t('home-input-placeholder-phone')}
-                    variant="outlined"
-                    onChange={(c) => setPhone(c)}
-                />
+                <Typography variant="h3">Complete 2 Factor Authentication</Typography>
                 <Paper elevation={4} sx={{ m: 1, p: 1 }}>
                     <Typography>
-                        Allowing 2 Factor Authentication you significantly increase security of your
-                        account.
+                        By allowing 2 Factor Authentication you significantly increase the security
+                        of your account.
                     </Typography>
+                    <TextField
+                        id="phone"
+                        autoFocus={true}
+                        label={t('home-input-placeholder-phone')}
+                        variant="outlined"
+                        onChange={(e) => setPhone(e.target.value)}
+                        color={isPhoneValid ? 'success' : 'primary'}
+                        // sx={isPhoneValid ? { bgcolor: 'red', outlineColor: 'red' } : {}}
+                    />
                 </Paper>
             </Container>
         </div>

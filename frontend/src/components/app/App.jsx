@@ -1,18 +1,20 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Header from './header/Header'
 import useAuth from '../../hooks/useAuth'
 import Dashboard from './dashboard/Dashboard'
 import UserSetUp from './userSetUp/UserSetUp'
 import '../../assets/styles/app/app.css'
-import TwoFactorAuth from './2FA/TwoFactorAuth'
 import { ThemeProvider, createTheme } from '@mui/material'
+import TwoFactorAuthAction from './actions/TwoFactorAuthAction'
 
 function App() {
     const { user, setUser } = useAuth()
-    useEffect(() => {
-        console.log('app:')
-        console.log(user.role)
-    }, [])
+    const [activeComponent, setActiveComponent] = useState('dashboard')
+
+    // useEffect(() => {
+    //     console.log('app:')
+    //     console.log(user.role)
+    // }, [])
 
     const theme = createTheme({
         palette: {
@@ -30,13 +32,32 @@ function App() {
         },
     })
 
+    const renderActiveComponent = () => {
+        switch (activeComponent) {
+            case 'dashboard':
+                return <Dashboard setActiveComponent={setActiveComponent} />
+            case 'app-action-2fa':
+                return <TwoFactorAuthAction />
+        }
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <div className="">
                 <Header />
-                {/* {user.role ? <Dashboard /> : <UserSetUp />} */}
-                {/* <TwoFactorAuth /> */}
-                <Dashboard />
+                {renderActiveComponent()}
+                {/* {activeComponent && (
+                    <switch>
+                        <case value="dashboard">
+                            <Dashboard />
+                            break;
+                        </case>
+                        <case value="app-two-factor-authentication">
+                            <TwoFactorAuthAction />
+                            break;
+                        </case>
+                    </switch>
+                )} */}
             </div>
         </ThemeProvider>
     )

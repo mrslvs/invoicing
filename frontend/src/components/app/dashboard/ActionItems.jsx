@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import useTranslation from '../../../hooks/useTranslation'
 
-const ActionItems = () => {
+const ActionItems = ({ setActiveComponent }) => {
     const { t } = useTranslation()
     const { user, setUser } = useAuth()
     const [isLoading, setIsLoading] = useState(true)
@@ -35,7 +35,7 @@ const ActionItems = () => {
 
     const handleActionClick = (actionItem) => {
         console.log(actionItem)
-
+        setActiveComponent(actionItem)
         // switch(actionItem){
         //     case ''
         // }

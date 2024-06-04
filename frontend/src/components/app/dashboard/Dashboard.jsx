@@ -32,14 +32,14 @@ import InvoiceDash from './InvoiceDash'
 import ActionItems from './ActionItems'
 import DashboardCard from './DashboardCard'
 
-const Dashboard = () => {
+const Dashboard = ({ setActiveComponent }) => {
     return (
         <main className="grid grid-cols-1 lg:grid-cols-2 gap-4 mr-4 ml-4">
             <DashboardCard>
                 <InvoiceDash />
             </DashboardCard>
             <DashboardCard>
-                <ActionItems />
+                <ActionItems setActiveComponent={setActiveComponent} />
             </DashboardCard>
             <DashboardCard>
                 <InvoiceDash />
