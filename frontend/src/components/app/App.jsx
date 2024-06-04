@@ -1,15 +1,25 @@
 import { useEffect, useState } from 'react'
 import Header from './header/Header'
-import useAuth from '../../hooks/useAuth'
+// import useAuth from '../../hooks/useAuth'
 import Dashboard from './dashboard/Dashboard'
-import UserSetUp from './userSetUp/UserSetUp'
+// import UserSetUp from './userSetUp/UserSetUp'
 import '../../assets/styles/app/app.css'
 import { ThemeProvider, createTheme } from '@mui/material'
 import TwoFactorAuthAction from './actions/TwoFactorAuthAction'
+// import ActiveComponentProvider from '../../context/ActiveComponentProvider'
+import { useContext } from 'react'
+
+import ActiveComponentContext from '../../context/ActiveComponentProvider'
+// import ActiveComponentProvider from '../../context/ActiveComponentProvider'
+// import {
+//     ActiveComponentProvider,
+//     ActiveComponentContext,
+// } from '../../context/ActiveComponentProvider'
 
 function App() {
-    const { user, setUser } = useAuth()
-    const [activeComponent, setActiveComponent] = useState('dashboard')
+    // const { user, setUser } = useAuth()
+    const { activeComponent } = useContext(ActiveComponentContext)
+    // const [activeComponent, setActiveComponent] = useState('dashboard')
 
     // useEffect(() => {
     //     console.log('app:')
@@ -35,7 +45,8 @@ function App() {
     const renderActiveComponent = () => {
         switch (activeComponent) {
             case 'dashboard':
-                return <Dashboard setActiveComponent={setActiveComponent} />
+                // return <Dashboard setActiveComponent={setActiveComponent} />
+                return <Dashboard />
             case 'app-action-2fa':
                 return <TwoFactorAuthAction />
         }
@@ -45,6 +56,7 @@ function App() {
         <ThemeProvider theme={theme}>
             <div className="">
                 <Header />
+                {/* <ActiveComponentProvider>{renderActiveComponent()}</ActiveComponentProvider> */}
                 {renderActiveComponent()}
                 {/* {activeComponent && (
                     <switch>

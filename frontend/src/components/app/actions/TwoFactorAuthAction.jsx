@@ -2,7 +2,8 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField'
 import useTranslation from '../../../hooks/useTranslation'
-import { Box, Container, Typography, Paper } from '@mui/material'
+import { Container, Typography, Paper } from '@mui/material'
+import FooterOptions from '../footer/FooterOptions'
 
 const TwoFactorAuthAction = () => {
     const { t } = useTranslation()
@@ -41,6 +42,7 @@ const TwoFactorAuthAction = () => {
                         sx={{ width: '15rem' }}
                     />
                 </Paper>
+                <FooterOptions canSubmit={isPhoneValid} />
             </Container>
         </div>
     )

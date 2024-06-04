@@ -8,9 +8,13 @@ import axiosInstance from '../../../api/axiosInstance'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import useTranslation from '../../../hooks/useTranslation'
+import ActiveComponentContext from '../../../context/ActiveComponentProvider'
+import { useContext } from 'react'
 
-const ActionItems = ({ setActiveComponent }) => {
+const ActionItems = ({}) => {
     const { t } = useTranslation()
+    const { setActiveComponent } = useContext(ActiveComponentContext)
+
     const { user, setUser } = useAuth()
     const [isLoading, setIsLoading] = useState(true)
     const [actionItems, setActionItems] = useState([])
@@ -36,9 +40,6 @@ const ActionItems = ({ setActiveComponent }) => {
     const handleActionClick = (actionItem) => {
         console.log(actionItem)
         setActiveComponent(actionItem)
-        // switch(actionItem){
-        //     case ''
-        // }
     }
 
     return (
