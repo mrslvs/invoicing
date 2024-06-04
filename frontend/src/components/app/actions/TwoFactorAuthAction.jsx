@@ -26,8 +26,8 @@ const TwoFactorAuthAction = () => {
         <div>
             <Container>
                 <Typography variant="h3">Complete 2 Factor Authentication</Typography>
-                <Paper elevation={4} sx={{ m: 1, p: 1 }}>
-                    <Typography>
+                <Paper elevation={4} sx={{ m: 1, p: 4 }}>
+                    <Typography sx={{ marginBottom: '1rem' }}>
                         By allowing 2 Factor Authentication you significantly increase the security
                         of your account.
                     </Typography>
@@ -38,7 +38,7 @@ const TwoFactorAuthAction = () => {
                         variant="outlined"
                         onChange={(e) => setPhone(e.target.value)}
                         color={isPhoneValid ? 'success' : 'primary'}
-                        // sx={isPhoneValid ? { bgcolor: 'red', outlineColor: 'red' } : {}}
+                        sx={{ width: '15rem' }}
                     />
                 </Paper>
             </Container>
