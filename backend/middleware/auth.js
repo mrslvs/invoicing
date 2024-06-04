@@ -18,17 +18,7 @@ const authenticateSession = async (req, res, next) => {
         if (ses) {
             if (currentDate <= ses.dataValues.expires_at) {
                 const user = await getUserById(ses.dataValues.user_id)
-                // console.log(
-                //     '\x1b[36m%s\x1b[0m',
-                //     `currentDate ${currentDate} vs. ses.expires_at ${ses.dataValues.expires_at}`
-                // )
-                // console.log(
-                //     '\x1b[36m%s\x1b[0m',
-                //     `result of comparison: ${currentDate <= ses.dataValues.expires_at}`
-                // )
-
                 console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: valid request')
-                // res.status(200).json({ userId: ses.dataValues.user_id, role: user.role })
                 req.user = user
                 next()
             } else {
@@ -43,8 +33,6 @@ const authenticateSession = async (req, res, next) => {
         console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: did not receive a session ID')
         res.status(401).json('no session ID')
     }
-
-    // next()
 }
 
 module.exports = { authenticateSession }
