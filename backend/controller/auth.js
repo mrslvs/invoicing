@@ -113,4 +113,13 @@ const logoutUser = async (req, res) => {
     res.status(201).json('logged out')
 }
 
-module.exports = { registerUser, loginUser, logoutUser }
+const sessionIsValid = (req, res) => {
+    console.log('\x1b[33m%s\x1b[0m', `AUTHCONTROLLER RECEIVED USER FROM MIDDLEWARE`)
+    res.status(200).json({
+        userId: req.user.dataValues.id,
+        role: null,
+        verified: req.user.dataValues.verified,
+    })
+}
+
+module.exports = { registerUser, loginUser, logoutUser, sessionIsValid }

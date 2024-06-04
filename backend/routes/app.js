@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const { authenticateUser } = require('../controller/auth')
+const { sessionIsValid } = require('../controller/auth')
+const { getActionItemsForUser } = require('../controller/appController')
 
-router.post('/register', (req, res) => registerUser(req, res))
-router.post('/login', (req, res) => loginUser(req, res))
-router.get('/authenticate', (req, res) => authenticateUser(req, res))
+router.get('/', (req, res) => sessionIsValid(req, res))
+router.get('/dash/actions', (req, res) => getActionItemsForUser(req, res))
 
 module.exports = router

@@ -1,36 +1,50 @@
-const Session = require('../model/Session');
-const { getUserById } = require('../controller/userController');
+const Session = require('../model/Session')
+const { getUserById } = require('../controller/userController')
 
 const authenticateSession = async (req, res, next) => {
-    const currentDate = new Date();
-    const sessionID = req.sessionID;
+    const currentDate = new Date()
+    const sessionID = req.sessionID
 
-    console.log('my middleware - sessionID:' + sessionID);
+    console.log('\x1b[36m%s\x1b[0m', 'Auth Middleware intercepted request')
 
     if (sessionID) {
-        console.log('ok got the session id');
+        console.log('\x1b[36m%s\x1b[0m', 'Moving along Auth middleware')
         const ses = await Session.findOne({
             where: {
                 session_id: sessionID,
             },
-        });
+        })
 
         if (ses) {
             if (currentDate <= ses.dataValues.expires_at) {
-                const user = await getUserById(ses.dataValues.user_id);
+                const user = await getUserById(ses.dataValues.user_id)
+                // console.log(
+                //     '\x1b[36m%s\x1b[0m',
+                //     `currentDate ${currentDate} vs. ses.expires_at ${ses.dataValues.expires_at}`
+                // )
+                // console.log(
+                //     '\x1b[36m%s\x1b[0m',
+                //     `result of comparison: ${currentDate <= ses.dataValues.expires_at}`
+                // )
 
-                res.status(200).json({ userId: ses.dataValues.user_id, role: user.role });
+                console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: valid request')
+                // res.status(200).json({ userId: ses.dataValues.user_id, role: user.role })
+                req.user = user
+                next()
             } else {
-                res.status(401).json('session expired');
+                console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: session expired')
+                res.status(401).json('session expired')
             }
         } else {
-            res.status(401).json('no session ID');
+            console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: session not in database')
+            res.status(401).json('this session ID does not exist in DB')
         }
     } else {
-        res.status(401).json('no session ID');
+        console.log('\x1b[36m%s\x1b[0m', 'AUTH MIDDLEWARE: did not receive a session ID')
+        res.status(401).json('no session ID')
     }
 
-    next();
-};
+    // next()
+}
 
-module.exports = { authenticateSession };
+module.exports = { authenticateSession }
