@@ -7,8 +7,10 @@ import useAuth from '../../../hooks/useAuth'
 import axiosInstance from '../../../api/axiosInstance'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import useTranslation from '../../../hooks/useTranslation'
 
 const ActionItems = () => {
+    const { t } = useTranslation()
     const { user, setUser } = useAuth()
     const [isLoading, setIsLoading] = useState(true)
     const [actionItems, setActionItems] = useState([])
@@ -30,6 +32,14 @@ const ActionItems = () => {
 
         fetchData()
     }, [])
+
+    const handleActionClick = (actionItem) => {
+        console.log(actionItem)
+
+        // switch(actionItem){
+        //     case ''
+        // }
+    }
 
     return (
         <>
@@ -58,9 +68,9 @@ const ActionItems = () => {
                                     cursor: 'pointer',
                                 },
                             }}
-                            onClick={() => console.log('clicked')}
+                            onClick={() => handleActionClick(item)}
                         >
-                            <ListItemText primary={`${item}`} />
+                            <ListItemText primary={`${t(item)}`} />
                         </ListItem>
                     ))
                 )}

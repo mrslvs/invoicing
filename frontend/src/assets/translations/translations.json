@@ -120,6 +120,21 @@
         "de": "Profil",
         "sk": "Profil"
     },
+    "app-action-2fa": {
+        "en": "Complete 2 Factor Authentication",
+        "de": "Vollständige 2-Faktor-Authentifizierung",
+        "sk": "Dokončiť 2-faktorové overenie"
+    },
+    "app-action-pay-invoice": {
+        "en": "Invoice to be paid",
+        "de": "Zu zahlende Rechnung",
+        "sk": "Faktúra na zaplatenie"
+    },
+    "app-action-setup-profile": {
+        "en": "Set-Up your profile",
+        "de": "Richten Sie Ihr Profil ein",
+        "sk": "Nastavte si profil"
+    },
     "app-role-selection-set-up-business-button": {
         "en": "I want to set up my business",
         "de": "Ich möchte mein Unternehmen gründen",
