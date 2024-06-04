@@ -36,20 +36,20 @@ const ActionItems = () => {
             <Typography variant={'text'} sx={{ marginTop: '1rem', marginBottom: '1rem' }}>
                 Action items:
             </Typography>
-            {isLoading ? (
-                <Typography variant={'text'} sx={{ marginTop: '1rem', marginBottom: '1rem' }}>
-                    Loading...
-                </Typography>
-            ) : (
-                <List
-                    sx={{
-                        // bgcolor: 'background.paper',
-                        overflow: 'auto',
-                        maxHeight: '15rem',
-                        border: '1px solid black',
-                    }}
-                >
-                    {actionItems.map((item) => (
+            <List
+                sx={{
+                    // bgcolor: 'background.paper',
+                    overflow: 'auto',
+                    maxHeight: '15rem',
+                    border: '1px solid black',
+                }}
+            >
+                {isLoading ? (
+                    <ListItem>
+                        <ListItemText primary={`Loading...`} />
+                    </ListItem>
+                ) : (
+                    actionItems.map((item) => (
                         <ListItem
                             key={item}
                             sx={{
@@ -60,11 +60,11 @@ const ActionItems = () => {
                             }}
                             onClick={() => console.log('clicked')}
                         >
-                            <ListItemText primary={`Item ${item}`} />
+                            <ListItemText primary={`${item}`} />
                         </ListItem>
-                    ))}
-                </List>
-            )}
+                    ))
+                )}
+            </List>
         </>
     )
 }
