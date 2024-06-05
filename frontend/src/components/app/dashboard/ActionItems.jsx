@@ -10,10 +10,12 @@ import { useState } from 'react'
 import useTranslation from '../../../hooks/useTranslation'
 import ActiveComponentContext from '../../../context/ActiveComponentProvider'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ActionItems = ({}) => {
     const { t } = useTranslation()
     const { setActiveComponent } = useContext(ActiveComponentContext)
+    const navigate = useNavigate()
 
     const { user, setUser } = useAuth()
     const [isLoading, setIsLoading] = useState(true)
