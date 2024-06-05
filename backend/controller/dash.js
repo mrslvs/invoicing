@@ -19,7 +19,7 @@ const getActionItemsForUser = async (req, res) => {
         res.status(200).json({
             actionItems: actionItems,
         })
-    }, 3000)
+    }, 700)
 }
 
 module.exports = { getActionItemsForUser }

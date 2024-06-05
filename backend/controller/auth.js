@@ -122,4 +122,10 @@ const sessionIsValid = (req, res) => {
     })
 }
 
-module.exports = { registerUser, loginUser, logoutUser, sessionIsValid }
+const twoFactor = (req, res) => {
+    const { phone } = req.body
+    console.log('\x1b[35m', `Received 2fa from user[${req.user.id}] with phone ${phone}`)
+    res.status(200).json({ phone: phone })
+}
+
+module.exports = { registerUser, loginUser, logoutUser, sessionIsValid, twoFactor }

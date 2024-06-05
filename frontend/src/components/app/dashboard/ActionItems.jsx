@@ -28,8 +28,8 @@ const ActionItems = ({}) => {
                 setActionItems(response.data.actionItems)
                 setIsLoading(false)
             } catch (err) {
-                const status = err.response?.status || 500
                 setIsLoading(false)
+                if (err.response && err.response.status === 401) navigate('/')
                 console.log(err)
             }
         }

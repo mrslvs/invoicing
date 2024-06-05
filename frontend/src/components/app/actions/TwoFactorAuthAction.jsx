@@ -4,12 +4,36 @@ import TextField from '@mui/material/TextField'
 import useTranslation from '../../../hooks/useTranslation'
 import { Container, Typography, Paper } from '@mui/material'
 import FooterOptions from '../footer/FooterOptions'
+import axiosInstance from '../../../api/axiosInstance'
+import { useNavigate } from 'react-router-dom'
 
 const TwoFactorAuthAction = () => {
     const { t } = useTranslation()
+    const navigate = useNavigate()
 
     const [phone, setPhone] = useState('')
     const [isPhoneValid, setIsPhoneValid] = useState(false)
+    const [submit, setSubmit] = useState(false)
+
+    useEffect(() => {
+        const submit = async () => {
+            if (submit) {
+                try {
+                    const response = await axiosInstance.post(
+                        '/app/twofa',
+                        { phone: phone },
+                        {
+                            withCredentials: true,
+                        }
+                    )
+                    console.log(response)
+                } catch (err) {
+                    if (err.response && err.response.status === 401) navigate('/')
+                }
+            }
+        }
+        submit()
+    }, [submit])
 
     useEffect(() => {
         setIsPhoneValid(isPhoneValidSlovakia(phone))
@@ -42,7 +66,7 @@ const TwoFactorAuthAction = () => {
                         sx={{ width: '15rem' }}
                     />
                 </Paper>
-                <FooterOptions canSubmit={isPhoneValid} />
+                <FooterOptions canSubmit={isPhoneValid} setSubmitted={setSubmit} />
             </Container>
         </div>
     )

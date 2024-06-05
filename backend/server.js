@@ -27,7 +27,7 @@ app.use(
         cookie: {
             // secure: true, // Only HTTPS
             maxAge: 15 * 60 * 1000, // cookie expires in 15 min
-            // maxAge: 0.1 * 60 * 1000, // cookie expires in 15 min
+            // maxAge: 0.1 * 60 * 1000,
             // maxAge: 0.2 * 60 * 1000, // TESTING PURPOSES
             // domain: 'localhost', //
         },
